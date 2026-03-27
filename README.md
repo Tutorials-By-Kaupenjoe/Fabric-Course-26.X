@@ -1,4 +1,4 @@
-[![Fabric-Main-Course-Image](https://github.com/user-attachments/assets/4e69b1d0-10d5-47ae-9794-9e246b83d505)](courses.kaupenjoe.net/p/modding-by-kaupenjoe-fabric-modding-for-minecraft-26-x)
+[![Fabric-Main-Course-Image](https://github.com/user-attachments/assets/4e69b1d0-10d5-47ae-9794-9e246b83d505)](https://courses.kaupenjoe.net/p/modding-by-kaupenjoe-fabric-modding-for-minecraft-26-x)
 # Modding By Kaupenjoe: FABRIC MODDING COURSE 26.X
 
 This is the GitHub Repository for Kaupenjoe's Minecraft Modding Course using Fabric for Minecraft version 26.X.
