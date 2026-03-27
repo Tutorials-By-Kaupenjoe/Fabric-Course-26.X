@@ -2,6 +2,8 @@ package net.kaupenjoe.mccourse;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.kaupenjoe.mccourse.datagen.ModBlockLootTableProvider;
+import net.kaupenjoe.mccourse.datagen.ModBlockTagProvider;
 import net.kaupenjoe.mccourse.datagen.ModModelProvider;
 
 public class MCCourseDataGenerator implements DataGeneratorEntrypoint {
@@ -10,5 +12,7 @@ public class MCCourseDataGenerator implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
 		pack.addProvider(ModModelProvider::new);
+		pack.addProvider(ModBlockLootTableProvider::new);
+		pack.addProvider(ModBlockTagProvider::new);
 	}
 }

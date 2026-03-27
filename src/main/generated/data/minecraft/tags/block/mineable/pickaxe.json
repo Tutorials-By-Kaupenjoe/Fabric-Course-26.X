@@ -1,0 +1,10 @@
+{
+  "values": [
+    "mccourse:bismuth_block",
+    "mccourse:raw_bismuth_block",
+    "mccourse:bismuth_ore",
+    "mccourse:bismuth_deepslate_ore",
+    "mccourse:bismuth_nether_ore",
+    "mccourse:bismuth_end_ore"
+  ]
+}
