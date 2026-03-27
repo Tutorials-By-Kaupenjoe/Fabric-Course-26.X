@@ -2,6 +2,7 @@ package net.kaupenjoe.mccourse.item;
 
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.kaupenjoe.mccourse.MCCourse;
+import net.kaupenjoe.mccourse.food.ModFoodProperties;
 import net.kaupenjoe.mccourse.item.custom.ChiselItem;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -18,7 +19,8 @@ public class ModItems {
     public static final Item RAW_BISMUTH = registerItem("raw_bismuth", Item::new);
 
     public static final Item CHISEL = registerItem("chisel", properties -> new ChiselItem(properties.durability(32)));
-
+    public static final Item CAULIFLOWER = registerItem("cauliflower", properties -> new Item(properties.food(ModFoodProperties.CAULIFLOWER,
+            ModFoodProperties.CAULIFLOWER_EFFECT)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name),
