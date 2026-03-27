@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.item.ModCreativeModeTabs;
 import net.kaupenjoe.mccourse.item.ModItems;
+import net.kaupenjoe.mccourse.registries.ModFuels;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,6 +22,6 @@ public class MCCourse implements ModInitializer {
 		ModBlocks.registerModBlocks();
 
 
-
+		ModFuels.registerModFuels();
 	}
 }

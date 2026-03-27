@@ -22,6 +22,8 @@ public class ModItems {
     public static final Item CAULIFLOWER = registerItem("cauliflower", properties -> new Item(properties.food(ModFoodProperties.CAULIFLOWER,
             ModFoodProperties.CAULIFLOWER_EFFECT)));
 
+    public static final Item STARLIGHT_ASHES = registerItem("starlight_ashes", Item::new);
+
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name),
                 function.apply(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name)))));
