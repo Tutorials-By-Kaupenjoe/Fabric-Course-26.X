@@ -2,6 +2,7 @@ package net.kaupenjoe.mccourse.item;
 
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.kaupenjoe.mccourse.MCCourse;
+import net.kaupenjoe.mccourse.item.custom.ChiselItem;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -15,6 +16,8 @@ import java.util.function.Function;
 public class ModItems {
     public static final Item BISMUTH = registerItem("bismuth", Item::new);
     public static final Item RAW_BISMUTH = registerItem("raw_bismuth", Item::new);
+
+    public static final Item CHISEL = registerItem("chisel", properties -> new ChiselItem(properties.durability(32)));
 
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
