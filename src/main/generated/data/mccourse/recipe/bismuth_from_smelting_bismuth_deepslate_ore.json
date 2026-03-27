@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "bismuth",
+  "ingredient": "mccourse:bismuth_deepslate_ore",
+  "result": {
+    "id": "mccourse:bismuth"
+  }
+}

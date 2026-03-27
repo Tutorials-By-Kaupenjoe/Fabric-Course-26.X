@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "mccourse:bismuth_nether_ore"
+  ],
+  "result": {
+    "count": 2,
+    "id": "mccourse:raw_bismuth"
+  }
+}

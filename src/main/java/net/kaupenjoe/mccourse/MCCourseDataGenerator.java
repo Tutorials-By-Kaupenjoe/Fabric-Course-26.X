@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.kaupenjoe.mccourse.datagen.ModBlockLootTableProvider;
 import net.kaupenjoe.mccourse.datagen.ModBlockTagProvider;
 import net.kaupenjoe.mccourse.datagen.ModModelProvider;
+import net.kaupenjoe.mccourse.datagen.ModRecipeProvider;
 
 public class MCCourseDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -14,5 +15,6 @@ public class MCCourseDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModBlockLootTableProvider::new);
 		pack.addProvider(ModBlockTagProvider::new);
+		pack.addProvider(ModRecipeProvider::new);
 	}
 }

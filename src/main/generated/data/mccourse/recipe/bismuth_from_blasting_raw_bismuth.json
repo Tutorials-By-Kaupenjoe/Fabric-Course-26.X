@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "bismuth",
+  "ingredient": "mccourse:raw_bismuth",
+  "result": {
+    "id": "mccourse:bismuth"
+  }
+}

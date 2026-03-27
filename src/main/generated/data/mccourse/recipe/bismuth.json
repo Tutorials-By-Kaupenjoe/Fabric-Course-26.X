@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "mccourse:bismuth_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "mccourse:bismuth"
+  }
+}

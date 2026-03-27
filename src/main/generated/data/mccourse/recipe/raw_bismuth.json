@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "mccourse:raw_bismuth_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "mccourse:raw_bismuth"
+  }
+}
