@@ -2,6 +2,7 @@ package net.kaupenjoe.mccourse;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.item.ModCreativeModeTabs;
 import net.kaupenjoe.mccourse.item.ModItems;
 import org.slf4j.Logger;
@@ -17,6 +18,9 @@ public class MCCourse implements ModInitializer {
 		ModCreativeModeTabs.registerCreativeModeTabs();
 
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
+
+
 
 	}
 }
