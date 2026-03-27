@@ -33,6 +33,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         add(ModBlocks.BISMUTH_NETHER_ORE, multipleOreDrops(ModBlocks.BISMUTH_NETHER_ORE, ModItems.RAW_BISMUTH, 5, 8));
         add(ModBlocks.BISMUTH_END_ORE, multipleOreDrops(ModBlocks.BISMUTH_END_ORE, ModItems.RAW_BISMUTH, 7, 10));
 
+        dropSelf(ModBlocks.MAGIC_BLOCK);
 
     }
 

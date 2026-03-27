@@ -34,6 +34,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BISMUTH_DEEPSLATE_ORE);
                         output.accept(ModBlocks.BISMUTH_NETHER_ORE);
                         output.accept(ModBlocks.BISMUTH_END_ORE);
+                        output.accept(ModBlocks.MAGIC_BLOCK);
 
 
                     }).build());

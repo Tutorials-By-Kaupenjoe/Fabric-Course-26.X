@@ -21,6 +21,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_DEEPSLATE_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_NETHER_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_END_ORE);
+        blockModelGenerators.createTrivialCube(ModBlocks.MAGIC_BLOCK);
 
     }
 

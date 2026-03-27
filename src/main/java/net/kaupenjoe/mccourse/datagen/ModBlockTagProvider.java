@@ -21,7 +21,8 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.BISMUTH_ORE)
                 .add(ModBlocks.BISMUTH_DEEPSLATE_ORE)
                 .add(ModBlocks.BISMUTH_NETHER_ORE)
-                .add(ModBlocks.BISMUTH_END_ORE);
+                .add(ModBlocks.BISMUTH_END_ORE)
+                .add(ModBlocks.MAGIC_BLOCK);
 
         valueLookupBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.BISMUTH_DEEPSLATE_ORE);
