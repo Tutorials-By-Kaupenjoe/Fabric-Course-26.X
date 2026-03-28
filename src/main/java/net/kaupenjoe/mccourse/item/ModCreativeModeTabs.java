@@ -44,6 +44,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BISMUTH_BUTTON);
                         output.accept(ModBlocks.BISMUTH_PRESSURE_PLATE);
 
+                        output.accept(ModBlocks.BISMUTH_FENCE);
+                        output.accept(ModBlocks.BISMUTH_FENCE_GATE);
+                        output.accept(ModBlocks.BISMUTH_WALL);
+
 
                     }).build());
 

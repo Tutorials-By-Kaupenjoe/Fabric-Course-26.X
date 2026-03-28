@@ -8,6 +8,9 @@
     "mccourse:bismuth_end_ore",
     "mccourse:magic_block",
     "mccourse:bismuth_stairs",
-    "mccourse:bismuth_slab"
+    "mccourse:bismuth_slab",
+    "mccourse:bismuth_fence",
+    "mccourse:bismuth_fence_gate",
+    "mccourse:bismuth_wall"
   ]
 }

@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 
@@ -58,6 +59,13 @@ public class ModBlocks {
                     .mapColor(MapColor.STONE).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).noCollision()
                     .strength(0.5F).pushReaction(PushReaction.DESTROY)));
 
+    public static final Block BISMUTH_FENCE = registerBlock("bismuth_fence",
+            properties -> new FenceBlock(properties.strength(2f).requiresCorrectToolForDrops()));
+    public static final Block BISMUTH_FENCE_GATE = registerBlock("bismuth_fence_gate",
+            properties -> new FenceGateBlock(WoodType.ACACIA, properties.forceSolidOn()
+                    .strength(2f).requiresCorrectToolForDrops()));
+    public static final Block BISMUTH_WALL = registerBlock("bismuth_wall",
+            properties -> new WallBlock(properties.strength(2f).requiresCorrectToolForDrops()));
 
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {

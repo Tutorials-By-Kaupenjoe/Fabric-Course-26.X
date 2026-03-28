@@ -14,6 +14,9 @@
   "block.mccourse.magic_block": "Magic Block",
   "block.mccourse.bismuth_stairs": "Bismuth Stairs",
   "block.mccourse.bismuth_slab": "Bismuth Slab",
+  "block.mccourse.bismuth_fence": "Bismuth Fence",
+  "block.mccourse.bismuth_fence_gate": "Bismuth Fence Gate",
+  "block.mccourse.bismuth_wall": "Bismuth Wall",
 
   "block.mccourse.bismuth_button": "Bismuth Button",
   "block.mccourse.bismuth_pressure_plate": "Bismuth Pressure Plate",

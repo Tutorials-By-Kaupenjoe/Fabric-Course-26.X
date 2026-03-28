@@ -30,6 +30,10 @@ public class ModModelProvider extends FabricModelProvider {
         bismuthFamily.button(ModBlocks.BISMUTH_BUTTON);
         bismuthFamily.pressurePlate(ModBlocks.BISMUTH_PRESSURE_PLATE);
 
+        bismuthFamily.fence(ModBlocks.BISMUTH_FENCE);
+        bismuthFamily.fenceGate(ModBlocks.BISMUTH_FENCE_GATE);
+        bismuthFamily.wall(ModBlocks.BISMUTH_WALL);
+
     }
 
     @Override
