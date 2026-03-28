@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "mccourse:bismuth_block"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "mccourse:bismuth_pressure_plate"
+  }
+}

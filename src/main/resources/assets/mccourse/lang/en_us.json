@@ -15,6 +15,9 @@
   "block.mccourse.bismuth_stairs": "Bismuth Stairs",
   "block.mccourse.bismuth_slab": "Bismuth Slab",
 
+  "block.mccourse.bismuth_button": "Bismuth Button",
+  "block.mccourse.bismuth_pressure_plate": "Bismuth Pressure Plate",
+
   "tooltip.mccourse.cauliflower": "This is delicious!",
 
   "tooltip.mccourse.chisel": "Press §eShift§r for more Information!",

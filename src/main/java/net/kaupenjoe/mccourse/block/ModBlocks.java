@@ -12,6 +12,10 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 
 import java.util.function.Function;
 
@@ -46,6 +50,13 @@ public class ModBlocks {
     public static final Block BISMUTH_SLAB = registerBlock("bismuth_slab",
             properties -> new SlabBlock(properties.strength(2f).requiresCorrectToolForDrops()));
 
+    public static final Block BISMUTH_BUTTON = registerBlock("bismuth_button",
+            properties -> new ButtonBlock(BlockSetType.IRON, 20, properties
+                    .noCollision().strength(0.5F).pushReaction(PushReaction.DESTROY)));
+    public static final Block BISMUTH_PRESSURE_PLATE = registerBlock("bismuth_pressure_plate",
+            properties -> new PressurePlateBlock(BlockSetType.IRON, properties
+                    .mapColor(MapColor.STONE).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).noCollision()
+                    .strength(0.5F).pushReaction(PushReaction.DESTROY)));
 
 
 
