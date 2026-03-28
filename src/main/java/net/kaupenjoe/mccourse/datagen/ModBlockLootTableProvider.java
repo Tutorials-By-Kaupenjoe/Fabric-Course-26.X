@@ -45,6 +45,9 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(ModBlocks.BISMUTH_FENCE_GATE);
         dropSelf(ModBlocks.BISMUTH_WALL);
 
+        add(ModBlocks.BISMUTH_DOOR, createDoorTable(ModBlocks.BISMUTH_DOOR));
+        dropSelf(ModBlocks.BISMUTH_TRAPDOOR);
+
     }
 
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {

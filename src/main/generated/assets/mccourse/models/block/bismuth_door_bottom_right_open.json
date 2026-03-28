@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "textures": {
+    "bottom": "mccourse:block/bismuth_door_bottom",
+    "top": "mccourse:block/bismuth_door_top"
+  }
+}

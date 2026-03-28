@@ -34,6 +34,9 @@ public class ModModelProvider extends FabricModelProvider {
         bismuthFamily.fenceGate(ModBlocks.BISMUTH_FENCE_GATE);
         bismuthFamily.wall(ModBlocks.BISMUTH_WALL);
 
+        blockModelGenerators.createDoor(ModBlocks.BISMUTH_DOOR);
+        blockModelGenerators.createTrapdoor(ModBlocks.BISMUTH_TRAPDOOR);
+
     }
 
     @Override

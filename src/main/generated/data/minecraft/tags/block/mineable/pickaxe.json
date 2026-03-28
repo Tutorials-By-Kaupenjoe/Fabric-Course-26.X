@@ -11,6 +11,8 @@
     "mccourse:bismuth_slab",
     "mccourse:bismuth_fence",
     "mccourse:bismuth_fence_gate",
-    "mccourse:bismuth_wall"
+    "mccourse:bismuth_wall",
+    "mccourse:bismuth_door",
+    "mccourse:bismuth_trapdoor"
   ]
 }

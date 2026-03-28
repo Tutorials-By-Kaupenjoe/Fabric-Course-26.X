@@ -17,6 +17,8 @@
   "block.mccourse.bismuth_fence": "Bismuth Fence",
   "block.mccourse.bismuth_fence_gate": "Bismuth Fence Gate",
   "block.mccourse.bismuth_wall": "Bismuth Wall",
+  "block.mccourse.bismuth_door": "Bismuth Door",
+  "block.mccourse.bismuth_trapdoor": "Bismuth Trapdoor",
 
   "block.mccourse.bismuth_button": "Bismuth Button",
   "block.mccourse.bismuth_pressure_plate": "Bismuth Pressure Plate",
