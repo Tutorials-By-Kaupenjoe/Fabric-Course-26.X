@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "mccourse:block/bismuth_block",
+    "side": "mccourse:block/bismuth_block",
+    "top": "mccourse:block/bismuth_block"
+  }
+}

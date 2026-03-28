@@ -22,12 +22,20 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.BISMUTH_DEEPSLATE_ORE)
                 .add(ModBlocks.BISMUTH_NETHER_ORE)
                 .add(ModBlocks.BISMUTH_END_ORE)
-                .add(ModBlocks.MAGIC_BLOCK);
+                .add(ModBlocks.MAGIC_BLOCK)
+                .add(ModBlocks.BISMUTH_STAIRS)
+                .add(ModBlocks.BISMUTH_SLAB);
 
         valueLookupBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.BISMUTH_DEEPSLATE_ORE);
 
         valueLookupBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.BISMUTH_END_ORE);
+
+        valueLookupBuilder(BlockTags.STAIRS)
+                .add(ModBlocks.BISMUTH_STAIRS);
+
+        valueLookupBuilder(BlockTags.SLABS)
+                .add(ModBlocks.BISMUTH_SLAB);
     }
 }

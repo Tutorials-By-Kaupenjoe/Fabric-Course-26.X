@@ -38,6 +38,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BISMUTH_END_ORE);
                         output.accept(ModBlocks.MAGIC_BLOCK);
 
+                        output.accept(ModBlocks.BISMUTH_STAIRS);
+                        output.accept(ModBlocks.BISMUTH_SLAB);
+
 
                     }).build());
 

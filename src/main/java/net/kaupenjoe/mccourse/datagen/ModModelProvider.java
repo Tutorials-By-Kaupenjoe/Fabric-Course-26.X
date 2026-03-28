@@ -15,13 +15,17 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
-        blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_BLOCK);
+        var bismuthFamily = blockModelGenerators.family(ModBlocks.BISMUTH_BLOCK);
+
         blockModelGenerators.createTrivialCube(ModBlocks.RAW_BISMUTH_BLOCK);
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_DEEPSLATE_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_NETHER_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_END_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.MAGIC_BLOCK);
+
+        bismuthFamily.stairs(ModBlocks.BISMUTH_STAIRS);
+        bismuthFamily.slab(ModBlocks.BISMUTH_SLAB);
 
     }
 
