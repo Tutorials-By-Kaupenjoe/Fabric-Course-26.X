@@ -8,6 +8,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
@@ -79,6 +80,46 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
                         .save(output);
 
+                shaped(RecipeCategory.COMBAT, ModItems.BISMUTH_SWORD)
+                        .pattern("B")
+                        .pattern("B")
+                        .pattern("S")
+                        .define('B', ModItems.BISMUTH)
+                        .define('S', Items.STICK)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+                shaped(RecipeCategory.TOOLS, ModItems.BISMUTH_PICKAXE)
+                        .pattern("BBB")
+                        .pattern(" S ")
+                        .pattern(" S ")
+                        .define('B', ModItems.BISMUTH)
+                        .define('S', Items.STICK)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+                shaped(RecipeCategory.TOOLS, ModItems.BISMUTH_SHOVEL)
+                        .pattern("B")
+                        .pattern("S")
+                        .pattern("S")
+                        .define('B', ModItems.BISMUTH)
+                        .define('S', Items.STICK)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+                shaped(RecipeCategory.TOOLS, ModItems.BISMUTH_AXE)
+                        .pattern("BB")
+                        .pattern("BS")
+                        .pattern(" S")
+                        .define('B', ModItems.BISMUTH)
+                        .define('S', Items.STICK)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+                shaped(RecipeCategory.TOOLS, ModItems.BISMUTH_HOE)
+                        .pattern("BB")
+                        .pattern(" S")
+                        .pattern(" S")
+                        .define('B', ModItems.BISMUTH)
+                        .define('S', Items.STICK)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
 
             }
         };

@@ -10,10 +10,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.TooltipDisplay;
 
 import java.util.function.Consumer;
@@ -34,6 +31,17 @@ public class ModItems {
     });
 
     public static final Item STARLIGHT_ASHES = registerItem("starlight_ashes", Item::new);
+
+    public static final Item BISMUTH_SWORD = registerItem("bismuth_sword",
+            properties -> new Item(properties.sword(ModToolMaterials.BISMUTH, 3, -2.4f)));
+    public static final Item BISMUTH_PICKAXE = registerItem("bismuth_pickaxe",
+            properties -> new Item(properties.pickaxe(ModToolMaterials.BISMUTH, 1, -2.8f)));
+    public static final Item BISMUTH_SHOVEL = registerItem("bismuth_shovel",
+            properties -> new ShovelItem(ModToolMaterials.BISMUTH, 1.5f, -3.0f, properties));
+    public static final Item BISMUTH_AXE = registerItem("bismuth_axe",
+            properties -> new AxeItem(ModToolMaterials.BISMUTH, 6, -3.2f, properties));
+    public static final Item BISMUTH_HOE = registerItem("bismuth_hoe",
+            properties -> new HoeItem(ModToolMaterials.BISMUTH, 0, -3f, properties));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name),
