@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bismuth_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mccourse:bismuth_axe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bismuth_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mccourse:bismuth_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bismuth_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mccourse:bismuth_shovel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mccourse:bismuth_paxel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bismuth_pickaxe",
+      "has_bismuth_axe",
+      "has_bismuth_shovel"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mccourse:bismuth_paxel"
+    ]
+  }
+}

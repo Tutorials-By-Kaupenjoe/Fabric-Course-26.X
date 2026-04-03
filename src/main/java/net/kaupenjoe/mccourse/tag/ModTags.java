@@ -12,6 +12,8 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_BISMUTH_TOOL = createTag("needs_bismuth_tool");
         public static final TagKey<Block> INCORRECT_FOR_BISMUTH_TOOL = createTag("incorrect_for_bismuth_tool");
 
+        public static final TagKey<Block> PAXEL_MINEABLE = createTag("mineable/paxel");
+
         private static TagKey<Block> createTag(String name) {
             return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name));
         }

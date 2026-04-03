@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.food.ModFoodProperties;
 import net.kaupenjoe.mccourse.item.custom.ChiselItem;
+import net.kaupenjoe.mccourse.item.custom.PaxelItem;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -42,6 +43,10 @@ public class ModItems {
             properties -> new AxeItem(ModToolMaterials.BISMUTH, 6, -3.2f, properties));
     public static final Item BISMUTH_HOE = registerItem("bismuth_hoe",
             properties -> new HoeItem(ModToolMaterials.BISMUTH, 0, -3f, properties));
+
+    public static final Item BISMUTH_PAXEL = registerItem("bismuth_paxel",
+            properties -> new PaxelItem(ModToolMaterials.BISMUTH, 1, -2.2f, properties));
+
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name),

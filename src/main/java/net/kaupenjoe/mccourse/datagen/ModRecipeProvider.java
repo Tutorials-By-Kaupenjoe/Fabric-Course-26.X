@@ -120,6 +120,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('S', Items.STICK)
                         .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
                         .save(output);
+                shaped(RecipeCategory.TOOLS, ModItems.BISMUTH_PAXEL)
+                        .pattern("PAS")
+                        .define('P', ModItems.BISMUTH_PICKAXE)
+                        .define('A', ModItems.BISMUTH_AXE)
+                        .define('S', ModItems.BISMUTH_SHOVEL)
+                        .unlockedBy(getHasName(ModItems.BISMUTH_PICKAXE), has(ModItems.BISMUTH_PICKAXE))
+                        .unlockedBy(getHasName(ModItems.BISMUTH_AXE), has(ModItems.BISMUTH_AXE))
+                        .unlockedBy(getHasName(ModItems.BISMUTH_SHOVEL), has(ModItems.BISMUTH_SHOVEL))
+                        .save(output);
 
             }
         };

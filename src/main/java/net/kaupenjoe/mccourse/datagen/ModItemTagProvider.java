@@ -27,9 +27,9 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(ModItems.BISMUTH);
 
         valueLookupBuilder(ItemTags.SWORDS).add(ModItems.BISMUTH_SWORD);
-        valueLookupBuilder(ItemTags.PICKAXES).add(ModItems.BISMUTH_PICKAXE);
-        valueLookupBuilder(ItemTags.SHOVELS).add(ModItems.BISMUTH_SHOVEL);
-        valueLookupBuilder(ItemTags.AXES).add(ModItems.BISMUTH_AXE);
+        valueLookupBuilder(ItemTags.PICKAXES).add(ModItems.BISMUTH_PICKAXE).add(ModItems.BISMUTH_PAXEL);
+        valueLookupBuilder(ItemTags.SHOVELS).add(ModItems.BISMUTH_SHOVEL).add(ModItems.BISMUTH_PAXEL);
+        valueLookupBuilder(ItemTags.AXES).add(ModItems.BISMUTH_AXE).add(ModItems.BISMUTH_PAXEL);
         valueLookupBuilder(ItemTags.HOES).add(ModItems.BISMUTH_HOE);
 
 
