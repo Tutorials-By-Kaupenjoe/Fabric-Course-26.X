@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "mccourse:bismuth_block",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "BBB",
+    "BSB",
+    " S "
+  ],
+  "result": {
+    "id": "mccourse:bismuth_hammer"
+  }
+}
