@@ -61,6 +61,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_LEGGINGS, ModArmorMaterials.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
         itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_BOOTS, ModArmorMaterials.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
 
+        itemModelGenerators.generateFlatItem(ModItems.BISMUTH_HORSE_ARMOR, ModelTemplates.FLAT_ITEM);
 
 
 

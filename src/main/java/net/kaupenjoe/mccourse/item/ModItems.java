@@ -61,6 +61,9 @@ public class ModItems {
     public static final Item BISMUTH_BOOTS = registerItem("bismuth_boots",
             properties -> new Item(properties.humanoidArmor(ModArmorMaterials.BISMUTH_ARMOR_MATERIAL, ArmorType.BOOTS)));
 
+    public static final Item BISMUTH_HORSE_ARMOR = registerItem("bismuth_horse_armor",
+            properties -> new Item(properties.horseArmor(ModArmorMaterials.BISMUTH_ARMOR_MATERIAL)));
+
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name),
