@@ -5,6 +5,7 @@ import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.food.ModFoodProperties;
 import net.kaupenjoe.mccourse.item.custom.ChiselItem;
 import net.kaupenjoe.mccourse.item.custom.HammerItem;
+import net.kaupenjoe.mccourse.item.custom.ModArmorItem;
 import net.kaupenjoe.mccourse.item.custom.PaxelItem;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -52,7 +53,7 @@ public class ModItems {
             properties -> new HammerItem(properties.pickaxe(ModToolMaterials.BISMUTH, 8, -3.4f)));
 
     public static final Item BISMUTH_HELMET = registerItem("bismuth_helmet",
-            properties -> new Item(properties.humanoidArmor(ModArmorMaterials.BISMUTH_ARMOR_MATERIAL, ArmorType.HELMET)));
+            properties -> new ModArmorItem(properties.humanoidArmor(ModArmorMaterials.BISMUTH_ARMOR_MATERIAL, ArmorType.HELMET)));
     public static final Item BISMUTH_CHESTPLATE = registerItem("bismuth_chestplate",
             properties -> new Item(properties.humanoidArmor(ModArmorMaterials.BISMUTH_ARMOR_MATERIAL, ArmorType.CHESTPLATE)));
     public static final Item BISMUTH_LEGGINGS = registerItem("bismuth_leggings",
