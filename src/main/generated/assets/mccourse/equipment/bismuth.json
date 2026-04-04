@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "mccourse:bismuth"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "mccourse:bismuth"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "mccourse:bismuth"
+      }
+    ]
+  }
+}

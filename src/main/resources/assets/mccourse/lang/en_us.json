@@ -12,6 +12,11 @@
   "item.mccourse.bismuth_paxel": "Bismuth Paxel",
   "item.mccourse.bismuth_hammer": "Bismuth Hammer",
 
+  "item.mccourse.bismuth_helmet": "Bismuth Helmet",
+  "item.mccourse.bismuth_chestplate": "Bismuth Chestplate",
+  "item.mccourse.bismuth_leggings": "Bismuth Leggings",
+  "item.mccourse.bismuth_boots": "Bismuth Boots",
+
 
   "block.mccourse.bismuth_block": "Block of Bismuth",
   "block.mccourse.raw_bismuth_block": "Block of Raw Bismuth",

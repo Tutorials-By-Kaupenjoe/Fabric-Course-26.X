@@ -14,6 +14,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.TooltipDisplay;
+import net.minecraft.world.item.equipment.ArmorType;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -49,6 +50,15 @@ public class ModItems {
             properties -> new PaxelItem(ModToolMaterials.BISMUTH, 1, -2.2f, properties));
     public static final Item BISMUTH_HAMMER = registerItem("bismuth_hammer",
             properties -> new HammerItem(properties.pickaxe(ModToolMaterials.BISMUTH, 8, -3.4f)));
+
+    public static final Item BISMUTH_HELMET = registerItem("bismuth_helmet",
+            properties -> new Item(properties.humanoidArmor(ModArmorMaterials.BISMUTH_ARMOR_MATERIAL, ArmorType.HELMET)));
+    public static final Item BISMUTH_CHESTPLATE = registerItem("bismuth_chestplate",
+            properties -> new Item(properties.humanoidArmor(ModArmorMaterials.BISMUTH_ARMOR_MATERIAL, ArmorType.CHESTPLATE)));
+    public static final Item BISMUTH_LEGGINGS = registerItem("bismuth_leggings",
+            properties -> new Item(properties.humanoidArmor(ModArmorMaterials.BISMUTH_ARMOR_MATERIAL, ArmorType.LEGGINGS)));
+    public static final Item BISMUTH_BOOTS = registerItem("bismuth_boots",
+            properties -> new Item(properties.humanoidArmor(ModArmorMaterials.BISMUTH_ARMOR_MATERIAL, ArmorType.BOOTS)));
 
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {

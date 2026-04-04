@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "mccourse:bismuth"
+  },
+  "pattern": [
+    "B B",
+    "B B"
+  ],
+  "result": {
+    "id": "mccourse:bismuth_boots"
+  }
+}

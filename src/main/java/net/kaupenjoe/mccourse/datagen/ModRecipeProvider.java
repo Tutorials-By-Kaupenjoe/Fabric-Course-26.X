@@ -138,6 +138,33 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(ModBlocks.BISMUTH_BLOCK), has(ModBlocks.BISMUTH_BLOCK))
                         .save(output);
 
+                shaped(RecipeCategory.COMBAT, ModItems.BISMUTH_HELMET)
+                        .pattern("BBB")
+                        .pattern("B B")
+                        .define('B', ModItems.BISMUTH)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+                shaped(RecipeCategory.COMBAT, ModItems.BISMUTH_CHESTPLATE)
+                        .pattern("B B")
+                        .pattern("BBB")
+                        .pattern("BBB")
+                        .define('B', ModItems.BISMUTH)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+                shaped(RecipeCategory.COMBAT, ModItems.BISMUTH_LEGGINGS)
+                        .pattern("BBB")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('B', ModItems.BISMUTH)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+                shaped(RecipeCategory.COMBAT, ModItems.BISMUTH_BOOTS)
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('B', ModItems.BISMUTH)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+
             }
         };
     }
