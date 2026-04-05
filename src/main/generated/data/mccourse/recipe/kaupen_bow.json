@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:stick",
+    "B": "mccourse:bismuth",
+    "S": "minecraft:string"
+  },
+  "pattern": [
+    "S# ",
+    "S B",
+    "S# "
+  ],
+  "result": {
+    "id": "mccourse:kaupen_bow"
+  }
+}

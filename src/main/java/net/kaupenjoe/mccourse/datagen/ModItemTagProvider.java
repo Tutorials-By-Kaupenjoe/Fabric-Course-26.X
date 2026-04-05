@@ -41,5 +41,8 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
         valueLookupBuilder(ItemTags.FOOT_ARMOR)
                 .add(ModItems.BISMUTH_BOOTS);
 
+        valueLookupBuilder(ItemTags.BOW_ENCHANTABLE)
+                .add(ModItems.KAUPEN_BOW);
+
     }
 }
