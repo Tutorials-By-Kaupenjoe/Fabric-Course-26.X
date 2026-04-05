@@ -1,6 +1,7 @@
 package net.kaupenjoe.mccourse.block;
 
 import net.kaupenjoe.mccourse.MCCourse;
+import net.kaupenjoe.mccourse.block.custom.BismuthLampBlock;
 import net.kaupenjoe.mccourse.block.custom.MagicBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -74,6 +75,9 @@ public class ModBlocks {
             properties -> new TrapDoorBlock(BlockSetType.IRON,
                     properties.strength(2f).noOcclusion().requiresCorrectToolForDrops()));
 
+    public static final Block BISMUTH_LAMP = registerBlock("bismuth_lamp",
+            properties -> new BismuthLampBlock(properties.requiresCorrectToolForDrops()
+                    .strength(0.5F).lightLevel(state -> state.getValue(BismuthLampBlock.CLICKED) ? 15 : 0)));
 
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {

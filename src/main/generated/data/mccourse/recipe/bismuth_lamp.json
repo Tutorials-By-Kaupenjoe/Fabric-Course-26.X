@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "mccourse:bismuth",
+    "R": "minecraft:redstone"
+  },
+  "pattern": [
+    "BBB",
+    "BRB",
+    "BBB"
+  ],
+  "result": {
+    "id": "mccourse:bismuth_lamp"
+  }
+}

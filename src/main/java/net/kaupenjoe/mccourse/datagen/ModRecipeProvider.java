@@ -165,6 +165,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
                         .save(output);
 
+                shaped(RecipeCategory.DECORATIONS, ModBlocks.BISMUTH_LAMP)
+                        .pattern("BBB")
+                        .pattern("BRB")
+                        .pattern("BBB")
+                        .define('B', ModItems.BISMUTH)
+                        .define('R', Items.REDSTONE)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                        .save(output);
+
             }
         };
     }

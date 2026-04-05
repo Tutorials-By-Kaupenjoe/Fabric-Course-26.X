@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "clicked=false": {
+      "model": "mccourse:block/bismuth_lamp"
+    },
+    "clicked=true": {
+      "model": "mccourse:block/bismuth_lamp_on"
+    }
+  }
+}
