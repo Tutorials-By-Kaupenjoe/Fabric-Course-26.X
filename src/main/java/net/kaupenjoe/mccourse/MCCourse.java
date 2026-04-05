@@ -3,6 +3,7 @@ package net.kaupenjoe.mccourse;
 import net.fabricmc.api.ModInitializer;
 
 import net.kaupenjoe.mccourse.block.ModBlocks;
+import net.kaupenjoe.mccourse.data.ModDataComponents;
 import net.kaupenjoe.mccourse.item.ModCreativeModeTabs;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.kaupenjoe.mccourse.registries.ModFuels;
@@ -20,6 +21,8 @@ public class MCCourse implements ModInitializer {
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
+		ModDataComponents.registerDataComponents();
 
 
 		ModFuels.registerModFuels();

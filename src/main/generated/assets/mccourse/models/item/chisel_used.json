@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "mccourse:item/chisel"
+    "layer0": "mccourse:item/chisel_used"
   }
 }
