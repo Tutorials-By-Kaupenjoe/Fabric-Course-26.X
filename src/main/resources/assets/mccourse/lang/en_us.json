@@ -46,6 +46,8 @@
   "tooltip.mccourse.chisel": "Press §eShift§r for more Information!",
   "tooltip.mccourse.chisel.shift_down": "This item chisels blocks!",
 
+  "key.mccourse.kaupen_key": "Kaupen Key",
+
   "creativetab.mccourse.bismuth_items": "Bismuth Course Items",
   "creativetab.mccourse.bismuth_blocks": "Bismuth Course Blocks"
 }

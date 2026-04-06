@@ -18,6 +18,9 @@
 		"main": [
 			"net.kaupenjoe.mccourse.MCCourse"
 		],
+		"client": [
+			"net.kaupenjoe.mccourse.MCCourseClient"
+		],
 		"fabric-datagen": [
 			"net.kaupenjoe.mccourse.MCCourseDataGenerator"
 		]

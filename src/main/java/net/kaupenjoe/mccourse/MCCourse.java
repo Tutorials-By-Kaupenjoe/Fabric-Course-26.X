@@ -6,6 +6,7 @@ import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.data.ModDataComponents;
 import net.kaupenjoe.mccourse.item.ModCreativeModeTabs;
 import net.kaupenjoe.mccourse.item.ModItems;
+import net.kaupenjoe.mccourse.keybind.ModKeyMappings;
 import net.kaupenjoe.mccourse.registries.ModFuels;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
