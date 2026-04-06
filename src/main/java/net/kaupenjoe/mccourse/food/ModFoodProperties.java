@@ -1,5 +1,6 @@
 package net.kaupenjoe.mccourse.food;
 
+import net.kaupenjoe.mccourse.consumeeffect.ManaAddConsumeEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -11,6 +12,8 @@ public class ModFoodProperties {
     public static final FoodProperties CAULIFLOWER = new FoodProperties.Builder().nutrition(3).saturationModifier(0.25f).build();
 
     public static final Consumable CAULIFLOWER_EFFECT = Consumables.defaultFood()
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 300), 0.25f)).build();
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 300), 0.25f))
+            .onConsume(new ManaAddConsumeEffect())
+            .build();
 
 }

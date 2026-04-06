@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.kaupenjoe.mccourse.attachment.ModAttachmentTypes;
 import net.kaupenjoe.mccourse.block.ModBlocks;
+import net.kaupenjoe.mccourse.consumeeffect.ModConsumeEffects;
 import net.kaupenjoe.mccourse.data.ModDataComponents;
 import net.kaupenjoe.mccourse.event.ModServerEvents;
 import net.kaupenjoe.mccourse.item.ModCreativeModeTabs;
@@ -33,6 +34,7 @@ public class MCCourse implements ModInitializer {
 		ModAttachmentTypes.registerModAttachments();
 
 		ModFuels.registerModFuels();
+		ModConsumeEffects.registerModConsumeEffects();
 
 
 		ServerPlayerEvents.JOIN.register(ModServerEvents::onPlayerJoin);
