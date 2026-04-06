@@ -22,7 +22,7 @@
 
   "item.mccourse.cauliflower_seeds": "Cauliflower Seeds",
   "item.mccourse.honey_berries": "Honey Berries",
-
+  "item.mccourse.rice_shoot": "Rice Shoot",
 
   "block.mccourse.bismuth_block": "Block of Bismuth",
   "block.mccourse.raw_bismuth_block": "Block of Raw Bismuth",
@@ -49,6 +49,7 @@
   "block.mccourse.potted_petunia": "Potted Petunia",
   "block.mccourse.colored_leaves": "Colored Leaves",
   "block.mccourse.honey_berry_bush": "Honey Berry Bush",
+  "block.mccourse.rice_crop": "Rice Crop",
 
 
   "tooltip.mccourse.cauliflower": "This is delicious!",

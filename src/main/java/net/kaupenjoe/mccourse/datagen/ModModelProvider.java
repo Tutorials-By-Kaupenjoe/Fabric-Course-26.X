@@ -22,6 +22,7 @@ import net.minecraft.client.renderer.item.ConditionalItemModel;
 import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.client.renderer.item.properties.conditional.HasComponent;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import java.util.Optional;
@@ -67,6 +68,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createTintedLeaves(ModBlocks.COLORED_LEAVES, TexturedModel.LEAVES, -12466612);
         blockModelGenerators.createCrossBlock(ModBlocks.HONEY_BERRY_BUSH, BlockModelGenerators.PlantType.NOT_TINTED, HoneyBerryBushBlock.AGE,
                 0, 1, 2, 3);
+
+        blockModelGenerators.createCropBlock(ModBlocks.RICE_CROP, CropBlock.AGE, 0, 1, 2, 3, 4, 5, 6, 7);
     }
 
     @Override

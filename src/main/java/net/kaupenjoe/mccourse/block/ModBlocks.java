@@ -1,10 +1,7 @@
 package net.kaupenjoe.mccourse.block;
 
 import net.kaupenjoe.mccourse.MCCourse;
-import net.kaupenjoe.mccourse.block.custom.BismuthLampBlock;
-import net.kaupenjoe.mccourse.block.custom.CauliflowerCropBlock;
-import net.kaupenjoe.mccourse.block.custom.HoneyBerryBushBlock;
-import net.kaupenjoe.mccourse.block.custom.MagicBlock;
+import net.kaupenjoe.mccourse.block.custom.*;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -101,6 +98,10 @@ public class ModBlocks {
     public static final Block HONEY_BERRY_BUSH = registerBlockWithoutBlockItem("honey_berry_bush",
             properties -> new HoneyBerryBushBlock(properties.mapColor(MapColor.COLOR_GREEN).randomTicks()
                     .noCollision().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
+
+    public static final Block RICE_CROP = registerBlockWithoutBlockItem("rice_crop",
+            properties -> new RiceCropBlock(properties.randomTicks().instabreak()
+                    .sound(SoundType.CROP).noCollision().pushReaction(PushReaction.DESTROY)));
 
 
 

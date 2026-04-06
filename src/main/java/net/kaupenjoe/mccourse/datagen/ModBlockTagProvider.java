@@ -72,7 +72,8 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .forceAddTag(BlockTags.MINEABLE_WITH_AXE);
 
         valueLookupBuilder(BlockTags.CROPS)
-                .add(ModBlocks.CAULIFLOWER_CROP);
+                .add(ModBlocks.CAULIFLOWER_CROP)
+                .add(ModBlocks.RICE_CROP);
         valueLookupBuilder(BlockTags.FLOWERS)
                 .add(ModBlocks.PETUNIA);
         valueLookupBuilder(BlockTags.FLOWER_POTS)

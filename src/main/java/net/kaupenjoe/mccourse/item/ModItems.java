@@ -4,10 +4,7 @@ import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.food.ModFoodProperties;
-import net.kaupenjoe.mccourse.item.custom.ChiselItem;
-import net.kaupenjoe.mccourse.item.custom.HammerItem;
-import net.kaupenjoe.mccourse.item.custom.ModArmorItem;
-import net.kaupenjoe.mccourse.item.custom.PaxelItem;
+import net.kaupenjoe.mccourse.item.custom.*;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -74,6 +71,8 @@ public class ModItems {
             properties -> new BlockItem(ModBlocks.HONEY_BERRY_BUSH, properties
                     .food(ModFoodProperties.HONEY_BERRIES, ModFoodProperties.HONEY_BERRY_EFFECT).useItemDescriptionPrefix()));
 
+    public static final Item RICE_SHOOT = registerItem("rice_shoot",
+            properties -> new WaterCropBlockItem(ModBlocks.RICE_CROP, properties.useItemDescriptionPrefix()));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name),
