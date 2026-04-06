@@ -7,6 +7,7 @@ import net.kaupenjoe.mccourse.data.ModDataComponents;
 import net.kaupenjoe.mccourse.item.ModCreativeModeTabs;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.kaupenjoe.mccourse.keybind.ModKeyMappings;
+import net.kaupenjoe.mccourse.networking.ModPackets;
 import net.kaupenjoe.mccourse.registries.ModFuels;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +25,7 @@ public class MCCourse implements ModInitializer {
 		ModBlocks.registerModBlocks();
 
 		ModDataComponents.registerDataComponents();
-
+		ModPackets.registerPackets();
 
 		ModFuels.registerModFuels();
 	}
