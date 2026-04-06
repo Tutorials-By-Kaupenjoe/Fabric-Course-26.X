@@ -1,9 +1,9 @@
 package net.kaupenjoe.mccourse.event;
 
-import com.mojang.blaze3d.pipeline.RenderPipeline;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.attachment.ModAttachmentTypes;
+import net.kaupenjoe.mccourse.attachment.handler.ManaHandler;
 import net.kaupenjoe.mccourse.keybind.ModKeyMappings;
 import net.kaupenjoe.mccourse.networking.packet.TestPayloadC2S;
 import net.minecraft.client.DeltaTracker;
@@ -26,13 +26,13 @@ public class ModClientEvents {
         int y = guiGraphicsExtractor.guiHeight();
 
         if(!Minecraft.getInstance().player.isCreative() && !Minecraft.getInstance().player.isSpectator()
-                && Minecraft.getInstance().player.hasAttached(ModAttachmentTypes.MANA)) { // Needs fixing with a S2C Packet!
+                && Minecraft.getInstance().player.hasAttached(ModAttachmentTypes.MANA)) {
             for(int i = 0; i < 5; i++) {
                 guiGraphicsExtractor.blitSprite(RenderPipelines.GUI_OPAQUE_TEXTURED_BACKGROUND, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "mana_icon_bg"),
                         16, 16, 0, 0, x - 95 + i * 18, y - 55, 16, 16);
             }
 
-            for(int i = 0; i < Minecraft.getInstance().player.getAttached(ModAttachmentTypes.MANA); i++) {
+            for(int i = 0; i < ManaHandler.getMana(Minecraft.getInstance().player); i++) {
                 guiGraphicsExtractor.blitSprite(RenderPipelines.GUI_OPAQUE_TEXTURED_BACKGROUND, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "mana_icon"),
                         16, 16, 0, 0, x - 95 + i * 18, y - 55, 16, 16);
             }
