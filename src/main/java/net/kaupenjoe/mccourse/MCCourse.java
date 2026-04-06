@@ -3,11 +3,13 @@ package net.kaupenjoe.mccourse;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.kaupenjoe.mccourse.attachment.ModAttachmentTypes;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.consumeeffect.ModConsumeEffects;
 import net.kaupenjoe.mccourse.data.ModDataComponents;
+import net.kaupenjoe.mccourse.event.ModAttackEntityHandler;
 import net.kaupenjoe.mccourse.event.ModServerEvents;
 import net.kaupenjoe.mccourse.item.ModCreativeModeTabs;
 import net.kaupenjoe.mccourse.item.ModItems;
@@ -44,5 +46,7 @@ public class MCCourse implements ModInitializer {
 		ServerPlayerEvents.AFTER_RESPAWN.register(ModServerEvents::onPlayerAfterRespawn);
 
 		LootTableEvents.MODIFY.register(ModLootTableModifiers::modifyLootTables);
+
+		AttackEntityCallback.EVENT.register(new ModAttackEntityHandler());
 	}
 }
