@@ -2,8 +2,11 @@ package net.kaupenjoe.mccourse;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import net.kaupenjoe.mccourse.attachment.ModAttachmentTypes;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.data.ModDataComponents;
+import net.kaupenjoe.mccourse.event.ModServerEvents;
 import net.kaupenjoe.mccourse.item.ModCreativeModeTabs;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.kaupenjoe.mccourse.keybind.ModKeyMappings;
@@ -27,6 +30,13 @@ public class MCCourse implements ModInitializer {
 		ModDataComponents.registerDataComponents();
 		ModPackets.registerPackets();
 
+		ModAttachmentTypes.registerModAttachments();
+
 		ModFuels.registerModFuels();
+
+
+		ServerPlayerEvents.JOIN.register(ModServerEvents::onPlayerJoin);
+		ServerPlayerEvents.COPY_FROM.register(ModServerEvents::onPlayerCopyFrom);
+		ServerPlayerEvents.AFTER_RESPAWN.register(ModServerEvents::onPlayerAfterRespawn);
 	}
 }

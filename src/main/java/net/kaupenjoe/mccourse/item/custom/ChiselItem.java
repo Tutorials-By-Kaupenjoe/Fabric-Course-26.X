@@ -1,5 +1,6 @@
 package net.kaupenjoe.mccourse.item.custom;
 
+import net.kaupenjoe.mccourse.attachment.ModAttachmentTypes;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.data.ModDataComponents;
 import net.minecraft.client.Minecraft;
@@ -44,14 +45,20 @@ public class ChiselItem extends Item {
 
             // Client --> Anything (purely) Visuals
 
+            if(context.getPlayer().hasAttached(ModAttachmentTypes.MANA) && context.getPlayer().getAttached(ModAttachmentTypes.MANA) <= 0) {
+                context.getPlayer().sendSystemMessage(Component.literal("Not enough Mana left!"));
+            }
+
             // This means NOT on the clientSide
-            if(!level.isClientSide()) {
+            if(!level.isClientSide() && context.getPlayer().hasAttached(ModAttachmentTypes.MANA) &&
+                    context.getPlayer().getAttached(ModAttachmentTypes.MANA) > 0) {
                 level.setBlock(context.getClickedPos(), CHISEL_MAP.get(clickedBlock).defaultBlockState(), 3);
 
                 context.getItemInHand().hurtAndBreak(1, ((ServerLevel) level), ((ServerPlayer) context.getPlayer()),
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 context.getItemInHand().set(ModDataComponents.COORDINATES, context.getClickedPos());
+                context.getPlayer().setAttached(ModAttachmentTypes.MANA, context.getPlayer().getAttached(ModAttachmentTypes.MANA) - 1);
             }
         }
 
