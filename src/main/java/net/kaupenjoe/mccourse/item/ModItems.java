@@ -70,6 +70,9 @@ public class ModItems {
 
     public static final Item CAULIFLOWER_SEEDS = registerItem("cauliflower_seeds",
             properties -> new BlockItem(ModBlocks.CAULIFLOWER_CROP, properties.useItemDescriptionPrefix()));
+    public static final Item HONEY_BERRIES = registerItem("honey_berries",
+            properties -> new BlockItem(ModBlocks.HONEY_BERRY_BUSH, properties
+                    .food(ModFoodProperties.HONEY_BERRIES, ModFoodProperties.HONEY_BERRY_EFFECT).useItemDescriptionPrefix()));
 
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {

@@ -39,6 +39,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.KAUPEN_BOW);
 
                         output.accept(ModItems.CAULIFLOWER_SEEDS);
+                        output.accept(ModItems.HONEY_BERRIES);
 
 
                     }).build());

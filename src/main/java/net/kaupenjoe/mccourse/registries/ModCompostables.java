@@ -7,5 +7,6 @@ public class ModCompostables {
     public static void registerCompostables() {
         CompostableRegistry.INSTANCE.add(ModItems.CAULIFLOWER, 0.65f);
         CompostableRegistry.INSTANCE.add(ModItems.CAULIFLOWER_SEEDS, 0.3f);
+        CompostableRegistry.INSTANCE.add(ModItems.HONEY_BERRIES, 0.15f);
     }
 }

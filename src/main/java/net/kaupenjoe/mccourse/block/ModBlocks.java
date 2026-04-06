@@ -3,6 +3,7 @@ package net.kaupenjoe.mccourse.block;
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.block.custom.BismuthLampBlock;
 import net.kaupenjoe.mccourse.block.custom.CauliflowerCropBlock;
+import net.kaupenjoe.mccourse.block.custom.HoneyBerryBushBlock;
 import net.kaupenjoe.mccourse.block.custom.MagicBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -96,6 +97,11 @@ public class ModBlocks {
                     .strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(Blocks::ocelotOrParrot)
                     .isSuffocating(Blocks::never).isViewBlocking(Blocks::never)
                     .ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(Blocks::never)));
+
+    public static final Block HONEY_BERRY_BUSH = registerBlockWithoutBlockItem("honey_berry_bush",
+            properties -> new HoneyBerryBushBlock(properties.mapColor(MapColor.COLOR_GREEN).randomTicks()
+                    .noCollision().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
+
 
 
     private static Block registerBlockWithoutBlockItem(String name, Function<BlockBehaviour.Properties, Block> function) {

@@ -10,10 +10,13 @@ import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 
 public class ModFoodProperties {
     public static final FoodProperties CAULIFLOWER = new FoodProperties.Builder().nutrition(3).saturationModifier(0.25f).build();
+    public static final FoodProperties HONEY_BERRIES = new FoodProperties.Builder().nutrition(1).saturationModifier(0.15f).alwaysEdible().build();
 
     public static final Consumable CAULIFLOWER_EFFECT = Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 300), 0.25f))
             .onConsume(new ManaAddConsumeEffect())
             .build();
+
+    public static final Consumable HONEY_BERRY_EFFECT = Consumables.defaultFood().consumeSeconds(0.8f).build();
 
 }

@@ -21,6 +21,7 @@
   "item.mccourse.kaupen_bow": "Kaupen Bow",
 
   "item.mccourse.cauliflower_seeds": "Cauliflower Seeds",
+  "item.mccourse.honey_berries": "Honey Berries",
 
 
   "block.mccourse.bismuth_block": "Block of Bismuth",
@@ -47,6 +48,7 @@
   "block.mccourse.petunia": "Petunia",
   "block.mccourse.potted_petunia": "Potted Petunia",
   "block.mccourse.colored_leaves": "Colored Leaves",
+  "block.mccourse.honey_berry_bush": "Honey Berry Bush",
 
 
   "tooltip.mccourse.cauliflower": "This is delicious!",

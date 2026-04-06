@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.block.custom.BismuthLampBlock;
 import net.kaupenjoe.mccourse.block.custom.CauliflowerCropBlock;
+import net.kaupenjoe.mccourse.block.custom.HoneyBerryBushBlock;
 import net.kaupenjoe.mccourse.data.ModDataComponents;
 import net.kaupenjoe.mccourse.item.ModArmorMaterials;
 import net.kaupenjoe.mccourse.item.ModItems;
@@ -64,6 +65,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createPlantWithDefaultItem(ModBlocks.PETUNIA, ModBlocks.POTTED_PETUNIA, BlockModelGenerators.PlantType.TINTED);
 
         blockModelGenerators.createTintedLeaves(ModBlocks.COLORED_LEAVES, TexturedModel.LEAVES, -12466612);
+        blockModelGenerators.createCrossBlock(ModBlocks.HONEY_BERRY_BUSH, BlockModelGenerators.PlantType.NOT_TINTED, HoneyBerryBushBlock.AGE,
+                0, 1, 2, 3);
     }
 
     @Override
