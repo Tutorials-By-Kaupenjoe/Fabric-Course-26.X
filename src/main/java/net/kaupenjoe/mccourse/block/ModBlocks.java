@@ -91,6 +91,11 @@ public class ModBlocks {
     public static final Block POTTED_PETUNIA = registerBlockWithoutBlockItem("potted_petunia",
             properties -> new FlowerPotBlock(PETUNIA, properties.instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)));
 
+    public static final Block COLORED_LEAVES = registerBlock("colored_leaves",
+            properties -> new TintedParticleLeavesBlock(0.1f, properties.mapColor(MapColor.PLANT)
+                    .strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(Blocks::ocelotOrParrot)
+                    .isSuffocating(Blocks::never).isViewBlocking(Blocks::never)
+                    .ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(Blocks::never)));
 
 
     private static Block registerBlockWithoutBlockItem(String name, Function<BlockBehaviour.Properties, Block> function) {

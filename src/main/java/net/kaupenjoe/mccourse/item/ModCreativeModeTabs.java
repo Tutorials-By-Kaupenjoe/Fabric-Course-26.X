@@ -72,6 +72,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BISMUTH_LAMP);
 
                         output.accept(ModBlocks.PETUNIA);
+                        output.accept(ModBlocks.COLORED_LEAVES);
 
 
                     }).build());

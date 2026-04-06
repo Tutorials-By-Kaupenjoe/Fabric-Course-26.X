@@ -59,6 +59,8 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
 
         dropSelf(ModBlocks.PETUNIA);
         add(ModBlocks.POTTED_PETUNIA, createPotFlowerItemTable(ModBlocks.PETUNIA));
+
+        dropSelf(ModBlocks.COLORED_LEAVES);
     }
 
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {
