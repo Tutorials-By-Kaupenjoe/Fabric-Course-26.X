@@ -2,6 +2,7 @@ package net.kaupenjoe.mccourse.block;
 
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.block.custom.BismuthLampBlock;
+import net.kaupenjoe.mccourse.block.custom.CauliflowerCropBlock;
 import net.kaupenjoe.mccourse.block.custom.MagicBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -79,6 +80,16 @@ public class ModBlocks {
             properties -> new BismuthLampBlock(properties.requiresCorrectToolForDrops()
                     .strength(0.5F).lightLevel(state -> state.getValue(BismuthLampBlock.CLICKED) ? 15 : 0)));
 
+    public static final Block CAULIFLOWER_CROP = registerBlockWithoutBlockItem("cauliflower_crop",
+            properties -> new CauliflowerCropBlock(properties.randomTicks().instabreak()
+                    .sound(SoundType.CROP).noCollision().pushReaction(PushReaction.DESTROY)));
+
+
+
+    private static Block registerBlockWithoutBlockItem(String name, Function<BlockBehaviour.Properties, Block> function) {
+        return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name), function.apply(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name)))));
+    }
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of()

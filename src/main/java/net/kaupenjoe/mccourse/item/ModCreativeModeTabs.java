@@ -38,6 +38,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BISMUTH_HORSE_ARMOR);
                         output.accept(ModItems.KAUPEN_BOW);
 
+                        output.accept(ModItems.CAULIFLOWER_SEEDS);
+
 
                     }).build());
 

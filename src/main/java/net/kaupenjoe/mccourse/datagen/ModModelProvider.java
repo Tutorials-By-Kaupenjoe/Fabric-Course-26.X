@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.block.custom.BismuthLampBlock;
+import net.kaupenjoe.mccourse.block.custom.CauliflowerCropBlock;
 import net.kaupenjoe.mccourse.data.ModDataComponents;
 import net.kaupenjoe.mccourse.item.ModArmorMaterials;
 import net.kaupenjoe.mccourse.item.ModItems;
@@ -58,6 +59,8 @@ public class ModModelProvider extends FabricModelProvider {
                 ModelTemplates.CUBE_ALL, TextureMapping::cube));
         blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.BISMUTH_LAMP)
                 .with(BlockModelGenerators.createBooleanModelDispatch(BismuthLampBlock.CLICKED, on, off)));
+
+        blockModelGenerators.createCropBlock(ModBlocks.CAULIFLOWER_CROP, CauliflowerCropBlock.AGE, 0, 1, 2, 3, 4, 5, 6);
     }
 
     @Override

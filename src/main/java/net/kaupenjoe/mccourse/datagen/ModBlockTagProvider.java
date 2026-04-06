@@ -71,5 +71,8 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .forceAddTag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .forceAddTag(BlockTags.MINEABLE_WITH_AXE);
 
+        valueLookupBuilder(BlockTags.CROPS)
+                .add(ModBlocks.CAULIFLOWER_CROP);
+
     }
 }

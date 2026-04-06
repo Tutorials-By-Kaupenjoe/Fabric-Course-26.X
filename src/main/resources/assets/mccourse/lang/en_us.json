@@ -20,6 +20,8 @@
   "item.mccourse.bismuth_horse_armor": "Bismuth Horse Armor",
   "item.mccourse.kaupen_bow": "Kaupen Bow",
 
+  "item.mccourse.cauliflower_seeds": "Cauliflower Seeds",
+
 
   "block.mccourse.bismuth_block": "Block of Bismuth",
   "block.mccourse.raw_bismuth_block": "Block of Raw Bismuth",
@@ -40,6 +42,8 @@
   "block.mccourse.bismuth_pressure_plate": "Bismuth Pressure Plate",
 
   "block.mccourse.bismuth_lamp": "Bismuth Lamp",
+  "block.mccourse.cauliflower_crop": "Cauliflower Crop",
+
 
   "tooltip.mccourse.cauliflower": "This is delicious!",
 

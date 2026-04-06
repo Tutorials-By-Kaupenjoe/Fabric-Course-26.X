@@ -2,6 +2,7 @@ package net.kaupenjoe.mccourse.item;
 
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.kaupenjoe.mccourse.MCCourse;
+import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.food.ModFoodProperties;
 import net.kaupenjoe.mccourse.item.custom.ChiselItem;
 import net.kaupenjoe.mccourse.item.custom.HammerItem;
@@ -66,6 +67,9 @@ public class ModItems {
 
     public static final Item KAUPEN_BOW = registerItem("kaupen_bow",
             properties -> new BowItem(properties.durability(500)));
+
+    public static final Item CAULIFLOWER_SEEDS = registerItem("cauliflower_seeds",
+            properties -> new BlockItem(ModBlocks.CAULIFLOWER_CROP, properties.useItemDescriptionPrefix()));
 
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {

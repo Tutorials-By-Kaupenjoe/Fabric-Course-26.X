@@ -44,5 +44,8 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
         valueLookupBuilder(ItemTags.BOW_ENCHANTABLE)
                 .add(ModItems.KAUPEN_BOW);
 
+        valueLookupBuilder(ItemTags.VILLAGER_PLANTABLE_SEEDS)
+                .add(ModItems.CAULIFLOWER_SEEDS);
+
     }
 }
