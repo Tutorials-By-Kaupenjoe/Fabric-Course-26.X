@@ -73,6 +73,10 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 
         valueLookupBuilder(BlockTags.CROPS)
                 .add(ModBlocks.CAULIFLOWER_CROP);
+        valueLookupBuilder(BlockTags.FLOWERS)
+                .add(ModBlocks.PETUNIA);
+        valueLookupBuilder(BlockTags.FLOWER_POTS)
+                .add(ModBlocks.POTTED_PETUNIA);
 
     }
 }

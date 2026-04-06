@@ -71,6 +71,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.BISMUTH_LAMP);
 
+                        output.accept(ModBlocks.PETUNIA);
+
 
                     }).build());
 

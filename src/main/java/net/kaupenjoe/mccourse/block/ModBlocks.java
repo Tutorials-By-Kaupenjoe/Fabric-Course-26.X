@@ -10,6 +10,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -83,6 +84,12 @@ public class ModBlocks {
     public static final Block CAULIFLOWER_CROP = registerBlockWithoutBlockItem("cauliflower_crop",
             properties -> new CauliflowerCropBlock(properties.randomTicks().instabreak()
                     .sound(SoundType.CROP).noCollision().pushReaction(PushReaction.DESTROY)));
+
+    public static final Block PETUNIA = registerBlock("petunia",
+            properties -> new FlowerBlock(MobEffects.BLINDNESS, 12, properties.instabreak().mapColor(MapColor.PLANT)
+                    .sound(SoundType.GRASS).noCollision().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
+    public static final Block POTTED_PETUNIA = registerBlockWithoutBlockItem("potted_petunia",
+            properties -> new FlowerPotBlock(PETUNIA, properties.instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)));
 
 
 

@@ -57,6 +57,8 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CAULIFLOWER_CROP)
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CauliflowerCropBlock.AGE, CauliflowerCropBlock.MAX_AGE))));
 
+        dropSelf(ModBlocks.PETUNIA);
+        add(ModBlocks.POTTED_PETUNIA, createPotFlowerItemTable(ModBlocks.PETUNIA));
     }
 
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {
