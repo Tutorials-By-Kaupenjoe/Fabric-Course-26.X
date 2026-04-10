@@ -120,5 +120,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateBow(ModItems.KAUPEN_BOW);
 
         itemModelGenerators.generateFlatItem(ModItems.BAR_BRAWL_MUSIC_DISC, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.declareCustomModelItem(ModItems.SPECTRE_STAFF);
     }
 }

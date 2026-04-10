@@ -76,6 +76,8 @@ public class ModItems {
             properties -> new WaterCropBlockItem(ModBlocks.RICE_CROP, properties.useItemDescriptionPrefix()));
     public static final Item BAR_BRAWL_MUSIC_DISC = registerItem("bar_brawl_music_disc",
             properties -> new Item(properties.jukeboxPlayable(ModJukeboxSongs.BAR_BRAWL_KEY).stacksTo(1).rarity(Rarity.UNCOMMON)));
+    public static final Item SPECTRE_STAFF = registerItem("spectre_staff",
+            properties -> new Item(properties.stacksTo(1).rarity(Rarity.EPIC)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name),
