@@ -73,6 +73,9 @@
   "effect.mccourse.stinky": "Stinky",
   "effect.mccourse.stinky.description": "Causes entities around you to take damage",
 
+  "death.attack.stinky": "%s was stinkied to death!",
+  "death.attack.stinky.player": "%s was stinkied to death trying to outrun %s",
+
   "subtitles.mccourse.chisel_use": "Chisel Used",
   "subtitles.mccourse.magic_block_break": "Breaking Magic Block",
   "subtitles.mccourse.magic_block_fall": "Falling on Magic Block",
