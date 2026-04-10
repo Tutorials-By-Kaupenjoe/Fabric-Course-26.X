@@ -16,6 +16,7 @@ import net.kaupenjoe.mccourse.item.ModItems;
 import net.kaupenjoe.mccourse.keybind.ModKeyMappings;
 import net.kaupenjoe.mccourse.loot.ModLootTableModifiers;
 import net.kaupenjoe.mccourse.networking.ModPackets;
+import net.kaupenjoe.mccourse.registries.ModCommands;
 import net.kaupenjoe.mccourse.registries.ModCompostables;
 import net.kaupenjoe.mccourse.registries.ModFuels;
 import org.slf4j.Logger;
@@ -42,6 +43,7 @@ public class MCCourse implements ModInitializer {
 
 		ModFuels.registerModFuels();
 		ModCompostables.registerCompostables();
+		ModCommands.registerCommands();
 
 
 		ServerPlayerEvents.JOIN.register(ModServerEvents::onPlayerJoin);
