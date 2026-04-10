@@ -9,6 +9,7 @@ import net.kaupenjoe.mccourse.attachment.ModAttachmentTypes;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.consumeeffect.ModConsumeEffects;
 import net.kaupenjoe.mccourse.data.ModDataComponents;
+import net.kaupenjoe.mccourse.effect.ModEffects;
 import net.kaupenjoe.mccourse.event.ModAttackEntityHandler;
 import net.kaupenjoe.mccourse.event.ModServerEvents;
 import net.kaupenjoe.mccourse.item.ModCreativeModeTabs;
@@ -42,7 +43,7 @@ public class MCCourse implements ModInitializer {
 		ModConsumeEffects.registerModConsumeEffects();
 
 		ModSounds.registerSounds();
-
+		ModEffects.registerEffects();
 
 
 		ModFuels.registerModFuels();

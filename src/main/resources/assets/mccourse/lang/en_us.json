@@ -66,6 +66,9 @@
 
   "key.mccourse.kaupen_key": "Kaupen Key",
 
+  "effect.mccourse.stinky": "Stinky",
+  "effect.mccourse.stinky.description": "Causes entities around you to take damage",
+
   "subtitles.mccourse.chisel_use": "Chisel Used",
   "subtitles.mccourse.magic_block_break": "Breaking Magic Block",
   "subtitles.mccourse.magic_block_fall": "Falling on Magic Block",
