@@ -5,6 +5,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.kaupenjoe.mccourse.attachment.ModAttachmentTypes;
 import net.kaupenjoe.mccourse.datagen.*;
 import net.kaupenjoe.mccourse.datagen.damage.ModDamageTypes;
+import net.kaupenjoe.mccourse.datagen.villager.ModPOITags;
+import net.kaupenjoe.mccourse.datagen.villager.ModTradeSets;
 import net.kaupenjoe.mccourse.datagen.villager.ModVillagerTradeTags;
 import net.kaupenjoe.mccourse.datagen.villager.ModVillagerTrades;
 import net.minecraft.core.RegistrySetBuilder;
@@ -25,6 +27,7 @@ public class MCCourseDataGenerator implements DataGeneratorEntrypoint {
 
 		pack.addProvider(ModRegistryDataProvider::new);
 		pack.addProvider(ModVillagerTradeTags::new);
+		pack.addProvider(ModPOITags::new);
 	}
 
 	@Override
@@ -32,5 +35,6 @@ public class MCCourseDataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.add(Registries.JUKEBOX_SONG, ModJukeboxSongs::bootstrap);
 		registryBuilder.add(Registries.DAMAGE_TYPE, ModDamageTypes::bootstrap);
 		registryBuilder.add(Registries.VILLAGER_TRADE, ModVillagerTrades::bootstrap);
+		registryBuilder.add(Registries.TRADE_SET, ModTradeSets::bootstrap);
 	}
 }

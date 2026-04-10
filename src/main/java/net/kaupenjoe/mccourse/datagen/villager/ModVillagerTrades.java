@@ -1,6 +1,7 @@
 package net.kaupenjoe.mccourse.datagen.villager;
 
 import net.kaupenjoe.mccourse.MCCourse;
+import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -21,6 +22,14 @@ public class ModVillagerTrades {
     public static final ResourceKey<VillagerTrade> FARMER_2_EMERALD_HONEY_BERRIES = createKey("farmer/2/emerald_honey_berries");
 
     public static final ResourceKey<VillagerTrade> MASON_1_EMERALD_CHISEL = createKey("mason/1/emerald_chisel");
+
+    public static final ResourceKey<VillagerTrade> KAUPENGER_1_EMERALD_BISMUTH = createKey("kaupenger/1/emerald_bismuth");
+    public static final ResourceKey<VillagerTrade> KAUPENGER_1_EMERALD_RAW_BISMUTH = createKey("kaupenger/1/emerald_raw_bismuth");
+
+    public static final ResourceKey<VillagerTrade> KAUPENGER_2_EMERALD_CHAIR = createKey("kaupenger/2/emerald_chair");
+    public static final ResourceKey<VillagerTrade> KAUPENGER_2_BISMUTH_SPECTRE_STAFF = createKey("kaupenger/2/bismuth_spectre_staff");
+
+
 
     public static void bootstrap(BootstrapContext<VillagerTrade> context) {
         register(context, FARMER_1_EMERALD_CAULIFLOWER, new VillagerTrade(
@@ -44,6 +53,29 @@ public class ModVillagerTrades {
         register(context, MASON_1_EMERALD_CHISEL, new VillagerTrade(
                 new TradeCost(Items.EMERALD, 6),
                 new ItemStackTemplate(ModItems.CHISEL),
+                2, 19, 0.05f,
+                Optional.empty(), List.of()));
+
+
+        register(context, KAUPENGER_1_EMERALD_BISMUTH, new VillagerTrade(
+                new TradeCost(Items.EMERALD, 6),
+                new ItemStackTemplate(ModItems.BISMUTH, 4),
+                12, 19, 0.05f,
+                Optional.empty(), List.of()));
+        register(context, KAUPENGER_1_EMERALD_RAW_BISMUTH, new VillagerTrade(
+                new TradeCost(Items.EMERALD, 5),
+                new ItemStackTemplate(ModItems.RAW_BISMUTH, 12),
+                12, 23, 0.05f,
+                Optional.empty(), List.of()));
+
+        register(context, KAUPENGER_2_EMERALD_CHAIR, new VillagerTrade(
+                new TradeCost(Items.EMERALD, 24),
+                new ItemStackTemplate(ModBlocks.CHAIR.asItem()),
+                12, 24, 0.05f,
+                Optional.empty(), List.of()));
+        register(context, KAUPENGER_2_BISMUTH_SPECTRE_STAFF, new VillagerTrade(
+                new TradeCost(ModItems.BISMUTH, 19),
+                new ItemStackTemplate(ModItems.SPECTRE_STAFF),
                 2, 19, 0.05f,
                 Optional.empty(), List.of()));
     }

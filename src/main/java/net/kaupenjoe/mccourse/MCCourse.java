@@ -23,6 +23,7 @@ import net.kaupenjoe.mccourse.registries.ModCompostables;
 import net.kaupenjoe.mccourse.registries.ModFuels;
 import net.kaupenjoe.mccourse.registries.ModPotionsRecipes;
 import net.kaupenjoe.mccourse.sound.ModSounds;
+import net.kaupenjoe.mccourse.villager.ModVillagers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,7 +49,7 @@ public class MCCourse implements ModInitializer {
 		ModEffects.registerEffects();
 
 		ModPotions.registerPotions();
-
+		ModVillagers.registerVillagers();
 
 
 		ModFuels.registerModFuels();
