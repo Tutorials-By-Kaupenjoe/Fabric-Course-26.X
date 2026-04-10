@@ -12,6 +12,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -185,6 +186,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
                         .unlockedBy(getHasName(Items.STRING), has(Items.STRING))
                         .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                        .save(output);
+
+                shaped(RecipeCategory.DECORATIONS, ModBlocks.CHAIR)
+                        .pattern("PPP")
+                        .pattern("S S")
+                        .pattern("S S")
+                        .define('P', Blocks.OAK_PLANKS)
+                        .define('S', Items.STICK)
+                        .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                        .unlockedBy(getHasName(Blocks.OAK_PLANKS), has(Blocks.OAK_PLANKS))
                         .save(output);
 
             }

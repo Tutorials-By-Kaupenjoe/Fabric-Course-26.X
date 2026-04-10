@@ -76,6 +76,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.PETUNIA);
                         output.accept(ModBlocks.COLORED_LEAVES);
+                        output.accept(ModBlocks.CHAIR);
 
 
                     }).build());

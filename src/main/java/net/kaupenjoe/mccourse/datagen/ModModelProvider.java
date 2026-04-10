@@ -2,6 +2,7 @@ package net.kaupenjoe.mccourse.datagen;
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.block.custom.BismuthLampBlock;
 import net.kaupenjoe.mccourse.block.custom.CauliflowerCropBlock;
@@ -13,14 +14,18 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.client.renderer.block.dispatch.VariantMutator;
 import net.minecraft.client.renderer.item.ClientItem;
 import net.minecraft.client.renderer.item.ConditionalItemModel;
 import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.client.renderer.item.properties.conditional.HasComponent;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -31,6 +36,12 @@ public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricPackOutput output) {
         super(output);
     }
+
+    private static final PropertyDispatch<VariantMutator> ROTATION_HORIZONTAL_FACING = PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING)
+            .select(Direction.EAST, BlockModelGenerators.Y_ROT_90)
+            .select(Direction.SOUTH, BlockModelGenerators.Y_ROT_180)
+            .select(Direction.WEST, BlockModelGenerators.Y_ROT_270)
+            .select(Direction.NORTH, BlockModelGenerators.NOP);
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
@@ -70,6 +81,10 @@ public class ModModelProvider extends FabricModelProvider {
                 0, 1, 2, 3);
 
         blockModelGenerators.createCropBlock(ModBlocks.RICE_CROP, CropBlock.AGE, 0, 1, 2, 3, 4, 5, 6, 7);
+
+        blockModelGenerators.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(ModBlocks.CHAIR,
+                BlockModelGenerators.plainVariant(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "block/chair")))
+                .with(ROTATION_HORIZONTAL_FACING));
     }
 
     @Override

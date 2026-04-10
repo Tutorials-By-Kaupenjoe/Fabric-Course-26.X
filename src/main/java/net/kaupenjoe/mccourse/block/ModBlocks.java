@@ -104,6 +104,9 @@ public class ModBlocks {
             properties -> new RiceCropBlock(properties.randomTicks().instabreak()
                     .sound(SoundType.CROP).noCollision().pushReaction(PushReaction.DESTROY)));
 
+    public static final Block CHAIR = registerBlock("chair",
+            properties -> new ChairBlock(properties.mapColor(MapColor.WOOD).strength(1.25f)
+                    .sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)));
 
 
     private static Block registerBlockWithoutBlockItem(String name, Function<BlockBehaviour.Properties, Block> function) {

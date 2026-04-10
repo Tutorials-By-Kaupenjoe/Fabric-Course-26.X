@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": "minecraft:oak_planks",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "PPP",
+    "S S",
+    "S S"
+  ],
+  "result": {
+    "id": "mccourse:chair"
+  }
+}
