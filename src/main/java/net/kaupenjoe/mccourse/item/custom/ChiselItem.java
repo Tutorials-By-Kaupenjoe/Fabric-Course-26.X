@@ -4,10 +4,12 @@ import net.kaupenjoe.mccourse.attachment.ModAttachmentTypes;
 import net.kaupenjoe.mccourse.attachment.handler.ManaHandler;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.data.ModDataComponents;
+import net.kaupenjoe.mccourse.sound.ModSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
@@ -53,6 +55,7 @@ public class ChiselItem extends Item {
             // This means NOT on the clientSide
             if(!level.isClientSide() && ManaHandler.hasPlayerManaLeft(context.getPlayer())) {
                 level.setBlock(context.getClickedPos(), CHISEL_MAP.get(clickedBlock).defaultBlockState(), 3);
+                level.playSound(null, context.getClickedPos(), ModSounds.CHISEL_USE, SoundSource.BLOCKS, 2.5f, 1f);
 
                 context.getItemInHand().hurtAndBreak(1, ((ServerLevel) level), ((ServerPlayer) context.getPlayer()),
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
