@@ -4,5 +4,35 @@
       "mccourse:chisel_use"
     ],
     "subtitle": "subtitles.mccourse.chisel_use"
+  },
+  "magic_block_break": {
+    "sounds": [
+      "mccourse:magic_block_break"
+    ],
+    "subtitle": "subtitles.mccourse.magic_block_break"
+  },
+  "magic_block_fall": {
+    "sounds": [
+      "mccourse:magic_block_fall"
+    ],
+    "subtitle": "subtitles.mccourse.magic_block_fall"
+  },
+  "magic_block_hit": {
+    "sounds": [
+      "mccourse:magic_block_hit"
+    ],
+    "subtitle": "subtitles.mccourse.magic_block_hit"
+  },
+  "magic_block_place": {
+    "sounds": [
+      "mccourse:magic_block_place"
+    ],
+    "subtitle": "subtitles.mccourse.magic_block_place"
+  },
+  "magic_block_step": {
+    "sounds": [
+      "mccourse:magic_block_step"
+    ],
+    "subtitle": "subtitles.mccourse.magic_block_step"
   }
 }

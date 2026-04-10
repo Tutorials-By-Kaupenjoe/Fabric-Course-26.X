@@ -2,6 +2,7 @@ package net.kaupenjoe.mccourse.block;
 
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.block.custom.*;
+import net.kaupenjoe.mccourse.sound.ModSounds;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -44,7 +45,7 @@ public class ModBlocks {
 
     public static final Block MAGIC_BLOCK = registerBlock("magic_block",
             properties -> new MagicBlock(properties.strength(2f)
-                    .requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+                    .requiresCorrectToolForDrops().sound(ModSounds.MAGIC_BLOCK_SOUNDS)));
 
     public static final Block BISMUTH_STAIRS = registerBlock("bismuth_stairs",
             properties -> new StairBlock(ModBlocks.BISMUTH_BLOCK.defaultBlockState(),

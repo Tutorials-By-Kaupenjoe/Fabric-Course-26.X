@@ -20,6 +20,17 @@ public class ModSoundsProvider extends FabricSoundsProvider {
         exporter.add(ModSounds.CHISEL_USE, SoundTypeBuilder.of(ModSounds.CHISEL_USE)
                 .sound(SoundTypeBuilder.RegistrationBuilder.ofFile(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "chisel_use"))));
 
+        exporter.add(ModSounds.MAGIC_BLOCK_BREAK, SoundTypeBuilder.of(ModSounds.MAGIC_BLOCK_BREAK)
+                .sound(SoundTypeBuilder.RegistrationBuilder.ofFile(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "magic_block_break"))));
+        exporter.add(ModSounds.MAGIC_BLOCK_STEP, SoundTypeBuilder.of(ModSounds.MAGIC_BLOCK_STEP)
+                .sound(SoundTypeBuilder.RegistrationBuilder.ofFile(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "magic_block_step"))));
+        exporter.add(ModSounds.MAGIC_BLOCK_PLACE, SoundTypeBuilder.of(ModSounds.MAGIC_BLOCK_PLACE)
+                .sound(SoundTypeBuilder.RegistrationBuilder.ofFile(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "magic_block_place"))));
+        exporter.add(ModSounds.MAGIC_BLOCK_HIT, SoundTypeBuilder.of(ModSounds.MAGIC_BLOCK_HIT)
+                .sound(SoundTypeBuilder.RegistrationBuilder.ofFile(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "magic_block_hit"))));
+        exporter.add(ModSounds.MAGIC_BLOCK_FALL, SoundTypeBuilder.of(ModSounds.MAGIC_BLOCK_FALL)
+                .sound(SoundTypeBuilder.RegistrationBuilder.ofFile(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "magic_block_fall"))));
+
 
     }
 

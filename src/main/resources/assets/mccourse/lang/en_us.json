@@ -60,6 +60,11 @@
   "key.mccourse.kaupen_key": "Kaupen Key",
 
   "subtitles.mccourse.chisel_use": "Chisel Used",
+  "subtitles.mccourse.magic_block_break": "Breaking Magic Block",
+  "subtitles.mccourse.magic_block_fall": "Falling on Magic Block",
+  "subtitles.mccourse.magic_block_hit": "Hitting Magic Block",
+  "subtitles.mccourse.magic_block_place": "Placing Magic Block",
+  "subtitles.mccourse.magic_block_step": "Stepping on Magic Block",
 
   "creativetab.mccourse.bismuth_items": "Bismuth Course Items",
   "creativetab.mccourse.bismuth_blocks": "Bismuth Course Blocks"
