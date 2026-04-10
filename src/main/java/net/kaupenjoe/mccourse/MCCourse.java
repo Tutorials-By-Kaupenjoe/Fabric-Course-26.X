@@ -17,9 +17,11 @@ import net.kaupenjoe.mccourse.item.ModItems;
 import net.kaupenjoe.mccourse.keybind.ModKeyMappings;
 import net.kaupenjoe.mccourse.loot.ModLootTableModifiers;
 import net.kaupenjoe.mccourse.networking.ModPackets;
+import net.kaupenjoe.mccourse.potion.ModPotions;
 import net.kaupenjoe.mccourse.registries.ModCommands;
 import net.kaupenjoe.mccourse.registries.ModCompostables;
 import net.kaupenjoe.mccourse.registries.ModFuels;
+import net.kaupenjoe.mccourse.registries.ModPotionsRecipes;
 import net.kaupenjoe.mccourse.sound.ModSounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,10 +47,14 @@ public class MCCourse implements ModInitializer {
 		ModSounds.registerSounds();
 		ModEffects.registerEffects();
 
+		ModPotions.registerPotions();
+
+
 
 		ModFuels.registerModFuels();
 		ModCompostables.registerCompostables();
 		ModCommands.registerCommands();
+		ModPotionsRecipes.registerBrewingRecipes();
 
 
 		ServerPlayerEvents.JOIN.register(ModServerEvents::onPlayerJoin);

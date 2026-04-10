@@ -28,6 +28,10 @@
   "item.mccourse.spectre_staff": "Spectre Staff",
 
 
+  "item.minecraft.potion.effect.stinky_potion": "Stinky Potion",
+  "item.minecraft.splash_potion.effect.stinky_potion": "Stinky Splash Potion",
+  "item.minecraft.lingering_potion.effect.stinky_potion": "Stinky Lingering Potion",
+
   "block.mccourse.bismuth_block": "Block of Bismuth",
   "block.mccourse.raw_bismuth_block": "Block of Raw Bismuth",
   "block.mccourse.bismuth_ore": "Bismuth Ore",
