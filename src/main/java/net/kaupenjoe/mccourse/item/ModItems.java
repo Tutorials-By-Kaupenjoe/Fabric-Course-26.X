@@ -3,6 +3,7 @@ package net.kaupenjoe.mccourse.item;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.block.ModBlocks;
+import net.kaupenjoe.mccourse.datagen.ModJukeboxSongs;
 import net.kaupenjoe.mccourse.food.ModFoodProperties;
 import net.kaupenjoe.mccourse.item.custom.*;
 import net.minecraft.core.Registry;
@@ -73,6 +74,8 @@ public class ModItems {
 
     public static final Item RICE_SHOOT = registerItem("rice_shoot",
             properties -> new WaterCropBlockItem(ModBlocks.RICE_CROP, properties.useItemDescriptionPrefix()));
+    public static final Item BAR_BRAWL_MUSIC_DISC = registerItem("bar_brawl_music_disc",
+            properties -> new Item(properties.jukeboxPlayable(ModJukeboxSongs.BAR_BRAWL_KEY).stacksTo(1).rarity(Rarity.UNCOMMON)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name),

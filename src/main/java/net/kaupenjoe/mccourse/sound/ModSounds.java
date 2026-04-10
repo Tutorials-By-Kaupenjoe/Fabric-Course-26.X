@@ -1,6 +1,7 @@
 package net.kaupenjoe.mccourse.sound;
 
 import net.kaupenjoe.mccourse.MCCourse;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -19,6 +20,13 @@ public class ModSounds {
     public static final SoundType MAGIC_BLOCK_SOUNDS = new SoundType(1f, 1f,
             MAGIC_BLOCK_BREAK, MAGIC_BLOCK_STEP, MAGIC_BLOCK_PLACE, MAGIC_BLOCK_HIT, MAGIC_BLOCK_FALL);
 
+    public static final Holder.Reference<SoundEvent> BAR_BRAWL = registerJukeboxSong("bar_brawl");
+
+
+    private static Holder.Reference<SoundEvent> registerJukeboxSong(String name) {
+        Identifier id = Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name);
+        return Registry.registerForHolder(BuiltInRegistries.SOUND_EVENT, id, SoundEvent.createVariableRangeEvent(id));
+    }
 
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name);

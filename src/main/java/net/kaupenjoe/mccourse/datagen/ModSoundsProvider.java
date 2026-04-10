@@ -31,6 +31,9 @@ public class ModSoundsProvider extends FabricSoundsProvider {
         exporter.add(ModSounds.MAGIC_BLOCK_FALL, SoundTypeBuilder.of(ModSounds.MAGIC_BLOCK_FALL)
                 .sound(SoundTypeBuilder.RegistrationBuilder.ofFile(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "magic_block_fall"))));
 
+        exporter.add(ModSounds.BAR_BRAWL, SoundTypeBuilder.of(ModSounds.BAR_BRAWL.value())
+                .sound(SoundTypeBuilder.RegistrationBuilder.ofFile(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "bar_brawl")).stream(true)));
+
 
     }
 

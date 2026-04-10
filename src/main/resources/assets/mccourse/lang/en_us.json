@@ -24,6 +24,9 @@
   "item.mccourse.honey_berries": "Honey Berries",
   "item.mccourse.rice_shoot": "Rice Shoot",
 
+  "item.mccourse.bar_brawl_music_disc": "Bar Brawl Music Disc",
+
+
   "block.mccourse.bismuth_block": "Block of Bismuth",
   "block.mccourse.raw_bismuth_block": "Block of Raw Bismuth",
   "block.mccourse.bismuth_ore": "Bismuth Ore",
@@ -52,6 +55,8 @@
   "block.mccourse.rice_crop": "Rice Crop",
 
 
+  "jukebox_song.mccourse.bar_brawl": "Bryan Tech - Bar Brawl (CC0)",
+
   "tooltip.mccourse.cauliflower": "This is delicious!",
 
   "tooltip.mccourse.chisel": "Press §eShift§r for more Information!",
@@ -65,6 +70,7 @@
   "subtitles.mccourse.magic_block_hit": "Hitting Magic Block",
   "subtitles.mccourse.magic_block_place": "Placing Magic Block",
   "subtitles.mccourse.magic_block_step": "Stepping on Magic Block",
+  "subtitles.mccourse.bar_brawl": "Playing Bar Brawl Music Disc",
 
   "creativetab.mccourse.bismuth_items": "Bismuth Course Items",
   "creativetab.mccourse.bismuth_blocks": "Bismuth Course Blocks"
