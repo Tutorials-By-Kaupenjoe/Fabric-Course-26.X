@@ -28,6 +28,7 @@ public class MCCourseDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModRegistryDataProvider::new);
 		pack.addProvider(ModVillagerTradeTags::new);
 		pack.addProvider(ModPOITags::new);
+		pack.addProvider(ModPaintingTags::new);
 	}
 
 	@Override
@@ -36,5 +37,6 @@ public class MCCourseDataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.add(Registries.DAMAGE_TYPE, ModDamageTypes::bootstrap);
 		registryBuilder.add(Registries.VILLAGER_TRADE, ModVillagerTrades::bootstrap);
 		registryBuilder.add(Registries.TRADE_SET, ModTradeSets::bootstrap);
+		registryBuilder.add(Registries.PAINTING_VARIANT, ModPaintings::bootstrap);
 	}
 }

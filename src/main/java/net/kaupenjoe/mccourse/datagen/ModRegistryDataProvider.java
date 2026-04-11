@@ -18,6 +18,8 @@ public class ModRegistryDataProvider extends FabricDynamicRegistryProvider {
         entries.addAll(registries.lookupOrThrow(Registries.DAMAGE_TYPE));
         entries.addAll(registries.lookupOrThrow(Registries.VILLAGER_TRADE));
         entries.addAll(registries.lookupOrThrow(Registries.TRADE_SET));
+
+        entries.addAll(registries.lookupOrThrow(Registries.PAINTING_VARIANT));
     }
 
     @Override
