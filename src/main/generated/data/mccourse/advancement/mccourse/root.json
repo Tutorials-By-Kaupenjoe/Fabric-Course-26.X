@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_bismuth": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mccourse:bismuth"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:gui/advancements/backgrounds/adventure",
+    "description": {
+      "translate": "advancements.mccourse.root.description"
+    },
+    "icon": {
+      "id": "mccourse:bismuth"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.mccourse.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_bismuth"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

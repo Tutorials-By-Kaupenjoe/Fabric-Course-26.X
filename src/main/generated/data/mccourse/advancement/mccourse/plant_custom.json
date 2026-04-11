@@ -1,0 +1,57 @@
+{
+  "parent": "mccourse:mccourse/root",
+  "criteria": {
+    "berries": {
+      "conditions": {
+        "location": [
+          {
+            "block": "mccourse:honey_berry_bush",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "cauliflower": {
+      "conditions": {
+        "location": [
+          {
+            "block": "mccourse:cauliflower_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "rice": {
+      "conditions": {
+        "location": [
+          {
+            "block": "mccourse:rice_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.mccourse.plant_custom.description"
+    },
+    "icon": {
+      "id": "mccourse:rice_shoot"
+    },
+    "title": {
+      "translate": "advancements.mccourse.plant_custom.title"
+    }
+  },
+  "requirements": [
+    [
+      "berries",
+      "rice",
+      "cauliflower"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
