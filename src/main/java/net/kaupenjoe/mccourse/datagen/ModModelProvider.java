@@ -121,6 +121,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerators.generateFlatItem(ModItems.BAR_BRAWL_MUSIC_DISC, ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerators.declareCustomModelItem(ModItems.SPECTRE_STAFF);
+        // itemModelGenerators.declareCustomModelItem(ModItems.SPECTRE_STAFF); This is for 3d only
+        itemModelGenerators.generateFlatItem(ModItems.SPECTRE_STAFF, ModelTemplates.FLAT_HANDHELD_ITEM);
     }
 }
