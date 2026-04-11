@@ -3,6 +3,7 @@ package net.kaupenjoe.mccourse.attachment.handler;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.kaupenjoe.mccourse.attachment.ModAttachmentTypes;
 import net.kaupenjoe.mccourse.networking.packet.ManaPayloadS2C;
+import net.kaupenjoe.mccourse.stat.ModStats;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 
@@ -27,6 +28,7 @@ public class ManaHandler {
             newManaValue = 0;
         }
 
+        player.awardStat(ModStats.MANA_USED_TOTAL_STAT, 1);
         setMana(player, newManaValue);
     }
 

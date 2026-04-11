@@ -6,6 +6,7 @@ import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.data.ModDataComponents;
 import net.kaupenjoe.mccourse.particle.ModParticles;
 import net.kaupenjoe.mccourse.sound.ModSounds;
+import net.kaupenjoe.mccourse.stat.ModStats;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -65,7 +66,9 @@ public class ChiselItem extends Item {
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 context.getItemInHand().set(ModDataComponents.COORDINATES, context.getClickedPos());
-                // ManaHandler.removeMana(((ServerPlayer) context.getPlayer()), 1);
+                context.getPlayer().awardStat(ModStats.CHISEL_USED_STAT, 1);
+
+                ManaHandler.removeMana(((ServerPlayer) context.getPlayer()), 1);
             }
         }
 

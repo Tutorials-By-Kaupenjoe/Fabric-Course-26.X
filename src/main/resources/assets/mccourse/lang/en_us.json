@@ -111,6 +111,9 @@
   "subtitles.mccourse.magic_block_step": "Stepping on Magic Block",
   "subtitles.mccourse.bar_brawl": "Playing Bar Brawl Music Disc",
 
+  "stat.mccourse.chisel_used": "Chisel Used",
+  "stat.mccourse.mana_used_total": "Total Mana Used",
+
   "creativetab.mccourse.bismuth_items": "Bismuth Course Items",
   "creativetab.mccourse.bismuth_blocks": "Bismuth Course Blocks"
 }
