@@ -9,6 +9,7 @@ import net.kaupenjoe.mccourse.datagen.villager.ModPOITags;
 import net.kaupenjoe.mccourse.datagen.villager.ModTradeSets;
 import net.kaupenjoe.mccourse.datagen.villager.ModVillagerTradeTags;
 import net.kaupenjoe.mccourse.datagen.villager.ModVillagerTrades;
+import net.kaupenjoe.mccourse.enchantment.ModEnchantments;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 
@@ -29,6 +30,7 @@ public class MCCourseDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModVillagerTradeTags::new);
 		pack.addProvider(ModPOITags::new);
 		pack.addProvider(ModPaintingTags::new);
+		pack.addProvider(ModEnchantmentTagProvider::new);
 	}
 
 	@Override
@@ -38,5 +40,6 @@ public class MCCourseDataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.add(Registries.VILLAGER_TRADE, ModVillagerTrades::bootstrap);
 		registryBuilder.add(Registries.TRADE_SET, ModTradeSets::bootstrap);
 		registryBuilder.add(Registries.PAINTING_VARIANT, ModPaintings::bootstrap);
+		registryBuilder.add(Registries.ENCHANTMENT, ModEnchantments::bootstrap);
 	}
 }
