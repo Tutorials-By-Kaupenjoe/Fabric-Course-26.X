@@ -4,6 +4,7 @@ import net.kaupenjoe.mccourse.attachment.ModAttachmentTypes;
 import net.kaupenjoe.mccourse.attachment.handler.ManaHandler;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.data.ModDataComponents;
+import net.kaupenjoe.mccourse.particle.ModParticles;
 import net.kaupenjoe.mccourse.sound.ModSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -47,7 +48,6 @@ public class ChiselItem extends Item {
             // Giving Items/Changing Blocks/Breaking Blocks...
 
             // Client --> Anything (purely) Visuals
-
             if(!ManaHandler.hasPlayerManaLeft(context.getPlayer())) {
                 context.getPlayer().sendSystemMessage(Component.literal("Not enough Mana left!"));
             }
@@ -57,11 +57,15 @@ public class ChiselItem extends Item {
                 level.setBlock(context.getClickedPos(), CHISEL_MAP.get(clickedBlock).defaultBlockState(), 3);
                 level.playSound(null, context.getClickedPos(), ModSounds.CHISEL_USE, SoundSource.BLOCKS, 2.5f, 1f);
 
+                ((ServerLevel) level).sendParticles(ModParticles.BISMUTH_PARTICLE,
+                        context.getClickedPos().getX() + 0.5, context.getClickedPos().getY() + 1.15f,
+                        context.getClickedPos().getZ() + 0.5, 10, 0, 0, 0, 3);
+
                 context.getItemInHand().hurtAndBreak(1, ((ServerLevel) level), ((ServerPlayer) context.getPlayer()),
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 context.getItemInHand().set(ModDataComponents.COORDINATES, context.getClickedPos());
-                ManaHandler.removeMana(((ServerPlayer) context.getPlayer()), 1);
+                // ManaHandler.removeMana(((ServerPlayer) context.getPlayer()), 1);
             }
         }
 

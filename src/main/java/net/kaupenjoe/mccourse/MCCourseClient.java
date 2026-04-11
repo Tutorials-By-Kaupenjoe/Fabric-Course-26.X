@@ -2,11 +2,14 @@ package net.kaupenjoe.mccourse;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.event.ModClientEvents;
 import net.kaupenjoe.mccourse.keybind.ModKeyMappings;
+import net.kaupenjoe.mccourse.particle.BismuthParticle;
+import net.kaupenjoe.mccourse.particle.ModParticles;
 import net.minecraft.client.color.block.BlockTintSources;
 import net.minecraft.resources.Identifier;
 
@@ -21,5 +24,7 @@ public class MCCourseClient implements ClientModInitializer {
         HudElementRegistry.addFirst(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "mana_display"), ModClientEvents::addFirstHudElement);
 
         BlockColorRegistry.register(List.of(BlockTintSources.foliage()), ModBlocks.COLORED_LEAVES);
+
+        ParticleProviderRegistry.getInstance().register(ModParticles.BISMUTH_PARTICLE, BismuthParticle.Provider::new);
     }
 }
