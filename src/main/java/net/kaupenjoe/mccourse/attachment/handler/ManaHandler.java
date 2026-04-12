@@ -10,7 +10,7 @@ import net.minecraft.world.entity.player.Player;
 public class ManaHandler {
     public static void setMana(ServerPlayer player, int value) {
         player.setAttached(ModAttachmentTypes.MANA, value);
-        ServerPlayNetworking.send(player, new ManaPayloadS2C(0, value));
+        // ServerPlayNetworking.send(player, new ManaPayloadS2C(0, value));
     }
 
     public static void addMana(ServerPlayer player, int value) {

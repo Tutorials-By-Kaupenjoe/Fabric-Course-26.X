@@ -6,11 +6,12 @@ import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
 import net.kaupenjoe.mccourse.MCCourse;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.resources.Identifier;
 
 public class ModAttachmentTypes {
-    public static final AttachmentType<Integer> MANA = AttachmentRegistry.createPersistent(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "mana"),
-            Codec.INT);
+    public static final AttachmentType<Integer> MANA = AttachmentRegistry.create(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "mana"),
+            builder -> builder.persistent(Codec.INT).syncWith(ByteBufCodecs.INT, AttachmentSyncPredicate.all()));
     public static final AttachmentType<BlockPos> HOME_POS = AttachmentRegistry.create(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "home_pos"),
             blockPosBuilder -> blockPosBuilder.persistent(BlockPos.CODEC).syncWith(BlockPos.STREAM_CODEC, AttachmentSyncPredicate.all()));
 
