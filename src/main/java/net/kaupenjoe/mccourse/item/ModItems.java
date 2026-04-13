@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.datagen.ModJukeboxSongs;
+import net.kaupenjoe.mccourse.fluid.ModFluids;
 import net.kaupenjoe.mccourse.food.ModFoodProperties;
 import net.kaupenjoe.mccourse.item.custom.*;
 import net.minecraft.core.Registry;
@@ -78,6 +79,9 @@ public class ModItems {
             properties -> new Item(properties.jukeboxPlayable(ModJukeboxSongs.BAR_BRAWL_KEY).stacksTo(1).rarity(Rarity.UNCOMMON)));
     public static final Item SPECTRE_STAFF = registerItem("spectre_staff",
             properties -> new Item(properties.stacksTo(1).rarity(Rarity.EPIC)));
+
+    public static final Item BISMUTH_WATER_BUCKET = registerItem("bismuth_water_bucket",
+            properties -> new BucketItem(ModFluids.BISMUTH_WATER_SOURCE, properties.stacksTo(1).craftRemainder(Items.BUCKET)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name),

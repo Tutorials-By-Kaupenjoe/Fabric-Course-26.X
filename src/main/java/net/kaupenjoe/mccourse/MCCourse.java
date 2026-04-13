@@ -13,6 +13,7 @@ import net.kaupenjoe.mccourse.effect.ModEffects;
 import net.kaupenjoe.mccourse.enchantment.ModEnchantmentEffects;
 import net.kaupenjoe.mccourse.event.ModAttackEntityHandler;
 import net.kaupenjoe.mccourse.event.ModServerEvents;
+import net.kaupenjoe.mccourse.fluid.ModFluids;
 import net.kaupenjoe.mccourse.item.ModCreativeModeTabs;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.kaupenjoe.mccourse.keybind.ModKeyMappings;
@@ -58,7 +59,7 @@ public class MCCourse implements ModInitializer {
 		ModEnchantmentEffects.registerEnchantmentEffects();
 
 		ModStats.registerStats();
-
+		ModFluids.registerFluids();
 
 
 		ModFuels.registerModFuels();

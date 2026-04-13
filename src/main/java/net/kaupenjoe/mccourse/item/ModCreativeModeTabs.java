@@ -44,6 +44,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BAR_BRAWL_MUSIC_DISC);
                         output.accept(ModItems.SPECTRE_STAFF);
 
+                        output.accept(ModItems.BISMUTH_WATER_BUCKET);
+
 
                     }).build());
 

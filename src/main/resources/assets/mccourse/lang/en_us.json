@@ -27,6 +27,8 @@
   "item.mccourse.bar_brawl_music_disc": "Bar Brawl Music Disc",
   "item.mccourse.spectre_staff": "Spectre Staff",
 
+  "item.mccourse.bismuth_water_bucket": "Bismuth Water Bucket",
+
 
   "item.minecraft.potion.effect.stinky_potion": "Stinky Potion",
   "item.minecraft.splash_potion.effect.stinky_potion": "Stinky Splash Potion",
@@ -60,6 +62,11 @@
   "block.mccourse.rice_crop": "Rice Crop",
   "block.mccourse.chair": "Chair",
 
+  "block.mccourse.bismuth_water_block": "Bismuth Water",
+
+
+  "fluid.mccourse.bismuth_water_source": "Bismuth Water (Source)",
+  "fluid.mccourse.bismuth_water_flower": "Bismuth Water (Flowing)",
 
   "jukebox_song.mccourse.bar_brawl": "Bryan Tech - Bar Brawl (CC0)",
 

@@ -3,10 +3,12 @@ package net.kaupenjoe.mccourse;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
+import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderingRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.event.ModClientEvents;
+import net.kaupenjoe.mccourse.fluid.ModFluids;
 import net.kaupenjoe.mccourse.keybind.ModKeyMappings;
 import net.kaupenjoe.mccourse.particle.BismuthParticle;
 import net.kaupenjoe.mccourse.particle.ModParticles;
@@ -26,5 +28,7 @@ public class MCCourseClient implements ClientModInitializer {
         BlockColorRegistry.register(List.of(BlockTintSources.foliage()), ModBlocks.COLORED_LEAVES);
 
         ParticleProviderRegistry.getInstance().register(ModParticles.BISMUTH_PARTICLE, BismuthParticle.Provider::new);
+
+        FluidRenderingRegistry.register(ModFluids.BISMUTH_WATER_SOURCE, ModFluids.BISMUTH_WATER_FLOWING, ModFluids.BISMUTH_WATER_MODEL);
     }
 }

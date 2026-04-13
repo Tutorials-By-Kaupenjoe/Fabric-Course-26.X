@@ -85,6 +85,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(ModBlocks.CHAIR,
                 BlockModelGenerators.plainVariant(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "block/chair")))
                 .with(ROTATION_HORIZONTAL_FACING));
+
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.BISMUTH_WATER_BLOCK);
     }
 
     @Override
@@ -123,5 +125,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         // itemModelGenerators.declareCustomModelItem(ModItems.SPECTRE_STAFF); This is for 3d only
         itemModelGenerators.generateFlatItem(ModItems.SPECTRE_STAFF, ModelTemplates.FLAT_HANDHELD_ITEM);
+
+        itemModelGenerators.generateFlatItem(ModItems.BISMUTH_WATER_BUCKET, ModelTemplates.FLAT_ITEM);
     }
 }
