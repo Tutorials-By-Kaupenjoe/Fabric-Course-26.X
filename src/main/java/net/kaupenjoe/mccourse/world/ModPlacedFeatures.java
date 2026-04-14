@@ -6,17 +6,34 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 
 import java.util.List;
 
 public class ModPlacedFeatures {
+    public static final ResourceKey<PlacedFeature> BISMUTH_OVERWORLD_ORES_PLACED_KEY = registerKey("bismuth_overworld_ores_placed");
+    public static final ResourceKey<PlacedFeature> BISMUTH_NETHER_ORES_PLACED_KEY = registerKey("bismuth_nether_ores_placed");
+    public static final ResourceKey<PlacedFeature> BISMUTH_END_ORES_PLACED_KEY = registerKey("bismuth_end_ores_placed");
+
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
+        var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
+
+        register(context, BISMUTH_OVERWORLD_ORES_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BISMUTH_OVERWORLD_ORES_KEY),
+                ModOrePlacements.commonOrePlacement(14,
+                        HeightRangePlacement.triangle(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80))));
+        register(context, BISMUTH_NETHER_ORES_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BISMUTH_NETHER_ORES_KEY),
+                ModOrePlacements.commonOrePlacement(14,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80))));
+        register(context, BISMUTH_END_ORES_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BISMUTH_END_ORES_KEY),
+                ModOrePlacements.commonOrePlacement(14,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80))));
 
     }
 

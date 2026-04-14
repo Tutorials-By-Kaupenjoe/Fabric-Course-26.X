@@ -1,17 +1,41 @@
 package net.kaupenjoe.mccourse.world;
 
 import net.kaupenjoe.mccourse.MCCourse;
+import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
+import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
+
+import java.util.List;
 
 public class ModConfiguredFeatures {
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BISMUTH_OVERWORLD_ORES_KEY = registerKey("bismuth_overworld_ores");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BISMUTH_NETHER_ORES_KEY = registerKey("bismuth_nether_ores");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BISMUTH_END_ORES_KEY = registerKey("bismuth_end_ores");
+
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+        List<OreConfiguration.TargetBlockState> overworldBismuthTargets = List.of(
+                        OreConfiguration.target(new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), ModBlocks.BISMUTH_ORE.defaultBlockState()),
+                        OreConfiguration.target(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), ModBlocks.BISMUTH_DEEPSLATE_ORE.defaultBlockState()));
+        List<OreConfiguration.TargetBlockState> netherBismuthTargets = List.of(
+                        OreConfiguration.target(new TagMatchTest(BlockTags.BASE_STONE_NETHER), ModBlocks.BISMUTH_NETHER_ORE.defaultBlockState()));
+        List<OreConfiguration.TargetBlockState> endBismuthTargets = List.of(
+                        OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE), ModBlocks.BISMUTH_END_ORE.defaultBlockState()));
+
+        register(context, BISMUTH_OVERWORLD_ORES_KEY, Feature.ORE, new OreConfiguration(overworldBismuthTargets, 12));
+        register(context, BISMUTH_NETHER_ORES_KEY, Feature.ORE, new OreConfiguration(netherBismuthTargets, 9));
+        register(context, BISMUTH_END_ORES_KEY, Feature.ORE, new OreConfiguration(endBismuthTargets, 12));
+
 
     }
 
