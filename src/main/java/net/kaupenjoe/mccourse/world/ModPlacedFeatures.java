@@ -26,6 +26,8 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> PETUNIA_FLOWER_PLACED_KEY = registerKey("petunia_flower_placed");
 
+    public static final ResourceKey<PlacedFeature> HONEY_BERRY_BUSH_PLACED_KEY = registerKey("honey_berry_bush_placed");
+
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -46,6 +48,9 @@ public class ModPlacedFeatures {
 
         register(context, PETUNIA_FLOWER_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PETUNIA_FLOWER_KEY),
                 List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+
+        register(context, HONEY_BERRY_BUSH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.HONEY_BERRY_BUSH_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
 
     }
