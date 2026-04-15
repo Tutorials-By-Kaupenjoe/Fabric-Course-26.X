@@ -53,6 +53,7 @@ public class ModConfiguredFeatures {
                 new AcaciaFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3)),
 
                 new TwoLayersFeatureSize(1, 0, 2))
+                .belowTrunkProvider(BlockStateProvider.simple(Blocks.STONE))
                 .build());
 
     }

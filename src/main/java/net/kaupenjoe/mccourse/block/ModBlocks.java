@@ -141,8 +141,8 @@ public class ModBlocks {
 
 
     public static final Block BLOODWOOD_SAPLING = registerBlock("bloodwood_sapling",
-            properties -> new SaplingBlock(ModTreeGrowers.BLOODWOOD, properties.mapColor(MapColor.GRASS).noCollision()
-                    .randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            properties -> new ModSaplingBlock(ModTreeGrowers.BLOODWOOD, properties.mapColor(MapColor.GRASS).noCollision()
+                    .randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY), Blocks.STONE));
     public static final Block POTTED_BLOODWOOD_SAPLING = registerBlockWithoutBlockItem("potted_bloodwood_sapling",
             properties -> new FlowerPotBlock(BLOODWOOD_SAPLING, properties.mapColor(MapColor.GRASS).noOcclusion()
                     .instabreak().pushReaction(PushReaction.DESTROY)));
