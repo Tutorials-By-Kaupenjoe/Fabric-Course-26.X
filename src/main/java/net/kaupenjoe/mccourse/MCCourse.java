@@ -21,10 +21,7 @@ import net.kaupenjoe.mccourse.loot.ModLootTableModifiers;
 import net.kaupenjoe.mccourse.networking.ModPackets;
 import net.kaupenjoe.mccourse.particle.ModParticles;
 import net.kaupenjoe.mccourse.potion.ModPotions;
-import net.kaupenjoe.mccourse.registries.ModCommands;
-import net.kaupenjoe.mccourse.registries.ModCompostables;
-import net.kaupenjoe.mccourse.registries.ModFuels;
-import net.kaupenjoe.mccourse.registries.ModPotionsRecipes;
+import net.kaupenjoe.mccourse.registries.*;
 import net.kaupenjoe.mccourse.sound.ModSounds;
 import net.kaupenjoe.mccourse.stat.ModStats;
 import net.kaupenjoe.mccourse.villager.ModVillagers;
@@ -69,6 +66,8 @@ public class MCCourse implements ModInitializer {
 		ModCompostables.registerCompostables();
 		ModCommands.registerCommands();
 		ModPotionsRecipes.registerBrewingRecipes();
+		ModFlammableBlocks.registerFlammableBlocks();
+		ModStrippableBlocks.registerStrippableBlocks();
 
 
 		ServerPlayerEvents.JOIN.register(ModServerEvents::onPlayerJoin);
