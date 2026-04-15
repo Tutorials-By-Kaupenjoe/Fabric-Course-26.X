@@ -2,6 +2,7 @@ package net.kaupenjoe.mccourse.world;
 
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.block.ModBlocks;
+import net.kaupenjoe.mccourse.world.tree.SpiralTrunkPlacer;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -63,7 +64,7 @@ public class ModConfiguredFeatures {
 
         register(context, BLOODWOOD_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.BLOODWOOD_LOG),
-                new BendingTrunkPlacer(4, 2, 4, 5, ConstantInt.of(4)),
+                new SpiralTrunkPlacer(4, 2, 4),
 
                 BlockStateProvider.simple(ModBlocks.BLOODWOOD_LEAVES),
                 new AcaciaFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3)),

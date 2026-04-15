@@ -26,6 +26,7 @@ import net.kaupenjoe.mccourse.sound.ModSounds;
 import net.kaupenjoe.mccourse.stat.ModStats;
 import net.kaupenjoe.mccourse.villager.ModVillagers;
 import net.kaupenjoe.mccourse.world.gen.ModWorldGeneration;
+import net.kaupenjoe.mccourse.world.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -60,6 +61,7 @@ public class MCCourse implements ModInitializer {
 		ModFluids.registerFluids();
 
 		ModWorldGeneration.generateModWorldGen();
+		ModTrunkPlacerTypes.registerModTrunkPlacerTypes();
 
 
 		ModFuels.registerModFuels();
