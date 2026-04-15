@@ -13,9 +13,7 @@ import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
@@ -25,6 +23,8 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> BISMUTH_END_ORES_PLACED_KEY = registerKey("bismuth_end_ores_placed");
 
     public static final ResourceKey<PlacedFeature> BLOODWOOD_TREE_PLACED_KEY = registerKey("bloodwood_tree_placed_key");
+
+    public static final ResourceKey<PlacedFeature> PETUNIA_FLOWER_PLACED_KEY = registerKey("petunia_flower_placed");
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -43,6 +43,11 @@ public class ModPlacedFeatures {
         register(context, BLOODWOOD_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BLOODWOOD_TREE_KEY),
                 VegetationPlacements.treePlacement(
                         PlacementUtils.countExtra(2, 0.1f, 2), ModBlocks.BLOODWOOD_SAPLING));
+
+        register(context, PETUNIA_FLOWER_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PETUNIA_FLOWER_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+
+
     }
 
     public static ResourceKey<PlacedFeature> registerKey(String name) {
