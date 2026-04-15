@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.item.ModItems;
+import net.kaupenjoe.mccourse.tag.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -197,6 +198,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
                         .unlockedBy(getHasName(Blocks.OAK_PLANKS), has(Blocks.OAK_PLANKS))
                         .save(output);
+
+                woodFromLogs(ModBlocks.BLOODWOOD_WOOD, ModBlocks.BLOODWOOD_LOG);
+                woodFromLogs(ModBlocks.STRIPPED_BLOODWOOD_WOOD, ModBlocks.STRIPPED_BLOODWOOD_LOG);
+                planksFromLogs(ModBlocks.BLOODWOOD_PLANKS, ModTags.Items.BLOODWOOD_LOGS, 4);
 
             }
         };

@@ -1,9 +1,12 @@
 package net.kaupenjoe.mccourse.world;
 
 import net.kaupenjoe.mccourse.MCCourse;
+import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -21,6 +24,8 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> BISMUTH_NETHER_ORES_PLACED_KEY = registerKey("bismuth_nether_ores_placed");
     public static final ResourceKey<PlacedFeature> BISMUTH_END_ORES_PLACED_KEY = registerKey("bismuth_end_ores_placed");
 
+    public static final ResourceKey<PlacedFeature> BLOODWOOD_TREE_PLACED_KEY = registerKey("bloodwood_tree_placed_key");
+
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -35,6 +40,9 @@ public class ModPlacedFeatures {
                 ModOrePlacements.commonOrePlacement(14,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80))));
 
+        register(context, BLOODWOOD_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BLOODWOOD_TREE_KEY),
+                VegetationPlacements.treePlacement(
+                        PlacementUtils.countExtra(2, 0.1f, 2), ModBlocks.BLOODWOOD_SAPLING));
     }
 
     public static ResourceKey<PlacedFeature> registerKey(String name) {

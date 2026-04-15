@@ -4,7 +4,9 @@ import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.block.custom.*;
 import net.kaupenjoe.mccourse.fluid.ModFluids;
 import net.kaupenjoe.mccourse.sound.ModSounds;
+import net.kaupenjoe.mccourse.world.tree.ModTreeGrowers;
 import net.minecraft.core.Registry;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
@@ -113,6 +115,37 @@ public class ModBlocks {
             properties -> new LiquidBlock(ModFluids.BISMUTH_WATER_SOURCE, properties
                     .mapColor(MapColor.WATER).replaceable().noCollision().strength(100.0F)
                     .pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY)));
+
+    public static final Block BLOODWOOD_LOG = registerBlock("bloodwood_log",
+            properties -> new RotatedPillarBlock(properties.mapColor(MapColor.WOOD).strength(2f)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+    public static final Block BLOODWOOD_WOOD = registerBlock("bloodwood_wood",
+            properties -> new RotatedPillarBlock(properties.mapColor(MapColor.WOOD).strength(2f)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+    public static final Block STRIPPED_BLOODWOOD_LOG = registerBlock("stripped_bloodwood_log",
+            properties -> new RotatedPillarBlock(properties.mapColor(MapColor.WOOD).strength(2f)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+    public static final Block STRIPPED_BLOODWOOD_WOOD = registerBlock("stripped_bloodwood_wood",
+            properties -> new RotatedPillarBlock(properties.mapColor(MapColor.WOOD).strength(2f)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+
+    public static final Block BLOODWOOD_PLANKS = registerBlock("bloodwood_planks",
+            properties -> new Block(properties.mapColor(MapColor.WOOD).strength(2f)
+                    .sound(SoundType.WOOD).ignitedByLava()));
+    public static final Block BLOODWOOD_LEAVES = registerBlock("bloodwood_leaves",
+            properties -> new UntintedParticleLeavesBlock(0f, ParticleTypes.CHERRY_LEAVES,
+                    properties.mapColor(MapColor.METAL).strength(0.2F).randomTicks().sound(SoundType.GRASS)
+                            .noOcclusion().isValidSpawn(Blocks::ocelotOrParrot).isSuffocating(Blocks::never)
+                            .isViewBlocking(Blocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY)
+                            .isRedstoneConductor(Blocks::never)));
+
+
+    public static final Block BLOODWOOD_SAPLING = registerBlock("bloodwood_sapling",
+            properties -> new SaplingBlock(ModTreeGrowers.BLOODWOOD, properties.mapColor(MapColor.GRASS).noCollision()
+                    .randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+    public static final Block POTTED_BLOODWOOD_SAPLING = registerBlockWithoutBlockItem("potted_bloodwood_sapling",
+            properties -> new FlowerPotBlock(BLOODWOOD_SAPLING, properties.mapColor(MapColor.GRASS).noOcclusion()
+                    .instabreak().pushReaction(PushReaction.DESTROY)));
 
 
     private static Block registerBlockWithoutBlockItem(String name, Function<BlockBehaviour.Properties, Block> function) {

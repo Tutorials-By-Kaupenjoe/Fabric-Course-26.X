@@ -87,6 +87,14 @@ public class ModModelProvider extends FabricModelProvider {
                 .with(ROTATION_HORIZONTAL_FACING));
 
         blockModelGenerators.createNonTemplateModelBlock(ModBlocks.BISMUTH_WATER_BLOCK);
+
+        blockModelGenerators.createTrivialCube(ModBlocks.BLOODWOOD_PLANKS);
+        blockModelGenerators.woodProvider(ModBlocks.BLOODWOOD_LOG).log(ModBlocks.BLOODWOOD_LOG).wood(ModBlocks.BLOODWOOD_WOOD);
+        blockModelGenerators.woodProvider(ModBlocks.STRIPPED_BLOODWOOD_LOG).log(ModBlocks.STRIPPED_BLOODWOOD_LOG).wood(ModBlocks.STRIPPED_BLOODWOOD_WOOD);
+
+        blockModelGenerators.createTrivialBlock(ModBlocks.BLOODWOOD_LEAVES, TexturedModel.LEAVES);
+        blockModelGenerators.createPlantWithDefaultItem(ModBlocks.BLOODWOOD_SAPLING, ModBlocks.POTTED_BLOODWOOD_SAPLING, BlockModelGenerators.PlantType.TINTED);
+
     }
 
     @Override

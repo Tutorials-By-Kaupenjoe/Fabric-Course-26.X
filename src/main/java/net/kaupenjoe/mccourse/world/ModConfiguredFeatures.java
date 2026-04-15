@@ -7,11 +7,18 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
@@ -21,6 +28,8 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> BISMUTH_OVERWORLD_ORES_KEY = registerKey("bismuth_overworld_ores");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BISMUTH_NETHER_ORES_KEY = registerKey("bismuth_nether_ores");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BISMUTH_END_ORES_KEY = registerKey("bismuth_end_ores");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BLOODWOOD_TREE_KEY = registerKey("bloodwood_tree_key");
 
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
@@ -36,6 +45,15 @@ public class ModConfiguredFeatures {
         register(context, BISMUTH_NETHER_ORES_KEY, Feature.ORE, new OreConfiguration(netherBismuthTargets, 9));
         register(context, BISMUTH_END_ORES_KEY, Feature.ORE, new OreConfiguration(endBismuthTargets, 12));
 
+        register(context, BLOODWOOD_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.BLOODWOOD_LOG),
+                new BendingTrunkPlacer(4, 2, 4, 5, ConstantInt.of(4)),
+
+                BlockStateProvider.simple(ModBlocks.BLOODWOOD_LEAVES),
+                new AcaciaFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3)),
+
+                new TwoLayersFeatureSize(1, 0, 2))
+                .build());
 
     }
 

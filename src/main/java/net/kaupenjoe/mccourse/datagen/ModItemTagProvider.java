@@ -2,9 +2,11 @@ package net.kaupenjoe.mccourse.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
+import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.kaupenjoe.mccourse.tag.ModTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 
@@ -49,5 +51,20 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
         valueLookupBuilder(ItemTags.CREEPER_DROP_MUSIC_DISCS)
                 .add(ModItems.BAR_BRAWL_MUSIC_DISC);
+
+        valueLookupBuilder(ModTags.Items.BLOODWOOD_LOGS)
+                .add(ModBlocks.BLOODWOOD_LOG.asItem())
+                .add(ModBlocks.BLOODWOOD_WOOD.asItem())
+                .add(ModBlocks.STRIPPED_BLOODWOOD_LOG.asItem())
+                .add(ModBlocks.STRIPPED_BLOODWOOD_WOOD.asItem());
+
+        valueLookupBuilder(ItemTags.PLANKS)
+                .add(ModBlocks.BLOODWOOD_PLANKS.asItem());
+
+        valueLookupBuilder(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.BLOODWOOD_LOG.asItem())
+                .add(ModBlocks.BLOODWOOD_WOOD.asItem())
+                .add(ModBlocks.STRIPPED_BLOODWOOD_LOG.asItem())
+                .add(ModBlocks.STRIPPED_BLOODWOOD_WOOD.asItem());
     }
 }

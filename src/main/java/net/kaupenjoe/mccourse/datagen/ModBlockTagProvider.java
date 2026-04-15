@@ -79,5 +79,23 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
         valueLookupBuilder(BlockTags.FLOWER_POTS)
                 .add(ModBlocks.POTTED_PETUNIA);
 
+        valueLookupBuilder(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.BLOODWOOD_LOG)
+                .add(ModBlocks.BLOODWOOD_WOOD)
+                .add(ModBlocks.STRIPPED_BLOODWOOD_LOG)
+                .add(ModBlocks.STRIPPED_BLOODWOOD_WOOD);
+
+        valueLookupBuilder(BlockTags.SAPLINGS)
+                .add(ModBlocks.BLOODWOOD_SAPLING);
+
+        valueLookupBuilder(BlockTags.PLANKS)
+                .add(ModBlocks.BLOODWOOD_PLANKS);
+
+        valueLookupBuilder(ModTags.Blocks.BLOODWOOD_LOGS)
+                .add(ModBlocks.BLOODWOOD_LOG)
+                .add(ModBlocks.BLOODWOOD_WOOD)
+                .add(ModBlocks.STRIPPED_BLOODWOOD_LOG)
+                .add(ModBlocks.STRIPPED_BLOODWOOD_WOOD);
+
     }
 }

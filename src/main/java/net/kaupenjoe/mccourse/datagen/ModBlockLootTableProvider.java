@@ -92,6 +92,16 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
                         .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, CropBlock.MAX_AGE))));
 
 
+        dropSelf(ModBlocks.BLOODWOOD_LOG);
+        dropSelf(ModBlocks.BLOODWOOD_WOOD);
+        dropSelf(ModBlocks.STRIPPED_BLOODWOOD_LOG);
+        dropSelf(ModBlocks.STRIPPED_BLOODWOOD_WOOD);
+        dropSelf(ModBlocks.BLOODWOOD_PLANKS);
+
+        dropSelf(ModBlocks.BLOODWOOD_SAPLING);
+        add(ModBlocks.POTTED_BLOODWOOD_SAPLING, createPotFlowerItemTable(ModBlocks.BLOODWOOD_SAPLING));
+
+        add(ModBlocks.BLOODWOOD_LEAVES, createLeavesDrops(ModBlocks.BLOODWOOD_LEAVES, ModBlocks.BLOODWOOD_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {

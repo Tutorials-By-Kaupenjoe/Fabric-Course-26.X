@@ -64,6 +64,16 @@
 
   "block.mccourse.bismuth_water_block": "Bismuth Water",
 
+  "block.mccourse.bloodwood_log": "Bloodwood Log",
+  "block.mccourse.bloodwood_wood": "Bloodwood Wood",
+  "block.mccourse.stripped_bloodwood_log": "Stripped Bloodwood Log",
+  "block.mccourse.stripped_bloodwood_wood": "Stripped Bloodwood Wood",
+
+  "block.mccourse.bloodwood_planks": "Bloodwood Planks",
+  "block.mccourse.bloodwood_leaves": "Bloodwood Leaves",
+  "block.mccourse.bloodwood_sapling": "Bloodwood Sapling",
+  "block.mccourse.potted_bloodwood_sapling": "Potted Bloodwood Sapling",
+
 
   "fluid.mccourse.bismuth_water_source": "Bismuth Water (Source)",
   "fluid.mccourse.bismuth_water_flower": "Bismuth Water (Flowing)",

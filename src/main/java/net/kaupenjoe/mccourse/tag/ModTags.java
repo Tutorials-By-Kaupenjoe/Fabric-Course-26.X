@@ -14,6 +14,7 @@ public class ModTags {
         public static final TagKey<Block> INCORRECT_FOR_BISMUTH_TOOL = createTag("incorrect_for_bismuth_tool");
 
         public static final TagKey<Block> PAXEL_MINEABLE = createTag("mineable/paxel");
+        public static final TagKey<Block> BLOODWOOD_LOGS = createTag("bloodwood_logs");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name));
@@ -23,6 +24,8 @@ public class ModTags {
     public static class Items {
         public static final TagKey<Item> TRANSFORMABLE_ITEMS = createTag("transformable_items");
         public static final TagKey<Item> BISMUTH_REPAIRABLE = createTag("bismuth_repairables");
+
+        public static final TagKey<Item> BLOODWOOD_LOGS = createTag("bloodwood_logs");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name));
