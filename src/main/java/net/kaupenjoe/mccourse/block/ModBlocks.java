@@ -148,6 +148,11 @@ public class ModBlocks {
                     .instabreak().pushReaction(PushReaction.DESTROY)));
 
 
+    public static final Block KAUPEN_PORTAL = registerBlock("kaupen_portal",
+            properties -> new KaupenPortalBlock(properties.strength(1f)));
+
+
+
     private static Block registerBlockWithoutBlockItem(String name, Function<BlockBehaviour.Properties, Block> function) {
         return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name), function.apply(BlockBehaviour.Properties.of()
                 .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name)))));

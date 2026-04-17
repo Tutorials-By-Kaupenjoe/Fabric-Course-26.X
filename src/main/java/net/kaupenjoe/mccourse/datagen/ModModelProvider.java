@@ -95,6 +95,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialBlock(ModBlocks.BLOODWOOD_LEAVES, TexturedModel.LEAVES);
         blockModelGenerators.createPlantWithDefaultItem(ModBlocks.BLOODWOOD_SAPLING, ModBlocks.POTTED_BLOODWOOD_SAPLING, BlockModelGenerators.PlantType.TINTED);
 
+        blockModelGenerators.createTrivialCube(ModBlocks.KAUPEN_PORTAL);
     }
 
     @Override

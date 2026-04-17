@@ -90,6 +90,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BLOODWOOD_LEAVES);
                         output.accept(ModBlocks.BLOODWOOD_SAPLING);
 
+                        output.accept(ModBlocks.KAUPEN_PORTAL);
+
 
                     }).build());
 

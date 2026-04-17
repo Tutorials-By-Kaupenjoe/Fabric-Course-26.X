@@ -12,6 +12,7 @@ import net.kaupenjoe.mccourse.datagen.villager.ModVillagerTrades;
 import net.kaupenjoe.mccourse.enchantment.ModEnchantments;
 import net.kaupenjoe.mccourse.world.ModConfiguredFeatures;
 import net.kaupenjoe.mccourse.world.ModPlacedFeatures;
+import net.kaupenjoe.mccourse.world.dimension.ModDimensions;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 
@@ -48,5 +49,9 @@ public class MCCourseDataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.add(Registries.ENCHANTMENT, ModEnchantments::bootstrap);
 		registryBuilder.add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
 		registryBuilder.add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
+
+		registryBuilder.add(Registries.LEVEL_STEM, ModDimensions::bootstrapStem);
+		registryBuilder.add(Registries.DIMENSION_TYPE, ModDimensions::bootstrapType);
+
 	}
 }
