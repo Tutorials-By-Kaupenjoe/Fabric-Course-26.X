@@ -25,14 +25,18 @@ import net.kaupenjoe.mccourse.registries.*;
 import net.kaupenjoe.mccourse.sound.ModSounds;
 import net.kaupenjoe.mccourse.stat.ModStats;
 import net.kaupenjoe.mccourse.villager.ModVillagers;
+import net.kaupenjoe.mccourse.world.biome.ModBiomes;
+import net.kaupenjoe.mccourse.world.biome.ModSurfaceRules;
 import net.kaupenjoe.mccourse.world.gen.ModWorldGeneration;
 import net.kaupenjoe.mccourse.world.tree.ModFoliagePlacerTypes;
 import net.kaupenjoe.mccourse.world.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import terrablender.api.SurfaceRuleManager;
+import terrablender.api.TerraBlenderApi;
 
 // An extremely important comment
-public class MCCourse implements ModInitializer {
+public class MCCourse implements ModInitializer, TerraBlenderApi {
 	public static final String MOD_ID = "mccourse";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
@@ -82,5 +86,14 @@ public class MCCourse implements ModInitializer {
 		LootTableEvents.MODIFY.register(ModLootTableModifiers::modifyLootTables);
 
 		AttackEntityCallback.EVENT.register(new ModAttackEntityHandler());
+	}
+
+	@Override
+	public void onTerraBlenderInitialized() {
+		ModBiomes.registerBiomes();
+
+		SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeKaupenValleyRules());
+		SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.NETHER, MOD_ID, ModSurfaceRules.makeGlowstonePlainsRules());
+		SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.END, MOD_ID, ModSurfaceRules.makeEndRotRules());
 	}
 }
