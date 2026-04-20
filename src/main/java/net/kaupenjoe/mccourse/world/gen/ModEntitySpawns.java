@@ -14,6 +14,6 @@ public class ModEntitySpawns {
                 MobCategory.CREATURE, ModEntities.GIRAFFE, 25, 2, 4);
 
         SpawnPlacements.register(ModEntities.GIRAFFE, SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                PathfinderMob::checkMobSpawnRules);
+                Animal::checkAnimalSpawnRules);
     }
 }

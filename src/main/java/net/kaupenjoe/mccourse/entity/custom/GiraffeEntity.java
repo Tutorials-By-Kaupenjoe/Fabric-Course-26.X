@@ -1,9 +1,11 @@
 package net.kaupenjoe.mccourse.entity.custom;
 
+import net.kaupenjoe.mccourse.entity.ModEntities;
 import net.kaupenjoe.mccourse.entity.variant.GiraffeVariant;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
@@ -14,21 +16,23 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import org.jspecify.annotations.Nullable;
 
-public class GiraffeEntity extends PathfinderMob {
+public class GiraffeEntity extends Animal {
     private static final EntityDataAccessor<Integer> VARIANT =
             SynchedEntityData.defineId(GiraffeEntity.class, EntityDataSerializers.INT);
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
-    public GiraffeEntity(EntityType<? extends PathfinderMob> type, Level level) {
+    public GiraffeEntity(EntityType<? extends Animal> type, Level level) {
         super(type, level);
     }
 
@@ -37,11 +41,14 @@ public class GiraffeEntity extends PathfinderMob {
         this.goalSelector.addGoal(0, new FloatGoal(this));
 
         this.goalSelector.addGoal(1, new PanicGoal(this, 2d));
-        this.goalSelector.addGoal(2, new TemptGoal(this, 1.25d, stack -> stack.is(ItemTags.LEAVES), false));
+        this.goalSelector.addGoal(2, new BreedGoal(this, 1.25d));
+        this.goalSelector.addGoal(3, new TemptGoal(this, 1.25d, stack -> stack.is(ItemTags.LEAVES), false));
 
-        this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1f));
-        this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 6f));
-        this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25f));
+
+        this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1f));
+        this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6f));
+        this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
     }
 
     private void setupAnimationStates() {
@@ -125,5 +132,19 @@ public class GiraffeEntity extends PathfinderMob {
     @Override
     protected @Nullable SoundEvent getDeathSound() {
         return SoundEvents.NAUTILUS_DEATH;
+    }
+
+    /* BREEDABLE (extends Animal) */
+    @Override
+    public boolean isFood(ItemStack itemStack) {
+        return itemStack.is(ItemTags.LEAVES);
+    }
+
+    @Override
+    public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob partner) {
+        GiraffeEntity baby = ModEntities.GIRAFFE.create(level, EntitySpawnReason.BREEDING);
+        GiraffeVariant variant = Util.getRandom(GiraffeVariant.values(), this.random);
+        baby.setVariant(variant);
+        return baby;
     }
 }
