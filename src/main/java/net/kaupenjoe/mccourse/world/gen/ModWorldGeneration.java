@@ -9,5 +9,7 @@ public class ModWorldGeneration {
         ModTreeGeneration.generateTrees();
         ModFlowerGeneration.generateFlowers();
         ModBushGeneration.generateBushes();
+
+        ModEntitySpawns.addSpawns();
     }
 }
