@@ -17,8 +17,8 @@ public class ModEntities {
 
     public static final EntityType<GiraffeEntity> GIRAFFE = Registry.register(BuiltInRegistries.ENTITY_TYPE,
             Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "giraffe"),
-            EntityType.Builder.of(GiraffeEntity::new, MobCategory.CREATURE).sized(1.5f, 2.5f)
-                    .eyeHeight(3f).build(GIRAFFE_KEY));
+            EntityType.Builder.of(GiraffeEntity::new, MobCategory.CREATURE).sized(1.5f, 6.5f)
+                    .eyeHeight(6.5f).build(GIRAFFE_KEY));
 
 
 
