@@ -5,12 +5,15 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.kaupenjoe.mccourse.attachment.ModAttachmentTypes;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.consumeeffect.ModConsumeEffects;
 import net.kaupenjoe.mccourse.data.ModDataComponents;
 import net.kaupenjoe.mccourse.effect.ModEffects;
 import net.kaupenjoe.mccourse.enchantment.ModEnchantmentEffects;
+import net.kaupenjoe.mccourse.entity.ModEntities;
+import net.kaupenjoe.mccourse.entity.custom.GiraffeEntity;
 import net.kaupenjoe.mccourse.event.ModAttackEntityHandler;
 import net.kaupenjoe.mccourse.event.ModServerEvents;
 import net.kaupenjoe.mccourse.fluid.ModFluids;
@@ -69,7 +72,7 @@ public class MCCourse implements ModInitializer, TerraBlenderApi {
 		ModTrunkPlacerTypes.registerModTrunkPlacerTypes();
 
 		ModFoliagePlacerTypes.registerModFoliagePlacerTypes();
-
+		ModEntities.registerModEntities();
 
 		ModFuels.registerModFuels();
 		ModCompostables.registerCompostables();
@@ -86,6 +89,8 @@ public class MCCourse implements ModInitializer, TerraBlenderApi {
 		LootTableEvents.MODIFY.register(ModLootTableModifiers::modifyLootTables);
 
 		AttackEntityCallback.EVENT.register(new ModAttackEntityHandler());
+
+		FabricDefaultAttributeRegistry.register(ModEntities.GIRAFFE, GiraffeEntity.createGiraffeAttributes());
 	}
 
 	@Override

@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.datagen.ModJukeboxSongs;
+import net.kaupenjoe.mccourse.entity.ModEntities;
 import net.kaupenjoe.mccourse.fluid.ModFluids;
 import net.kaupenjoe.mccourse.food.ModFoodProperties;
 import net.kaupenjoe.mccourse.item.custom.*;
@@ -82,6 +83,9 @@ public class ModItems {
 
     public static final Item BISMUTH_WATER_BUCKET = registerItem("bismuth_water_bucket",
             properties -> new BucketItem(ModFluids.BISMUTH_WATER_SOURCE, properties.stacksTo(1).craftRemainder(Items.BUCKET)));
+
+    public static final Item GIRAFFE_SPAWN_EGG = registerItem("giraffe_spawn_egg",
+            properties -> new SpawnEggItem(properties.spawnEgg(ModEntities.GIRAFFE)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name),
