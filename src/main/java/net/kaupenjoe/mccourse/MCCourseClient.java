@@ -9,6 +9,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.entity.ModEntities;
+import net.kaupenjoe.mccourse.entity.client.ChairRenderer;
 import net.kaupenjoe.mccourse.entity.client.GiraffeModel;
 import net.kaupenjoe.mccourse.entity.client.GiraffeRenderer;
 import net.kaupenjoe.mccourse.entity.client.ModModelLayerLocations;
@@ -39,5 +40,7 @@ public class MCCourseClient implements ClientModInitializer {
 
         ModelLayerRegistry.registerModelLayer(ModModelLayerLocations.GIRAFFE, GiraffeModel::createBodyLayer);
         EntityRenderers.register(ModEntities.GIRAFFE, GiraffeRenderer::new);
+
+        EntityRenderers.register(ModEntities.CHAIR, ChairRenderer::new);
     }
 }
