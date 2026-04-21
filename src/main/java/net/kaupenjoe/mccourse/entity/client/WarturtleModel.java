@@ -114,9 +114,9 @@ public class WarturtleModel extends EntityModel<WarturtleRenderState> {
         this.emergeAnimation.apply(state.emergeAnimationState, state.ageInTicks, 1f);
         this.sittingAnimation.apply(state.sittingAnimationState, state.ageInTicks, 1f);
 
-        tier1.visible = false;
-        tier2.visible = false;
-        tier3.visible = false;
+        tier1.visible = state.hasTier1Chest;
+        tier2.visible = state.hasTier2Chest;
+        tier3.visible = state.hasTier3Chest;
     }
 
     private void applyHeadRotation(float headYaw, float headPitch) {
