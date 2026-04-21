@@ -30,6 +30,7 @@
   "item.mccourse.bismuth_water_bucket": "Bismuth Water Bucket",
 
   "item.mccourse.giraffe_spawn_egg": "Giraffe Spawn Egg",
+  "item.mccourse.warturtle_spawn_egg": "Warturtle Spawn Egg",
 
 
 
@@ -104,6 +105,9 @@
   "enchantment.mccourse.lightning_striker": "Lightning Striker",
 
   "entity.minecraft.villager.mccourse.kaupenger": "Kaupenger",
+
+  "entity.mccourse.warturtle": "Warturtle",
+
 
   "effect.mccourse.stinky": "Stinky",
   "effect.mccourse.stinky.description": "Causes entities around you to take damage",

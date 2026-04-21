@@ -47,6 +47,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BISMUTH_WATER_BUCKET);
 
                         output.accept(ModItems.GIRAFFE_SPAWN_EGG);
+                        output.accept(ModItems.WARTURTLE_SPAWN_EGG);
 
 
                     }).build());

@@ -86,6 +86,8 @@ public class ModItems {
 
     public static final Item GIRAFFE_SPAWN_EGG = registerItem("giraffe_spawn_egg",
             properties -> new SpawnEggItem(properties.spawnEgg(ModEntities.GIRAFFE)));
+    public static final Item WARTURTLE_SPAWN_EGG = registerItem("warturtle_spawn_egg",
+            properties -> new SpawnEggItem(properties.spawnEgg(ModEntities.WARTURTLE)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name),

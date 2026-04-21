@@ -7,5 +7,7 @@ import net.minecraft.resources.Identifier;
 public class ModModelLayerLocations {
     public static final ModelLayerLocation GIRAFFE =
             new ModelLayerLocation(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "giraffe"), "main");
+    public static final ModelLayerLocation WARTURTLE =
+            new ModelLayerLocation(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "warturtle"), "main");
 
 }

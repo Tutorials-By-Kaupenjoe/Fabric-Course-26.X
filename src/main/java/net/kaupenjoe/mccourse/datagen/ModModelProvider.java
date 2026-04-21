@@ -137,5 +137,6 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_WATER_BUCKET, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.GIRAFFE_SPAWN_EGG, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.WARTURTLE_SPAWN_EGG, ModelTemplates.FLAT_ITEM);
     }
 }

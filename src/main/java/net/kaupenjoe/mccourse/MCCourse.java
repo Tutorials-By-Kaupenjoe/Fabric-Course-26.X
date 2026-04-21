@@ -14,6 +14,7 @@ import net.kaupenjoe.mccourse.effect.ModEffects;
 import net.kaupenjoe.mccourse.enchantment.ModEnchantmentEffects;
 import net.kaupenjoe.mccourse.entity.ModEntities;
 import net.kaupenjoe.mccourse.entity.custom.GiraffeEntity;
+import net.kaupenjoe.mccourse.entity.custom.WarturtleEntity;
 import net.kaupenjoe.mccourse.event.ModAttackEntityHandler;
 import net.kaupenjoe.mccourse.event.ModServerEvents;
 import net.kaupenjoe.mccourse.fluid.ModFluids;
@@ -91,6 +92,7 @@ public class MCCourse implements ModInitializer, TerraBlenderApi {
 		AttackEntityCallback.EVENT.register(new ModAttackEntityHandler());
 
 		FabricDefaultAttributeRegistry.register(ModEntities.GIRAFFE, GiraffeEntity.createGiraffeAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.WARTURTLE, WarturtleEntity.createAttributes());
 	}
 
 	@Override
