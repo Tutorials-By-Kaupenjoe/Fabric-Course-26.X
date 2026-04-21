@@ -13,9 +13,12 @@ import net.kaupenjoe.mccourse.entity.client.*;
 import net.kaupenjoe.mccourse.event.ModClientEvents;
 import net.kaupenjoe.mccourse.fluid.ModFluids;
 import net.kaupenjoe.mccourse.keybind.ModKeyMappings;
+import net.kaupenjoe.mccourse.menu.ModMenuTypes;
+import net.kaupenjoe.mccourse.menu.custom.WarturtleScreen;
 import net.kaupenjoe.mccourse.particle.BismuthParticle;
 import net.kaupenjoe.mccourse.particle.ModParticles;
 import net.minecraft.client.color.block.BlockTintSources;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.Identifier;
 
@@ -42,5 +45,7 @@ public class MCCourseClient implements ClientModInitializer {
 
         ModelLayerRegistry.registerModelLayer(ModModelLayerLocations.WARTURTLE, WarturtleModel::createBodyLayer);
         EntityRenderers.register(ModEntities.WARTURTLE, WarturtleRenderer::new);
+
+        MenuScreens.register(ModMenuTypes.WARTURTLE_MENU, WarturtleScreen::new);
     }
 }

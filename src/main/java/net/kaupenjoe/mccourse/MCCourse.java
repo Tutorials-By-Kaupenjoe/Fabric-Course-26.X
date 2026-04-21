@@ -22,6 +22,7 @@ import net.kaupenjoe.mccourse.item.ModCreativeModeTabs;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.kaupenjoe.mccourse.keybind.ModKeyMappings;
 import net.kaupenjoe.mccourse.loot.ModLootTableModifiers;
+import net.kaupenjoe.mccourse.menu.ModMenuTypes;
 import net.kaupenjoe.mccourse.networking.ModPackets;
 import net.kaupenjoe.mccourse.particle.ModParticles;
 import net.kaupenjoe.mccourse.potion.ModPotions;
@@ -74,6 +75,9 @@ public class MCCourse implements ModInitializer, TerraBlenderApi {
 
 		ModFoliagePlacerTypes.registerModFoliagePlacerTypes();
 		ModEntities.registerModEntities();
+
+		ModMenuTypes.registerModMenuTypes();
+
 
 		ModFuels.registerModFuels();
 		ModCompostables.registerCompostables();
