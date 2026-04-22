@@ -56,6 +56,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.NETHERITE_WARTURTLE_ARMOR);
                         output.accept(ModItems.BISMUTH_WARTURTLE_ARMOR);
 
+                        output.accept(ModItems.BLOODWOOD_BOAT);
+                        output.accept(ModItems.BLOODWOOD_CHEST_BOAT);
+
 
                     }).build());
 

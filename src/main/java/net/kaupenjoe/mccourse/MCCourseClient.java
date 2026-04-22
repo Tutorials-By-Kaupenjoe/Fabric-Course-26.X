@@ -19,6 +19,8 @@ import net.kaupenjoe.mccourse.particle.BismuthParticle;
 import net.kaupenjoe.mccourse.particle.ModParticles;
 import net.minecraft.client.color.block.BlockTintSources;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.model.object.boat.BoatModel;
+import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.Identifier;
 
@@ -52,5 +54,12 @@ public class MCCourseClient implements ClientModInitializer {
 
         ModelLayerRegistry.registerModelLayer(ModModelLayerLocations.DODO, DodoModel::createBodyLayer);
         EntityRenderers.register(ModEntities.DODO, DodoRenderer::new);
+
+        ModelLayerRegistry.registerModelLayer(ModModelLayerLocations.BLOODWOOD_BOAT, BoatModel::createBoatModel);
+        ModelLayerRegistry.registerModelLayer(ModModelLayerLocations.BLOODWOOD_CHEST_BOAT, BoatModel::createChestBoatModel);
+
+        EntityRenderers.register(ModEntities.BLOODWOOD_BOAT, context -> new BoatRenderer(context, ModModelLayerLocations.BLOODWOOD_BOAT));
+        EntityRenderers.register(ModEntities.BLOODWOOD_CHEST_BOAT, context -> new BoatRenderer(context, ModModelLayerLocations.BLOODWOOD_CHEST_BOAT));
+
     }
 }

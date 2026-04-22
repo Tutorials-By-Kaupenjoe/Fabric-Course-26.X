@@ -39,6 +39,9 @@
   "item.mccourse.netherite_warturtle_armor": "Netherite Warturtle Armor",
   "item.mccourse.bismuth_warturtle_armor": "Bismuth Warturtle Armor",
 
+  "item.mccourse.bloodwood_boat": "Bloodwood Boat",
+  "item.mccourse.bloodwood_chest_boat": "Bloodwood Chest Boat",
+
 
   "item.minecraft.potion.effect.stinky_potion": "Stinky Potion",
   "item.minecraft.splash_potion.effect.stinky_potion": "Stinky Splash Potion",
@@ -114,6 +117,7 @@
 
   "entity.mccourse.warturtle": "Warturtle",
   "entity.mccourse.dodo": "Dodo",
+  "entity.mccourse.bloodwood_chest_boat": "Bloodwood Chest Boat",
 
 
   "effect.mccourse.stinky": "Stinky",

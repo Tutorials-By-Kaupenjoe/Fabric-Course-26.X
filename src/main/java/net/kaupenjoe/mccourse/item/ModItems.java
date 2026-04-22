@@ -102,6 +102,11 @@ public class ModItems {
     public static final Item BISMUTH_WARTURTLE_ARMOR = registerItem("bismuth_warturtle_armor",
             properties -> new WarturtleArmorItem(properties.durability(1000)));
 
+    public static final Item BLOODWOOD_BOAT = registerItem("bloodwood_boat",
+            properties -> new BoatItem(ModEntities.BLOODWOOD_BOAT, properties.stacksTo(1)));
+    public static final Item BLOODWOOD_CHEST_BOAT = registerItem("bloodwood_chest_boat",
+            properties -> new BoatItem(ModEntities.BLOODWOOD_CHEST_BOAT, properties.stacksTo(1)));
+
 
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {

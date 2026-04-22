@@ -16,4 +16,9 @@ public class ModModelLayerLocations {
     public static final ModelLayerLocation DODO =
             new ModelLayerLocation(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "dodo"), "main");
 
+    public static final ModelLayerLocation BLOODWOOD_BOAT =
+            new ModelLayerLocation(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "boat/bloodwood_boat"), "main");
+    public static final ModelLayerLocation BLOODWOOD_CHEST_BOAT =
+            new ModelLayerLocation(Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "chest_boat/bloodwood_boat"), "main");
+
 }

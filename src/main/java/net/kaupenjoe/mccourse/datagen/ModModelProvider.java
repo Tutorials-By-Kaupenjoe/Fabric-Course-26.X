@@ -145,5 +145,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.DIAMOND_WARTURTLE_ARMOR, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.NETHERITE_WARTURTLE_ARMOR, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_WARTURTLE_ARMOR, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(ModItems.BLOODWOOD_BOAT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.BLOODWOOD_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
     }
 }
