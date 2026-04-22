@@ -46,7 +46,7 @@ public class WarturtleMenu extends AbstractContainerMenu {
         this.addSlot(new Slot(warturtleContainer, 1, 44, 63) {
             @Override
             public boolean mayPlace(ItemStack itemStack) {
-                return super.mayPlace(itemStack);
+                return warturtleEntity.hasArmorOn();
             }
         });
 

@@ -2,7 +2,9 @@ package net.kaupenjoe.mccourse.entity.client;
 
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.world.entity.AnimationState;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
+import org.jspecify.annotations.Nullable;
 
 public class WarturtleRenderState extends LivingEntityRenderState {
     public final AnimationState idleAnimationState = new AnimationState();
@@ -15,4 +17,6 @@ public class WarturtleRenderState extends LivingEntityRenderState {
     public boolean hasTier3Chest = false;
 
     public ItemStack bodyArmorItem = ItemStack.EMPTY;
+    @Nullable
+    public DyeColor dyeColor;
 }
