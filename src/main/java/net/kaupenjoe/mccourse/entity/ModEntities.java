@@ -1,10 +1,7 @@
 package net.kaupenjoe.mccourse.entity;
 
 import net.kaupenjoe.mccourse.MCCourse;
-import net.kaupenjoe.mccourse.entity.custom.ChairEntity;
-import net.kaupenjoe.mccourse.entity.custom.DodoEntity;
-import net.kaupenjoe.mccourse.entity.custom.GiraffeEntity;
-import net.kaupenjoe.mccourse.entity.custom.WarturtleEntity;
+import net.kaupenjoe.mccourse.entity.custom.*;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -29,6 +26,8 @@ public class ModEntities {
             Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "bloodwood_boat"));
     public static final ResourceKey<EntityType<?>> BLOODWOOD_CHEST_BOAT_KEY = ResourceKey.create(Registries.ENTITY_TYPE,
             Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "bloodwood_chest_boat"));
+    public static final ResourceKey<EntityType<?>> TOMAHAWK_KEY = ResourceKey.create(Registries.ENTITY_TYPE,
+            Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "tomahawk"));
 
 
     public static final EntityType<GiraffeEntity> GIRAFFE = Registry.register(BuiltInRegistries.ENTITY_TYPE,
@@ -61,6 +60,13 @@ public class ModEntities {
             EntityType.Builder.<ChestBoat>of((entityType, level) -> new ChestBoat(entityType, level, () -> ModItems.BLOODWOOD_CHEST_BOAT),
                             MobCategory.MISC).sized(1.375f, 0.5625f)
                     .clientTrackingRange(10).build(BLOODWOOD_CHEST_BOAT_KEY));
+
+    public static final EntityType<TomahawkProjectileEntity> TOMAHAWK = Registry.register(BuiltInRegistries.ENTITY_TYPE,
+            Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "tomahawk"),
+            EntityType.Builder.<TomahawkProjectileEntity>of(TomahawkProjectileEntity::new, MobCategory.MISC).noLootTable()
+                    .sized(0.5f, 1.15f).build(TOMAHAWK_KEY));
+
+
 
 
     public static void registerModEntities() {

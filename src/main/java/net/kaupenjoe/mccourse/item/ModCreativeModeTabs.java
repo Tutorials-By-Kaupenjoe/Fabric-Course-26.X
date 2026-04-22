@@ -58,6 +58,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.BLOODWOOD_BOAT);
                         output.accept(ModItems.BLOODWOOD_CHEST_BOAT);
+                        output.accept(ModItems.TOMAHAWK);
 
 
                     }).build());

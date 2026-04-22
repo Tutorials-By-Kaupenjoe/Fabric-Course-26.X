@@ -148,5 +148,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerators.generateFlatItem(ModItems.BLOODWOOD_BOAT, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.BLOODWOOD_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.declareCustomModelItem(ModItems.TOMAHAWK);
     }
 }

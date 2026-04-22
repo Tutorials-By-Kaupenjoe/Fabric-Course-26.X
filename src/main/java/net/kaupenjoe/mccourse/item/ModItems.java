@@ -107,6 +107,9 @@ public class ModItems {
     public static final Item BLOODWOOD_CHEST_BOAT = registerItem("bloodwood_chest_boat",
             properties -> new BoatItem(ModEntities.BLOODWOOD_CHEST_BOAT, properties.stacksTo(1)));
 
+    public static final Item TOMAHAWK = registerItem("tomahawk",
+            properties -> new TomahawkItem(properties.stacksTo(16)));
+
 
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {

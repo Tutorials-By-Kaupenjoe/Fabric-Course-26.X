@@ -61,5 +61,7 @@ public class MCCourseClient implements ClientModInitializer {
         EntityRenderers.register(ModEntities.BLOODWOOD_BOAT, context -> new BoatRenderer(context, ModModelLayerLocations.BLOODWOOD_BOAT));
         EntityRenderers.register(ModEntities.BLOODWOOD_CHEST_BOAT, context -> new BoatRenderer(context, ModModelLayerLocations.BLOODWOOD_CHEST_BOAT));
 
+        ModelLayerRegistry.registerModelLayer(ModModelLayerLocations.TOMAHAWK, TomahawkModel::createBodyLayer);
+        EntityRenderers.register(ModEntities.TOMAHAWK, TomahawkRenderer::new);
     }
 }
