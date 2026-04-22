@@ -88,6 +88,8 @@ public class ModItems {
             properties -> new SpawnEggItem(properties.spawnEgg(ModEntities.GIRAFFE)));
     public static final Item WARTURTLE_SPAWN_EGG = registerItem("warturtle_spawn_egg",
             properties -> new SpawnEggItem(properties.spawnEgg(ModEntities.WARTURTLE)));
+    public static final Item DODO_SPAWN_EGG = registerItem("dodo_spawn_egg",
+            properties -> new SpawnEggItem(properties.spawnEgg(ModEntities.DODO)));
 
     public static final Item IRON_WARTURTLE_ARMOR = registerItem("iron_warturtle_armor",
             properties -> new WarturtleArmorItem(properties.durability(200)));

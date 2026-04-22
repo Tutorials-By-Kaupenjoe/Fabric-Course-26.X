@@ -49,5 +49,8 @@ public class MCCourseClient implements ClientModInitializer {
         MenuScreens.register(ModMenuTypes.WARTURTLE_MENU, WarturtleScreen::new);
 
         ModelLayerRegistry.registerModelLayer(ModModelLayerLocations.WARTURTLE_ARMOR, WarturtleModel::createBodyLayer);
+
+        ModelLayerRegistry.registerModelLayer(ModModelLayerLocations.DODO, DodoModel::createBodyLayer);
+        EntityRenderers.register(ModEntities.DODO, DodoRenderer::new);
     }
 }

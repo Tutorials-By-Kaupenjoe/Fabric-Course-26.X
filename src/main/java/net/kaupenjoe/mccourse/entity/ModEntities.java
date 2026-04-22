@@ -2,6 +2,7 @@ package net.kaupenjoe.mccourse.entity;
 
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.entity.custom.ChairEntity;
+import net.kaupenjoe.mccourse.entity.custom.DodoEntity;
 import net.kaupenjoe.mccourse.entity.custom.GiraffeEntity;
 import net.kaupenjoe.mccourse.entity.custom.WarturtleEntity;
 import net.minecraft.core.Registry;
@@ -19,6 +20,8 @@ public class ModEntities {
             Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "chair"));
     public static final ResourceKey<EntityType<?>> WARTURTLE_KEY = ResourceKey.create(Registries.ENTITY_TYPE,
             Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "warturtle"));
+    public static final ResourceKey<EntityType<?>> DODO_KEY = ResourceKey.create(Registries.ENTITY_TYPE,
+            Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "dodo"));
 
 
     public static final EntityType<GiraffeEntity> GIRAFFE = Registry.register(BuiltInRegistries.ENTITY_TYPE,
@@ -36,6 +39,10 @@ public class ModEntities {
             Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "warturtle"),
             EntityType.Builder.of(WarturtleEntity::new, MobCategory.CREATURE).sized(2.5f, 1.5f)
                     .build(WARTURTLE_KEY));
+    public static final EntityType<DodoEntity> DODO = Registry.register(BuiltInRegistries.ENTITY_TYPE,
+            Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "dodo"),
+            EntityType.Builder.of(DodoEntity::new, MobCategory.CREATURE).sized(1f, 2.5f)
+                    .build(DODO_KEY));
 
 
 

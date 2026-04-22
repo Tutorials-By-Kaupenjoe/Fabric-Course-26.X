@@ -31,6 +31,7 @@
 
   "item.mccourse.giraffe_spawn_egg": "Giraffe Spawn Egg",
   "item.mccourse.warturtle_spawn_egg": "Warturtle Spawn Egg",
+  "item.mccourse.dodo_spawn_egg": "Dodo Spawn Egg",
 
   "item.mccourse.iron_warturtle_armor": "Iron Warturtle Armor",
   "item.mccourse.gold_warturtle_armor": "Gold Warturtle Armor",
@@ -112,6 +113,7 @@
   "entity.minecraft.villager.mccourse.kaupenger": "Kaupenger",
 
   "entity.mccourse.warturtle": "Warturtle",
+  "entity.mccourse.dodo": "Dodo",
 
 
   "effect.mccourse.stinky": "Stinky",
