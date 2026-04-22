@@ -47,5 +47,7 @@ public class MCCourseClient implements ClientModInitializer {
         EntityRenderers.register(ModEntities.WARTURTLE, WarturtleRenderer::new);
 
         MenuScreens.register(ModMenuTypes.WARTURTLE_MENU, WarturtleScreen::new);
+
+        ModelLayerRegistry.registerModelLayer(ModModelLayerLocations.WARTURTLE_ARMOR, WarturtleModel::createBodyLayer);
     }
 }

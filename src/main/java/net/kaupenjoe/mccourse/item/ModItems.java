@@ -89,6 +89,19 @@ public class ModItems {
     public static final Item WARTURTLE_SPAWN_EGG = registerItem("warturtle_spawn_egg",
             properties -> new SpawnEggItem(properties.spawnEgg(ModEntities.WARTURTLE)));
 
+    public static final Item IRON_WARTURTLE_ARMOR = registerItem("iron_warturtle_armor",
+            properties -> new WarturtleArmorItem(properties.durability(200)));
+    public static final Item GOLD_WARTURTLE_ARMOR = registerItem("gold_warturtle_armor",
+            properties -> new WarturtleArmorItem(properties.durability(400)));
+    public static final Item DIAMOND_WARTURTLE_ARMOR = registerItem("diamond_warturtle_armor",
+            properties -> new WarturtleArmorItem(properties.durability(600)));
+    public static final Item NETHERITE_WARTURTLE_ARMOR = registerItem("netherite_warturtle_armor",
+            properties -> new WarturtleArmorItem(properties.durability(800)));
+    public static final Item BISMUTH_WARTURTLE_ARMOR = registerItem("bismuth_warturtle_armor",
+            properties -> new WarturtleArmorItem(properties.durability(1000)));
+
+
+
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name),
                 function.apply(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name)))));

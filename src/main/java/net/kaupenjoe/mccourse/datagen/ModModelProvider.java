@@ -138,5 +138,11 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_WATER_BUCKET, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.GIRAFFE_SPAWN_EGG, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.WARTURTLE_SPAWN_EGG, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(ModItems.IRON_WARTURTLE_ARMOR, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.GOLD_WARTURTLE_ARMOR, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.DIAMOND_WARTURTLE_ARMOR, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.NETHERITE_WARTURTLE_ARMOR, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.BISMUTH_WARTURTLE_ARMOR, ModelTemplates.FLAT_ITEM);
     }
 }
