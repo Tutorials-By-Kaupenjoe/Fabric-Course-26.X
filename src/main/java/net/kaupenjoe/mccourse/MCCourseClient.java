@@ -16,6 +16,7 @@ import net.kaupenjoe.mccourse.event.ModClientEvents;
 import net.kaupenjoe.mccourse.fluid.ModFluids;
 import net.kaupenjoe.mccourse.keybind.ModKeyMappings;
 import net.kaupenjoe.mccourse.menu.ModMenuTypes;
+import net.kaupenjoe.mccourse.menu.custom.PedestalScreen;
 import net.kaupenjoe.mccourse.menu.custom.WarturtleScreen;
 import net.kaupenjoe.mccourse.particle.BismuthParticle;
 import net.kaupenjoe.mccourse.particle.ModParticles;
@@ -68,5 +69,6 @@ public class MCCourseClient implements ClientModInitializer {
         EntityRenderers.register(ModEntities.TOMAHAWK, TomahawkRenderer::new);
 
         BlockEntityRenderers.register(ModBlockEntities.PEDESTAL_BE, PedestalBlockEntityRenderer::new);
+        MenuScreens.register(ModMenuTypes.PEDESTAL_MENU, PedestalScreen::new);
     }
 }

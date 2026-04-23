@@ -1,13 +1,18 @@
 package net.kaupenjoe.mccourse.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import net.fabricmc.fabric.api.menu.v1.ExtendedMenuProvider;
 import net.kaupenjoe.mccourse.block.entity.custom.PedestalBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -57,6 +62,27 @@ public class PedestalBlock extends BaseEntityBlock {
     protected InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level,
                                           BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if(level.getBlockEntity(pos) instanceof PedestalBlockEntity pedestalBlockEntity) {
+            if(player.isCrouching()) { // && !level.isClientSide()) {
+                player.openMenu(new ExtendedMenuProvider<BlockPos>() {
+                    @Override
+                    public @Nullable AbstractContainerMenu createMenu(int containerId, Inventory inventory, Player player) {
+                        return pedestalBlockEntity.createMenu(containerId, inventory, player);
+                    }
+
+                    @Override
+                    public Component getDisplayName() {
+                        return Component.translatable("block.mccourse.main_pedestal");
+                    }
+
+                    @Override
+                    public BlockPos getScreenOpeningData(ServerPlayer player) {
+                        return pedestalBlockEntity.getBlockPos();
+                    }
+                });
+
+                return InteractionResult.SUCCESS;
+            }
+
             boolean isPedestalEmpty = pedestalBlockEntity.isEmpty();
 
             // INSERTING
