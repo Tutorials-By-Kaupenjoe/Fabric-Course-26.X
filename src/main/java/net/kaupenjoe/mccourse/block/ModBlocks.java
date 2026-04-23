@@ -151,6 +151,9 @@ public class ModBlocks {
     public static final Block KAUPEN_PORTAL = registerBlock("kaupen_portal",
             properties -> new KaupenPortalBlock(properties.strength(1f)));
 
+    public static final Block MAIN_PEDESTAL = registerBlock("main_pedestal",
+            properties -> new PedestalBlock(properties.strength(2f).noOcclusion()));
+
 
 
     private static Block registerBlockWithoutBlockItem(String name, Function<BlockBehaviour.Properties, Block> function) {

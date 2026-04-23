@@ -104,6 +104,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         add(ModBlocks.BLOODWOOD_LEAVES, createLeavesDrops(ModBlocks.BLOODWOOD_LEAVES, ModBlocks.BLOODWOOD_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES));
 
         dropSelf(ModBlocks.KAUPEN_PORTAL);
+        dropSelf(ModBlocks.MAIN_PEDESTAL);
     }
 
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {

@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.kaupenjoe.mccourse.attachment.ModAttachmentTypes;
 import net.kaupenjoe.mccourse.block.ModBlocks;
+import net.kaupenjoe.mccourse.block.entity.ModBlockEntities;
 import net.kaupenjoe.mccourse.consumeeffect.ModConsumeEffects;
 import net.kaupenjoe.mccourse.data.ModDataComponents;
 import net.kaupenjoe.mccourse.effect.ModEffects;
@@ -78,6 +79,7 @@ public class MCCourse implements ModInitializer, TerraBlenderApi {
 		ModEntities.registerModEntities();
 
 		ModMenuTypes.registerModMenuTypes();
+		ModBlockEntities.registerBlockEntities();
 
 
 		ModFuels.registerModFuels();
