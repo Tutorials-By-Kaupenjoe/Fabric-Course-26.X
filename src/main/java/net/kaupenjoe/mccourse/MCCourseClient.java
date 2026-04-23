@@ -8,6 +8,8 @@ import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.kaupenjoe.mccourse.block.ModBlocks;
+import net.kaupenjoe.mccourse.block.entity.ModBlockEntities;
+import net.kaupenjoe.mccourse.block.entity.renderer.PedestalBlockEntityRenderer;
 import net.kaupenjoe.mccourse.entity.ModEntities;
 import net.kaupenjoe.mccourse.entity.client.*;
 import net.kaupenjoe.mccourse.event.ModClientEvents;
@@ -20,6 +22,7 @@ import net.kaupenjoe.mccourse.particle.ModParticles;
 import net.minecraft.client.color.block.BlockTintSources;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.object.boat.BoatModel;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.Identifier;
@@ -63,5 +66,7 @@ public class MCCourseClient implements ClientModInitializer {
 
         ModelLayerRegistry.registerModelLayer(ModModelLayerLocations.TOMAHAWK, TomahawkModel::createBodyLayer);
         EntityRenderers.register(ModEntities.TOMAHAWK, TomahawkRenderer::new);
+
+        BlockEntityRenderers.register(ModBlockEntities.PEDESTAL_BE, PedestalBlockEntityRenderer::new);
     }
 }
