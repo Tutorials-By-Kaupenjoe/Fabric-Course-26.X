@@ -1,6 +1,7 @@
 package net.kaupenjoe.mccourse.block.entity.custom;
 
 import net.fabricmc.fabric.api.menu.v1.ExtendedMenuProvider;
+import net.kaupenjoe.mccourse.block.custom.CrystallizerBlock;
 import net.kaupenjoe.mccourse.block.entity.ImplementedInventory;
 import net.kaupenjoe.mccourse.block.entity.ModBlockEntities;
 import net.kaupenjoe.mccourse.item.ModItems;
@@ -117,14 +118,17 @@ public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenu
     public void tick(Level level, BlockPos pos, BlockState state) {
         if(hasRecipe() && isOutputSlotEmptyOrReceivable()) {
             increaseCraftingProgress();
+            level.setBlockAndUpdate(pos, state.setValue(CrystallizerBlock.LIT, true));
             setChanged(level, pos, state);
 
             if (hasCraftingFinished()) {
                 craftItem();
                 resetProgress();
             }
+
         } else {
             resetProgress();
+            level.setBlockAndUpdate(pos, state.setValue(CrystallizerBlock.LIT, false));
         }
     }
 
