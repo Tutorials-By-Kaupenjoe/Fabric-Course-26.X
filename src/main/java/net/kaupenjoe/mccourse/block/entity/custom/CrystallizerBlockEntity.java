@@ -11,6 +11,7 @@ import net.kaupenjoe.mccourse.recipe.ModRecipes;
 import net.kaupenjoe.mccourse.recipe.custom.CrystallizerRecipe;
 import net.kaupenjoe.mccourse.recipe.custom.CrystallizerRecipeInput;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
@@ -192,6 +193,39 @@ public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenu
 
     private boolean hasCraftingFinished() {
         return progress >= maxProgress;
+    }
+
+    /* SIDED INVENTORY */
+    @Override
+    public boolean canPlaceItemThroughFace(int slot, ItemStack stack, @Nullable Direction side) {
+        if (side == null || side == Direction.DOWN) return false;
+        if (side == Direction.UP) return slot == INPUT_SLOT;
+
+        if (slot != INPUT_SLOT && slot != FLUID_ITEM_SLOT && slot != ENERGY_ITEM_SLOT) {
+            return false;
+        }
+
+        Direction localDir = this.level.getBlockState(this.getBlockPos()).getValue(CrystallizerBlock.FACING);
+        return switch (slot) {
+            case INPUT_SLOT -> side != localDir.getOpposite(); // If not Up/Down/Back, it must be Front/Left/Right
+            case FLUID_ITEM_SLOT -> side == localDir.getClockWise(); // Left
+            case ENERGY_ITEM_SLOT -> side == localDir.getCounterClockWise(); // Right
+            default -> false; // Fallback
+        };
+    }
+
+    @Override
+    public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction side) {
+        if (slot != OUTPUT_SLOT || side == Direction.UP) {
+            return false;
+        }
+
+        if (side == Direction.DOWN) {
+            return true;
+        }
+
+        Direction localDir = this.level.getBlockState(this.getBlockPos()).getValue(CrystallizerBlock.FACING);
+        return side == localDir.getOpposite() || side == localDir.getClockWise();
     }
 
 
