@@ -1,0 +1,8 @@
+{
+  "type": "mccourse:crystallizing",
+  "ingredient": "mccourse:raw_bismuth",
+  "result": {
+    "id": "mccourse:bismuth",
+    "count": 3
+  }
+}

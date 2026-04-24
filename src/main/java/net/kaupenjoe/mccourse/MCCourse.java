@@ -28,6 +28,7 @@ import net.kaupenjoe.mccourse.menu.ModMenuTypes;
 import net.kaupenjoe.mccourse.networking.ModPackets;
 import net.kaupenjoe.mccourse.particle.ModParticles;
 import net.kaupenjoe.mccourse.potion.ModPotions;
+import net.kaupenjoe.mccourse.recipe.ModRecipes;
 import net.kaupenjoe.mccourse.registries.*;
 import net.kaupenjoe.mccourse.sound.ModSounds;
 import net.kaupenjoe.mccourse.stat.ModStats;
@@ -80,6 +81,9 @@ public class MCCourse implements ModInitializer, TerraBlenderApi {
 
 		ModMenuTypes.registerModMenuTypes();
 		ModBlockEntities.registerBlockEntities();
+
+		ModRecipes.registerModRecipes();
+
 
 
 		ModFuels.registerModFuels();
