@@ -17,6 +17,12 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	maven { url = 'https://maven.minecraftforge.net/' }
+	maven {
+		url "https://cursemaven.com"
+		content {
+			includeGroup "curse.maven"
+		}
+	}
 }
 
 fabricApi {
@@ -35,6 +41,13 @@ dependencies {
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
 	implementation 'com.github.glitchfiend:TerraBlender-fabric:26.1.2-26.1.2.0.1'
+
+	include api('teamreborn:energy:5.0.0') {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
+
+	implementation "curse.maven:techreborn-233564:7920013"
+	implementation "curse.maven:reborncore-237903:7920012"
 }
 
 processResources {

@@ -1,6 +1,7 @@
 package net.kaupenjoe.mccourse.block.entity.custom;
 
 import net.fabricmc.fabric.api.menu.v1.ExtendedMenuProvider;
+import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.kaupenjoe.mccourse.block.custom.CrystallizerBlock;
 import net.kaupenjoe.mccourse.block.entity.ImplementedInventory;
 import net.kaupenjoe.mccourse.block.entity.ModBlockEntities;
@@ -35,6 +36,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import org.jspecify.annotations.Nullable;
+import team.reborn.energy.api.base.SimpleEnergyStorage;
 
 import java.util.Optional;
 
@@ -49,6 +51,16 @@ public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenu
     private final ContainerData data;
     private int progress = 0;
     private int maxProgress = 72;
+
+    private static final int ENERGY_CRAFT_AMOUNT = 25; // amount per TICK to craft
+
+    private final SimpleEnergyStorage ENERGY_STORAGE = new SimpleEnergyStorage(64000, 320, 25) {
+        @Override
+        protected void onFinalCommit() {
+            setChanged(level, getBlockPos(), getBlockState());
+            getLevel().sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
+        }
+    };
 
 
     public CrystallizerBlockEntity(BlockPos worldPosition, BlockState blockState) {
@@ -89,6 +101,7 @@ public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenu
         super.saveAdditional(output);
         output.putInt("crystallizer.progress", progress);
         output.putInt("crystallizer.max_progress", maxProgress);
+        output.putLong("crystallizer.energy", ENERGY_STORAGE.amount);
 
         ContainerHelper.saveAllItems(output, inventory);
     }
@@ -98,6 +111,7 @@ public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenu
         super.loadAdditional(input);
         progress = input.getIntOr("crystallizer.progress", 0);
         maxProgress = input.getIntOr("crystallizer.max_progress", 72);
+        ENERGY_STORAGE.amount = input.getLongOr("crystallizer.energy", 0);
 
         ContainerHelper.loadAllItems(input, inventory);
     }
@@ -126,6 +140,7 @@ public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenu
     public void tick(Level level, BlockPos pos, BlockState state) {
         if(hasRecipe() && isOutputSlotEmptyOrReceivable()) {
             increaseCraftingProgress();
+            useEnergyForCrafting();
             level.setBlockAndUpdate(pos, state.setValue(CrystallizerBlock.LIT, true));
             setChanged(level, pos, state);
 
@@ -137,6 +152,13 @@ public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenu
         } else {
             resetProgress();
             level.setBlockAndUpdate(pos, state.setValue(CrystallizerBlock.LIT, false));
+        }
+
+
+        // Debug-ish purposes!
+        if(hasItemInEnergyItemSlot()) {
+            fillUpOnEnergy();
+            setChanged(level, pos, state);
         }
     }
 
@@ -162,8 +184,9 @@ public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenu
         ItemStack output = recipe.get().value().assemble(new CrystallizerRecipeInput(inventory.get(INPUT_SLOT)));
         boolean isItemRight = canInsertItemIntoOutputSlot(output);
         boolean isAmountRight = canInsertAmountIntoOutputSlot(output.getCount());
+        boolean hasEnergy = hasEnoughEnergyToCraft();
 
-        return isItemRight && isAmountRight;
+        return isItemRight && isAmountRight && hasEnergy;
     }
 
     private Optional<RecipeHolder<CrystallizerRecipe>> getCurrentRecipe() {
@@ -226,6 +249,33 @@ public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenu
 
         Direction localDir = this.level.getBlockState(this.getBlockPos()).getValue(CrystallizerBlock.FACING);
         return side == localDir.getOpposite() || side == localDir.getClockWise();
+    }
+
+    /* ENERGY HANDLING */
+    public SimpleEnergyStorage getEnergyStorage() {
+        return this.ENERGY_STORAGE;
+    }
+
+    private boolean hasEnoughEnergyToCraft() {
+        return ENERGY_STORAGE.amount >= (long) ENERGY_CRAFT_AMOUNT * maxProgress;
+    }
+
+    private void fillUpOnEnergy() {
+        try(Transaction transaction = Transaction.openOuter()) {
+            ENERGY_STORAGE.insert(160, transaction);
+            transaction.commit();
+        }
+    }
+
+    private boolean hasItemInEnergyItemSlot() {
+        return inventory.get(ENERGY_ITEM_SLOT).is(ModItems.CAULIFLOWER);
+    }
+
+    private void useEnergyForCrafting() {
+        try(Transaction transaction = Transaction.openOuter()) {
+            ENERGY_STORAGE.extract(ENERGY_CRAFT_AMOUNT, transaction);
+            transaction.commit();
+        }
     }
 
 

@@ -9,6 +9,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import team.reborn.energy.api.EnergyStorage;
 
 public class ModBlockEntities {
     public static final BlockEntityType<PedestalBlockEntity> PEDESTAL_BE =
@@ -22,5 +23,7 @@ public class ModBlockEntities {
 
     public static void registerBlockEntities() {
         MCCourse.LOGGER.info("Registering Block Entities for " + MCCourse.MOD_ID);
+
+        EnergyStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.getEnergyStorage(), CRYSTALLIZER_BE);
     }
 }
