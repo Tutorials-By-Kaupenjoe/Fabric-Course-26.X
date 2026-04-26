@@ -78,6 +78,7 @@
   "block.mccourse.chair": "Chair",
 
   "block.mccourse.bismuth_water_block": "Bismuth Water",
+  "block.mccourse.bismuth_water": "Bismuth Water",
 
   "block.mccourse.bloodwood_log": "Bloodwood Log",
   "block.mccourse.bloodwood_wood": "Bloodwood Wood",
@@ -154,6 +155,9 @@
 
   "stat.mccourse.chisel_used": "Chisel Used",
   "stat.mccourse.mana_used_total": "Total Mana Used",
+
+  "mccourse.tooltip.liquid.amount.with.capacity": "%s / %s mB",
+  "mccourse.tooltip.liquid.amount": "%s mB",
 
   "creativetab.mccourse.bismuth_items": "Bismuth Course Items",
   "creativetab.mccourse.bismuth_blocks": "Bismuth Course Blocks"
