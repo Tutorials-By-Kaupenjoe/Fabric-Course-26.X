@@ -1,6 +1,5 @@
 package net.kaupenjoe.mccourse.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.fabricmc.fabric.api.menu.v1.ExtendedMenuProvider;
 import net.kaupenjoe.mccourse.block.entity.custom.PedestalBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -25,27 +24,15 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jspecify.annotations.Nullable;
 
-public class PedestalBlock extends BaseEntityBlock {
+public abstract class PedestalBlock extends BaseEntityBlock {
     public static final VoxelShape SHAPE = Block.box(2, 0, 2, 14, 13, 14);
-    public static final MapCodec<PedestalBlock> CODEC = simpleCodec(PedestalBlock::new);
-
     public PedestalBlock(Properties properties) {
         super(properties);
     }
 
     @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
-    }
-
-    @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE;
-    }
-
-    @Override
-    public @Nullable BlockEntity newBlockEntity(BlockPos worldPosition, BlockState blockState) {
-        return new PedestalBlockEntity(worldPosition, blockState);
     }
 
     @Override
@@ -71,7 +58,7 @@ public class PedestalBlock extends BaseEntityBlock {
 
                     @Override
                     public Component getDisplayName() {
-                        return Component.translatable("block.mccourse.main_pedestal");
+                        return Component.translatable("block.mccourse.pedestal");
                     }
 
                     @Override

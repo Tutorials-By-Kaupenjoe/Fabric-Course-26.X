@@ -105,6 +105,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
 
         dropSelf(ModBlocks.KAUPEN_PORTAL);
         dropSelf(ModBlocks.MAIN_PEDESTAL);
+        dropSelf(ModBlocks.SIDE_PEDESTAL);
         dropSelf(ModBlocks.CRYSTALLIZER);
     }
 

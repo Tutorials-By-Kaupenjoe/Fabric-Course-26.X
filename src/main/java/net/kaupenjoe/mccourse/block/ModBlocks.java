@@ -152,7 +152,9 @@ public class ModBlocks {
             properties -> new KaupenPortalBlock(properties.strength(1f)));
 
     public static final Block MAIN_PEDESTAL = registerBlock("main_pedestal",
-            properties -> new PedestalBlock(properties.strength(2f).noOcclusion()));
+            properties -> new MainPedestalBlock(properties.strength(2f).noOcclusion()));
+    public static final Block SIDE_PEDESTAL = registerBlock("side_pedestal",
+            properties -> new SidePedestalBlock(properties.strength(2f).noOcclusion()));
     public static final Block CRYSTALLIZER = registerBlock("crystallizer",
             properties -> new CrystallizerBlock(properties.strength(2f)));
 

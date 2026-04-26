@@ -1,0 +1,19 @@
+{
+  "type": "mccourse:pedestal_crafting",
+  "ingredients": [
+    "minecraft:iron_ingot",
+
+    "minecraft:diamond",
+    "minecraft:redstone",
+    "minecraft:gold_block",
+    "minecraft:redstone",
+
+    "minecraft:diamond",
+    "minecraft:redstone",
+    "minecraft:gold_block",
+    "minecraft:redstone"
+  ],
+  "result": {
+    "id": "mccourse:tomahawk"
+  }
+}

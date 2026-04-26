@@ -1,0 +1,18 @@
+{
+  "type": "mccourse:pedestal_crafting",
+  "ingredients": [
+    "minecraft:diamond",
+
+    "minecraft:diamond",
+    "minecraft:redstone",
+    "minecraft:diamond",
+    "minecraft:redstone",
+    "minecraft:diamond",
+    "minecraft:redstone",
+    "minecraft:diamond",
+    "minecraft:redstone"
+  ],
+  "result": {
+    "id": "minecraft:slime_ball"
+  }
+}

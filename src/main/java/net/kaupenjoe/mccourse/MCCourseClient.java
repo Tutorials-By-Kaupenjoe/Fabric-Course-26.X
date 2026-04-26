@@ -9,7 +9,9 @@ import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.block.entity.ModBlockEntities;
+import net.kaupenjoe.mccourse.block.entity.renderer.MainPedestalBlockEntityRenderer;
 import net.kaupenjoe.mccourse.block.entity.renderer.PedestalBlockEntityRenderer;
+import net.kaupenjoe.mccourse.block.entity.renderer.SidePedestalBlockEntityRenderer;
 import net.kaupenjoe.mccourse.entity.ModEntities;
 import net.kaupenjoe.mccourse.entity.client.*;
 import net.kaupenjoe.mccourse.event.ModClientEvents;
@@ -69,7 +71,8 @@ public class MCCourseClient implements ClientModInitializer {
         ModelLayerRegistry.registerModelLayer(ModModelLayerLocations.TOMAHAWK, TomahawkModel::createBodyLayer);
         EntityRenderers.register(ModEntities.TOMAHAWK, TomahawkRenderer::new);
 
-        BlockEntityRenderers.register(ModBlockEntities.PEDESTAL_BE, PedestalBlockEntityRenderer::new);
+        BlockEntityRenderers.register(ModBlockEntities.MAIN_PEDESTAL_BE, MainPedestalBlockEntityRenderer::new);
+        BlockEntityRenderers.register(ModBlockEntities.SIDE_PEDESTAL_BE, SidePedestalBlockEntityRenderer::new);
         MenuScreens.register(ModMenuTypes.PEDESTAL_MENU, PedestalScreen::new);
 
         MenuScreens.register(ModMenuTypes.CRYSTALLIZER_MENU, CrystallizerScreen::new);

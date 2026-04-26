@@ -1,6 +1,5 @@
 package net.kaupenjoe.mccourse.block.entity.custom;
 
-import net.kaupenjoe.mccourse.block.entity.ModBlockEntities;
 import net.kaupenjoe.mccourse.menu.custom.PedestalMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -18,17 +17,18 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.ticks.ContainerSingleItem;
 import org.jspecify.annotations.Nullable;
 
-public class PedestalBlockEntity extends BlockEntity implements ContainerSingleItem.BlockContainerSingleItem, MenuProvider {
+public abstract class PedestalBlockEntity extends BlockEntity implements ContainerSingleItem.BlockContainerSingleItem, MenuProvider {
     public NonNullList<ItemStack> inventory = NonNullList.withSize(1, ItemStack.EMPTY);
 
-    public PedestalBlockEntity(BlockPos worldPosition, BlockState blockState) {
-        super(ModBlockEntities.PEDESTAL_BE, worldPosition, blockState);
+    public PedestalBlockEntity(BlockEntityType<?> type, BlockPos worldPosition, BlockState blockState) {
+        super(type, worldPosition, blockState);
     }
 
     @Override
@@ -77,8 +77,6 @@ public class PedestalBlockEntity extends BlockEntity implements ContainerSingleI
     public @Nullable AbstractContainerMenu createMenu(int containerId, Inventory inventory, Player player) {
         return new PedestalMenu(containerId, inventory, this);
     }
-
-
 
     /* BLOCK ENTITY SYNC METHOD */
     @Override

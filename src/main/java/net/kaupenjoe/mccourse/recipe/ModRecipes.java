@@ -2,6 +2,7 @@ package net.kaupenjoe.mccourse.recipe;
 
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.recipe.custom.CrystallizerRecipe;
+import net.kaupenjoe.mccourse.recipe.custom.PedestalRecipe;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -18,6 +19,18 @@ public class ModRecipes {
                 @Override
                 public String toString() {
                     return "crystallizing";
+                }
+            });
+
+    public static final RecipeSerializer<PedestalRecipe> PEDESTAL_SERIALIZER = Registry.register(
+            BuiltInRegistries.RECIPE_SERIALIZER, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "pedestal_crafting"),
+            new RecipeSerializer<>(PedestalRecipe.CODEC, PedestalRecipe.STREAM_CODEC));
+    public static final RecipeType<PedestalRecipe> PEDESTAL_TYPE = Registry.register(
+            BuiltInRegistries.RECIPE_TYPE, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "pedestal_crafting"),
+            new RecipeType<PedestalRecipe>() {
+                @Override
+                public String toString() {
+                    return "pedestal_crafting";
                 }
             });
 

@@ -20,11 +20,23 @@ import org.jspecify.annotations.Nullable;
 
 import java.util.List;
 
-public abstract class PedestalBlockEntityRenderer implements BlockEntityRenderer<PedestalBlockEntity, PedestalBlockEntityRenderState> {
-    private final ItemModelResolver itemModelResolver;
+public class MainPedestalBlockEntityRenderer extends PedestalBlockEntityRenderer {
+    private final BlockModelResolver blockResolver;
+    private final BlockModelRenderState blockRenderState = new BlockModelRenderState();
+    List<Vector2i> offsets = List.of(
+            new Vector2i(3, 0),
+            new Vector2i(2, 2),
+            new Vector2i(0, 3),
+            new Vector2i(2, -2),
 
-    public PedestalBlockEntityRenderer(BlockEntityRendererProvider.Context context) {
-        itemModelResolver = context.itemModelResolver();
+            new Vector2i(-2, 2),
+            new Vector2i(-2, -2),
+            new Vector2i(0, -3),
+            new Vector2i(-3, 0));
+
+    public MainPedestalBlockEntityRenderer(BlockEntityRendererProvider.Context context) {
+        super(context);
+        blockResolver = context.blockModelResolver();
     }
 
     @Override
@@ -34,26 +46,25 @@ public abstract class PedestalBlockEntityRenderer implements BlockEntityRenderer
 
     @Override
     public void extractRenderState(PedestalBlockEntity blockEntity, PedestalBlockEntityRenderState state, float partialTicks, Vec3 cameraPosition, ModelFeatureRenderer.@Nullable CrumblingOverlay breakProgress) {
-        BlockEntityRenderer.super.extractRenderState(blockEntity, state, partialTicks, cameraPosition, breakProgress);
-
-        state.level = blockEntity.getLevel();
-        state.rotation = (blockEntity.getLevel().getGameTime() + partialTicks * 0.5f) % 360f;
-
-        itemModelResolver.updateForTopItem(state.itemStackRenderState,
-                blockEntity.getTheItem(), ItemDisplayContext.FIXED, blockEntity.getLevel(), null, 0);
+        super.extractRenderState(blockEntity, state, partialTicks, cameraPosition, breakProgress);
+        blockResolver.update(blockRenderState, blockEntity.getBlockState(), BlockDisplayContext.create());
     }
 
     @Override
     public void submit(PedestalBlockEntityRenderState state, PoseStack poseStack,
                        SubmitNodeCollector submitNodeCollector, CameraRenderState camera) {
+        super.submit(state, poseStack, submitNodeCollector, camera);
+        offsets.forEach(offset -> {
+            if(state.level.getBlockState(state.blockPos.offset(offset.x, 0, offset.y)).isAir()) {
+                renderSidePedestal(poseStack, submitNodeCollector, offset.x, offset.y);
+            }
+        });
+    }
+
+    private void renderSidePedestal(PoseStack poseStack, SubmitNodeCollector submitNodeCollector, float xOffset, float zOffset) {
         poseStack.pushPose();
-
-        poseStack.translate(0.5f, 1.15f, 0.5f);
-        poseStack.scale(0.5f, 0.5f, 0.5f);
-        poseStack.mulPose(Axis.YP.rotationDegrees(state.rotation));
-
-        state.itemStackRenderState.submit(poseStack, submitNodeCollector, state.lightCoords, OverlayTexture.NO_OVERLAY, 0);
-
+        poseStack.translate(xOffset, 0f, zOffset);
+        blockRenderState.submit(poseStack, submitNodeCollector, 400, OverlayTexture.RED_OVERLAY_V, 0);
         poseStack.popPose();
     }
 }
