@@ -1,0 +1,21 @@
+// 26.2	-999999999-01-01T00:00:00	MCCourse/Tags for minecraft:block
+8a39aad0d42907ffd16410d43f304e0d5a597383 data/mccourse/tags/block/bloodwood_logs.json
+cfde3185dfa6e6a0e09ea3be0b7dacfcb2b9724c data/mccourse/tags/block/incorrect_for_bismuth_tool.json
+64ba52a0503fe733de3f3907b7f157cb0821a8e3 data/mccourse/tags/block/mineable/paxel.json
+370f9978b80f0440555d015a201c8e77af44a8a8 data/mccourse/tags/block/needs_bismuth_tool.json
+b2d1a3f6fd05fb5119213e5404dba5b4a558b11e data/minecraft/tags/block/buttons.json
+fcfd722451875638422c8f1679524deed30421d7 data/minecraft/tags/block/crops.json
+2d64d61e2d3107cdb5ba149a4d28ea11219c4f9c data/minecraft/tags/block/doors.json
+0eded3f9a02df8ad4fad6e113be5c00af68fa80d data/minecraft/tags/block/fence_gates.json
+0eded3f9a02df8ad4fad6e113be5c00af68fa80d data/minecraft/tags/block/fences.json
+dbc5fb022577671892ac6be74d537251726cc629 data/minecraft/tags/block/flower_pots.json
+e6dfee1ac11319113486db5874173a61314bd232 data/minecraft/tags/block/flowers.json
+0c0e08c3b020302ed1295fcc00fdd919787625f7 data/minecraft/tags/block/mineable/pickaxe.json
+3c2197468be4c30ab7eeffdda9918b5a18c0db9b data/minecraft/tags/block/needs_diamond_tool.json
+281120aa983d144af3a989432781851a83b4c0c0 data/minecraft/tags/block/needs_iron_tool.json
+0fe5bc70bce4b991690450a5958d87b9b268b606 data/minecraft/tags/block/planks.json
+f41ad9877e1cd661f9ceec546b03dfaa60e9254b data/minecraft/tags/block/pressure_plates.json
+e6166982e87d580593bcc90690d5ef1bdc18d890 data/minecraft/tags/block/slabs.json
+5aee88b6d1a190f20f8ad29a908e0436d5d6a7f7 data/minecraft/tags/block/stairs.json
+f2239e1504116ecf04baa1546dde9f30c773843a data/minecraft/tags/block/trapdoors.json
+1737fcc335d7646a46b217a55a92e9bedcac0793 data/minecraft/tags/block/walls.json

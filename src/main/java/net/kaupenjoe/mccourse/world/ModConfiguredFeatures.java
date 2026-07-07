@@ -51,6 +51,8 @@ public class ModConfiguredFeatures {
 
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+        var blocks = context.lookup(Registries.BLOCK);
+
         List<OreConfiguration.TargetBlockState> overworldBismuthTargets = List.of(
                         OreConfiguration.target(new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), ModBlocks.BISMUTH_ORE.defaultBlockState()),
                         OreConfiguration.target(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), ModBlocks.BISMUTH_DEEPSLATE_ORE.defaultBlockState()));
@@ -70,12 +72,12 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.simple(ModBlocks.BLOODWOOD_LEAVES),
                 new InvertedPyramidFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), 3),
 
-                new TwoLayersFeatureSize(1, 0, 2))
-                .belowTrunkProvider(BlockStateProvider.simple(Blocks.STONE))
+                new TwoLayersFeatureSize(1, 0, 2),
+                BlockStateProvider.simple(Blocks.STONE))
                 .build());
 
         register(context, PETUNIA_FLOWER_KEY, Feature.SIMPLE_RANDOM_SELECTOR,
-                new SimpleRandomFeatureConfiguration(
+                new CompositeFeatureConfiguration(
                         HolderSet.direct(PlacementUtils.inlinePlaced(
                                 Feature.SIMPLE_BLOCK,
                                 new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.PETUNIA)),
@@ -85,7 +87,7 @@ public class ModConfiguredFeatures {
                         ))));
 
         register(context, HONEY_BERRY_BUSH_KEY, Feature.SIMPLE_RANDOM_SELECTOR,
-                new SimpleRandomFeatureConfiguration(
+                new CompositeFeatureConfiguration(
                         HolderSet.direct(PlacementUtils.inlinePlaced(
                                 Feature.SIMPLE_BLOCK,
                                 new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.HONEY_BERRY_BUSH
@@ -106,8 +108,8 @@ public class ModConfiguredFeatures {
                                         ModBlocks.RAW_BISMUTH_BLOCK.defaultBlockState(),
                                         ModBlocks.MAGIC_BLOCK.defaultBlockState()
                                 ),
-                                BlockTags.FEATURES_CANNOT_REPLACE,
-                                BlockTags.GEODE_INVALID_BLOCKS
+                                blocks.getOrThrow(BlockTags.FEATURES_CANNOT_REPLACE),
+                                blocks.getOrThrow(BlockTags.GEODE_INVALID_BLOCKS)
                         ),
                         new GeodeLayerSettings(1.7, 2.2, 3.2, 4.2),
                         new GeodeCrackSettings(0.95, 2.0, 2),

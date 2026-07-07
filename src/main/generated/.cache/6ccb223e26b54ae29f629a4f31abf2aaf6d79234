@@ -1,0 +1,18 @@
+// 26.2	-999999999-01-01T00:00:00	MCCourse/Tags for minecraft:item
+4af9a87ea723fb3cdbf4de24a8a04206e668a280 data/mccourse/tags/item/bismuth_repairables.json
+8a39aad0d42907ffd16410d43f304e0d5a597383 data/mccourse/tags/item/bloodwood_logs.json
+a6f1f04be6e2d556508f72792dbf09988a794753 data/mccourse/tags/item/transformable_items.json
+e94d625ef6f9551428a327d202bb4daf38201b6e data/minecraft/tags/item/axes.json
+db7bdae35aacf082fbffaf09d3dc747816b08337 data/minecraft/tags/item/chest_armor.json
+88448a9614049e76fd5ab8789951ddb53416aae7 data/minecraft/tags/item/creeper_drop_music_discs.json
+7f1ccabc5ad4066aeab82b414ef90bb7613ef74c data/minecraft/tags/item/enchantable/bow.json
+112c9da20036377d272e1743eba70e601b8feca3 data/minecraft/tags/item/foot_armor.json
+1bba6d9c4992081bfd4d24f352bc01a725274f57 data/minecraft/tags/item/head_armor.json
+e0f9b8ece8124aba31c94ba6b7c9f512086a088e data/minecraft/tags/item/hoes.json
+d318a3e9fd66dca43f8e7899f65f6d62b0dd417d data/minecraft/tags/item/leg_armor.json
+8a39aad0d42907ffd16410d43f304e0d5a597383 data/minecraft/tags/item/logs_that_burn.json
+ced07908158cff5d48204caf17b579fce1d1b658 data/minecraft/tags/item/pickaxes.json
+0fe5bc70bce4b991690450a5958d87b9b268b606 data/minecraft/tags/item/planks.json
+449d1f5f19d397b8d18ecd0d5839f48ce0914bf5 data/minecraft/tags/item/shovels.json
+7cd7ac550f7051dd68db5e942e199be0af19cdec data/minecraft/tags/item/swords.json
+5e237a54a75440a343542f84effcefe594a2d551 data/minecraft/tags/item/villager_plantable_seeds.json

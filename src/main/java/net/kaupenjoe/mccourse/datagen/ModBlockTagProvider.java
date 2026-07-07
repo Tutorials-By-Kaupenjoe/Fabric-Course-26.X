@@ -16,86 +16,77 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
-        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.BISMUTH_BLOCK)
-                .add(ModBlocks.RAW_BISMUTH_BLOCK)
-                .add(ModBlocks.BISMUTH_ORE)
-                .add(ModBlocks.BISMUTH_DEEPSLATE_ORE)
-                .add(ModBlocks.BISMUTH_NETHER_ORE)
-                .add(ModBlocks.BISMUTH_END_ORE)
-                .add(ModBlocks.BISMUTH_STAIRS)
-                .add(ModBlocks.BISMUTH_SLAB)
-                .add(ModBlocks.BISMUTH_FENCE)
-                .add(ModBlocks.BISMUTH_FENCE_GATE)
-                .add(ModBlocks.BISMUTH_WALL)
-                .add(ModBlocks.BISMUTH_DOOR)
-                .add(ModBlocks.BISMUTH_TRAPDOOR)
-                .add(ModBlocks.BISMUTH_LAMP);
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.BISMUTH_BLOCK.properties().blockIdOrThrow())
+                .add(ModBlocks.RAW_BISMUTH_BLOCK.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_ORE.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_DEEPSLATE_ORE.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_NETHER_ORE.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_END_ORE.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_STAIRS.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_SLAB.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_FENCE.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_FENCE_GATE.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_WALL.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_DOOR.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_TRAPDOOR.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_LAMP.properties().blockIdOrThrow());
 
-        valueLookupBuilder(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.BISMUTH_DEEPSLATE_ORE);
+        tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.BISMUTH_DEEPSLATE_ORE.properties().blockIdOrThrow());
 
-        valueLookupBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(ModBlocks.BISMUTH_END_ORE);
+        tag(BlockTags.NEEDS_DIAMOND_TOOL)
+                .add(ModBlocks.BISMUTH_END_ORE.properties().blockIdOrThrow());
 
-        valueLookupBuilder(BlockTags.STAIRS)
-                .add(ModBlocks.BISMUTH_STAIRS);
-        valueLookupBuilder(BlockTags.SLABS)
-                .add(ModBlocks.BISMUTH_SLAB);
+        tag(BlockTags.STAIRS)
+                .add(ModBlocks.BISMUTH_STAIRS.properties().blockIdOrThrow());
+        tag(BlockTags.SLABS)
+                .add(ModBlocks.BISMUTH_SLAB.properties().blockIdOrThrow());
 
-        valueLookupBuilder(BlockTags.BUTTONS)
-                .add(ModBlocks.BISMUTH_BUTTON);
-        valueLookupBuilder(BlockTags.PRESSURE_PLATES)
-                .add(ModBlocks.BISMUTH_PRESSURE_PLATE);
+        tag(BlockTags.BUTTONS)
+                .add(ModBlocks.BISMUTH_BUTTON.properties().blockIdOrThrow());
+        tag(BlockTags.PRESSURE_PLATES)
+                .add(ModBlocks.BISMUTH_PRESSURE_PLATE.properties().blockIdOrThrow());
 
-        valueLookupBuilder(BlockTags.FENCES)
-                .add(ModBlocks.BISMUTH_FENCE);
-        valueLookupBuilder(BlockTags.FENCE_GATES)
-                .add(ModBlocks.BISMUTH_FENCE);
-        valueLookupBuilder(BlockTags.WALLS)
-                .add(ModBlocks.BISMUTH_WALL);
+        tag(BlockTags.FENCES)
+                .add(ModBlocks.BISMUTH_FENCE.properties().blockIdOrThrow());
+        tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.BISMUTH_FENCE.properties().blockIdOrThrow());
+        tag(BlockTags.WALLS)
+                .add(ModBlocks.BISMUTH_WALL.properties().blockIdOrThrow());
 
-        valueLookupBuilder(BlockTags.DOORS)
-                .add(ModBlocks.BISMUTH_DOOR);
-        valueLookupBuilder(BlockTags.TRAPDOORS)
-                .add(ModBlocks.BISMUTH_TRAPDOOR);
+        tag(BlockTags.DOORS)
+                .add(ModBlocks.BISMUTH_DOOR.properties().blockIdOrThrow());
+        tag(BlockTags.TRAPDOORS)
+                .add(ModBlocks.BISMUTH_TRAPDOOR.properties().blockIdOrThrow());
 
-        valueLookupBuilder(ModTags.Blocks.NEEDS_BISMUTH_TOOL)
-                .add(ModBlocks.MAGIC_BLOCK)
+        tag(ModTags.Blocks.NEEDS_BISMUTH_TOOL)
+                .add(ModBlocks.MAGIC_BLOCK.properties().blockIdOrThrow())
                 .addTag(BlockTags.NEEDS_IRON_TOOL);
-        valueLookupBuilder(ModTags.Blocks.INCORRECT_FOR_BISMUTH_TOOL)
+        tag(ModTags.Blocks.INCORRECT_FOR_BISMUTH_TOOL)
                 .addOptionalTag(BlockTags.INCORRECT_FOR_IRON_TOOL);
 
-        valueLookupBuilder(ModTags.Blocks.PAXEL_MINEABLE)
+        tag(ModTags.Blocks.PAXEL_MINEABLE)
                 .forceAddTag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .forceAddTag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .forceAddTag(BlockTags.MINEABLE_WITH_AXE);
 
-        valueLookupBuilder(BlockTags.CROPS)
-                .add(ModBlocks.CAULIFLOWER_CROP)
-                .add(ModBlocks.RICE_CROP);
-        valueLookupBuilder(BlockTags.FLOWERS)
-                .add(ModBlocks.PETUNIA);
-        valueLookupBuilder(BlockTags.FLOWER_POTS)
-                .add(ModBlocks.POTTED_PETUNIA);
+        tag(BlockTags.CROPS)
+                .add(ModBlocks.CAULIFLOWER_CROP.properties().blockIdOrThrow())
+                .add(ModBlocks.RICE_CROP.properties().blockIdOrThrow());
+        tag(BlockTags.FLOWERS)
+                .add(ModBlocks.PETUNIA.properties().blockIdOrThrow());
+        tag(BlockTags.FLOWER_POTS)
+                .add(ModBlocks.POTTED_PETUNIA.properties().blockIdOrThrow());
 
-        valueLookupBuilder(BlockTags.LOGS_THAT_BURN)
-                .add(ModBlocks.BLOODWOOD_LOG)
-                .add(ModBlocks.BLOODWOOD_WOOD)
-                .add(ModBlocks.STRIPPED_BLOODWOOD_LOG)
-                .add(ModBlocks.STRIPPED_BLOODWOOD_WOOD);
+        tag(BlockTags.PLANKS)
+                .add(ModBlocks.BLOODWOOD_PLANKS.properties().blockIdOrThrow());
 
-        valueLookupBuilder(BlockTags.SAPLINGS)
-                .add(ModBlocks.BLOODWOOD_SAPLING);
-
-        valueLookupBuilder(BlockTags.PLANKS)
-                .add(ModBlocks.BLOODWOOD_PLANKS);
-
-        valueLookupBuilder(ModTags.Blocks.BLOODWOOD_LOGS)
-                .add(ModBlocks.BLOODWOOD_LOG)
-                .add(ModBlocks.BLOODWOOD_WOOD)
-                .add(ModBlocks.STRIPPED_BLOODWOOD_LOG)
-                .add(ModBlocks.STRIPPED_BLOODWOOD_WOOD);
+        tag(ModTags.Blocks.BLOODWOOD_LOGS)
+                .add(ModBlocks.BLOODWOOD_LOG.properties().blockIdOrThrow())
+                .add(ModBlocks.BLOODWOOD_WOOD.properties().blockIdOrThrow())
+                .add(ModBlocks.STRIPPED_BLOODWOOD_LOG.properties().blockIdOrThrow())
+                .add(ModBlocks.STRIPPED_BLOODWOOD_WOOD.properties().blockIdOrThrow());
 
     }
 }

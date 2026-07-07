@@ -15,7 +15,7 @@ public class ModEntityTypeTagsProvider extends FabricTagsProvider.EntityTypeTags
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
-        valueLookupBuilder(EntityTypeTags.CAN_EQUIP_SADDLE)
-                .add(ModEntities.DODO);
+        tag(EntityTypeTags.CAN_EQUIP_SADDLE)
+                .add(ModEntities.DODO_KEY);
     }
 }

@@ -163,6 +163,8 @@ public class WarturtleEntity extends TamableAnimal implements ContainerListener,
         if(inventory.getItem(TIER_3_CHEST_SLOT).is(Items.CHEST) && !hasTier3Chest()) {
             setChest(TIER_3_CHEST_SLOT, true);
         }
+
+        this.entityData.set(DYE_STACK, inventory.getItem(1));
     }
 
     /* SITTING */
@@ -332,6 +334,10 @@ public class WarturtleEntity extends TamableAnimal implements ContainerListener,
         if(container.getSlot(1).getItem().isEmpty()) {
             this.entityData.set(DYE_STACK, ItemStack.EMPTY);
         }
+    }
+
+    private void setBodyArmorItem(ItemStack item) {
+        this.setItemSlot(EquipmentSlot.BODY, item);
     }
 
     @Override
