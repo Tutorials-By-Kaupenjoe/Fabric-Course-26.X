@@ -14,10 +14,6 @@ public class ModFluids {
     public static final FlowingFluid BISMUTH_WATER_FLOWING = Registry.register(BuiltInRegistries.FLUID,
             Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "bismuth_water_flowing"), new BismuthWaterFluid.Flowing());
 
-    public static final FluidModel.Unbaked BISMUTH_WATER_MODEL = new FluidModel.Unbaked(
-            new Material(Identifier.withDefaultNamespace("block/water_still")),
-            new Material(Identifier.withDefaultNamespace("block/water_flow")),
-            new Material(Identifier.withDefaultNamespace("block/water_overlay")), _ -> 0xA1123125);
 
     public static void registerFluids() {
         MCCourse.LOGGER.info("Registering Fluids for " + MCCourse.MOD_ID);

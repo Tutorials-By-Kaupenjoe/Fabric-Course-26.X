@@ -26,9 +26,11 @@ import net.kaupenjoe.mccourse.particle.ModParticles;
 import net.minecraft.client.color.block.BlockTintSources;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.object.boat.BoatModel;
+import net.minecraft.client.renderer.block.FluidModel;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.resources.Identifier;
 
 import java.util.List;
@@ -45,7 +47,10 @@ public class MCCourseClient implements ClientModInitializer {
 
         ParticleProviderRegistry.getInstance().register(ModParticles.BISMUTH_PARTICLE, BismuthParticle.Provider::new);
 
-        FluidRenderingRegistry.register(ModFluids.BISMUTH_WATER_SOURCE, ModFluids.BISMUTH_WATER_FLOWING, ModFluids.BISMUTH_WATER_MODEL);
+        FluidRenderingRegistry.register(ModFluids.BISMUTH_WATER_SOURCE, ModFluids.BISMUTH_WATER_FLOWING, new FluidModel.Unbaked(
+                new Material(Identifier.withDefaultNamespace("block/water_still")),
+                new Material(Identifier.withDefaultNamespace("block/water_flow")),
+                new Material(Identifier.withDefaultNamespace("block/water_overlay")), _ -> 0xA1123125));
 
         ModelLayerRegistry.registerModelLayer(ModModelLayerLocations.GIRAFFE, GiraffeModel::createBodyLayer);
         EntityRenderers.register(ModEntities.GIRAFFE, GiraffeRenderer::new);
