@@ -13,6 +13,8 @@ import net.kaupenjoe.mccourse.keybind.ModKeyMappings;
 import net.kaupenjoe.mccourse.particle.BismuthParticle;
 import net.kaupenjoe.mccourse.particle.ModParticles;
 import net.minecraft.client.color.block.BlockTintSources;
+import net.minecraft.client.renderer.block.FluidModel;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.resources.Identifier;
 
 import java.util.List;
@@ -29,6 +31,9 @@ public class MCCourseClient implements ClientModInitializer {
 
         ParticleProviderRegistry.getInstance().register(ModParticles.BISMUTH_PARTICLE, BismuthParticle.Provider::new);
 
-        FluidRenderingRegistry.register(ModFluids.BISMUTH_WATER_SOURCE, ModFluids.BISMUTH_WATER_FLOWING, ModFluids.BISMUTH_WATER_MODEL);
+        FluidRenderingRegistry.register(ModFluids.BISMUTH_WATER_SOURCE, ModFluids.BISMUTH_WATER_FLOWING, new FluidModel.Unbaked(
+                new Material(Identifier.withDefaultNamespace("block/water_still")),
+                new Material(Identifier.withDefaultNamespace("block/water_flow")),
+                new Material(Identifier.withDefaultNamespace("block/water_overlay")), _ -> 0xA1123125));
     }
 }
