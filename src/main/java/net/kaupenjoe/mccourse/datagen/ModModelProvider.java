@@ -100,6 +100,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createNonTemplateModelBlock(ModBlocks.SIDE_PEDESTAL);
         blockModelGenerators.createFurnace(ModBlocks.CRYSTALLIZER, TexturedModel.ORIENTABLE_ONLY_TOP);
         blockModelGenerators.createTrivialCube(ModBlocks.COAL_GENERATOR);
+        blockModelGenerators.createTrivialCube(ModBlocks.BATTERY);
     }
 
     @Override

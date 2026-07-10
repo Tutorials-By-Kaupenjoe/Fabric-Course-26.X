@@ -1,4 +1,5 @@
 // 26.2	-999999999-01-01T00:00:00	MCCourse/Block Loot Tables
+6f0e2dabc2e3c0021dfdba0e742f996554166d7e data/mccourse/loot_table/blocks/battery.json
 ddd5e9a56dcb283facaf11e6106777f93516771c data/mccourse/loot_table/blocks/bismuth_block.json
 105f9e49fd7a9879bfb472ea71b30859cf5291a3 data/mccourse/loot_table/blocks/bismuth_button.json
 fe6ab85496a16e71b6138627631eeae5e877c796 data/mccourse/loot_table/blocks/bismuth_deepslate_ore.json

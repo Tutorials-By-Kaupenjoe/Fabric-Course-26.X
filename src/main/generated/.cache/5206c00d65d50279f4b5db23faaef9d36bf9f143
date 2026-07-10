@@ -1,4 +1,5 @@
 // 26.2	-999999999-01-01T00:00:00	MCCourse/Model Definitions
+c21e3601a043b3783eff105a4e3e6db12947c7e8 assets/mccourse/blockstates/battery.json
 3ab9f56b5038fb8754d30aebb3f0b443478cb0a4 assets/mccourse/blockstates/bismuth_block.json
 da9713ced67ace9ada5a63eb12a67c58035a624c assets/mccourse/blockstates/bismuth_button.json
 730fd2e00b033a9d1b41817d745b01db685bc3d8 assets/mccourse/blockstates/bismuth_deepslate_ore.json
@@ -38,6 +39,7 @@ f8f39fe16da91d6753d7178b7d2160e02ce9611a assets/mccourse/blockstates/potted_petu
 b0e4dcdef125325ef8fb232debb6d21dbd29eaf6 assets/mccourse/blockstates/stripped_bloodwood_log.json
 a0ab9c7914f13c6e57d6a477b7921902782ec3ea assets/mccourse/blockstates/stripped_bloodwood_wood.json
 5d730dd496c944736136ebbfd76f76890bd2de25 assets/mccourse/items/bar_brawl_music_disc.json
+4f8f38aff19e3094e13b679d1a7148e63a9259cd assets/mccourse/items/battery.json
 19870f4e686b1c32dc7e58c55561cb15b778ebcc assets/mccourse/items/bismuth.json
 18df472097c5932bc0657f955a8af326666f7e78 assets/mccourse/items/bismuth_axe.json
 70b62eba37c6cef3e759ced06d468b6db05ec694 assets/mccourse/items/bismuth_block.json
@@ -104,6 +106,7 @@ fd2793fa1f35a497a872fdb5a1ee3030c3e3b917 assets/mccourse/items/stripped_bloodwoo
 cbdb44d8c1b6f55b9c29c3a39f78595a96589aa6 assets/mccourse/items/stripped_bloodwood_wood.json
 9d56f4de35a023ce6caa7af15db9e1af7702d5ea assets/mccourse/items/tomahawk.json
 92cb2dc746e5d456a2e20e021c6718c2d2609151 assets/mccourse/items/warturtle_spawn_egg.json
+f6bd56224f7244d10139dfe56918fb6a8375dff6 assets/mccourse/models/block/battery.json
 e5c1eb3a968989b52b14c797e36086d786d4121e assets/mccourse/models/block/bismuth_block.json
 2f184d5edbb0b3dfaab4fa54d1551f8bd3215273 assets/mccourse/models/block/bismuth_button.json
 56813ca3ce356bc616a063630d3574dd15fa2f5b assets/mccourse/models/block/bismuth_button_inventory.json

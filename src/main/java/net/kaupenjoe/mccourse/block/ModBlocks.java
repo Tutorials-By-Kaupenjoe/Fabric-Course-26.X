@@ -159,6 +159,8 @@ public class ModBlocks {
             properties -> new CrystallizerBlock(properties.strength(2f)));
     public static final Block COAL_GENERATOR = registerBlock("coal_generator",
             properties -> new CoalGeneratorBlock(properties.strength(2f)));
+    public static final Block BATTERY = registerBlock("battery",
+            properties -> new BatteryBlock(properties.strength(2f)));
 
 
 

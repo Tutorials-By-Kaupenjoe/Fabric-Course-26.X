@@ -2,10 +2,7 @@ package net.kaupenjoe.mccourse.menu;
 
 import net.fabricmc.fabric.api.menu.v1.ExtendedMenuType;
 import net.kaupenjoe.mccourse.MCCourse;
-import net.kaupenjoe.mccourse.menu.custom.CoalGeneratorMenu;
-import net.kaupenjoe.mccourse.menu.custom.CrystallizerMenu;
-import net.kaupenjoe.mccourse.menu.custom.PedestalMenu;
-import net.kaupenjoe.mccourse.menu.custom.WarturtleMenu;
+import net.kaupenjoe.mccourse.menu.custom.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.UUIDUtil;
@@ -29,6 +26,10 @@ public class ModMenuTypes {
     public static final MenuType<CoalGeneratorMenu> COAL_GENERATOR_MENU =
             Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "coal_generator_menu"),
                     new ExtendedMenuType<>(CoalGeneratorMenu::new, BlockPos.STREAM_CODEC));
+
+    public static final MenuType<BatteryMenu> BATTERY_MENU =
+            Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "battery_menu"),
+                    new ExtendedMenuType<>(BatteryMenu::new, BlockPos.STREAM_CODEC));
 
 
     public static void registerModMenuTypes() {

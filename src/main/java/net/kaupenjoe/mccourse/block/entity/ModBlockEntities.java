@@ -24,6 +24,9 @@ public class ModBlockEntities {
     public static final BlockEntityType<CoalGeneratorBlockEntity> COAL_GENERATOR_BE =
             Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "coal_generator_be"),
                     FabricBlockEntityTypeBuilder.create(CoalGeneratorBlockEntity::new, ModBlocks.COAL_GENERATOR).build());
+    public static final BlockEntityType<BatteryBlockEntity> BATTERY_BE =
+            Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "battery_be"),
+                    FabricBlockEntityTypeBuilder.create(BatteryBlockEntity::new, ModBlocks.BATTERY).build());
 
 
     public static void registerBlockEntities() {
@@ -31,5 +34,6 @@ public class ModBlockEntities {
 
         EnergyStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.getEnergyStorage(), CRYSTALLIZER_BE);
         EnergyStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.getEnergyStorage(), COAL_GENERATOR_BE);
+        EnergyStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.getEnergyStorage(), BATTERY_BE);
     }
 }

@@ -18,10 +18,7 @@ import net.kaupenjoe.mccourse.event.ModClientEvents;
 import net.kaupenjoe.mccourse.fluid.ModFluids;
 import net.kaupenjoe.mccourse.keybind.ModKeyMappings;
 import net.kaupenjoe.mccourse.menu.ModMenuTypes;
-import net.kaupenjoe.mccourse.menu.custom.CoalGeneratorScreen;
-import net.kaupenjoe.mccourse.menu.custom.CrystallizerScreen;
-import net.kaupenjoe.mccourse.menu.custom.PedestalScreen;
-import net.kaupenjoe.mccourse.menu.custom.WarturtleScreen;
+import net.kaupenjoe.mccourse.menu.custom.*;
 import net.kaupenjoe.mccourse.particle.BismuthParticle;
 import net.kaupenjoe.mccourse.particle.ModParticles;
 import net.minecraft.client.color.block.BlockTintSources;
@@ -83,5 +80,6 @@ public class MCCourseClient implements ClientModInitializer {
 
         MenuScreens.register(ModMenuTypes.CRYSTALLIZER_MENU, CrystallizerScreen::new);
         MenuScreens.register(ModMenuTypes.COAL_GENERATOR_MENU, CoalGeneratorScreen::new);
+        MenuScreens.register(ModMenuTypes.BATTERY_MENU, BatteryScreen::new);
     }
 }
