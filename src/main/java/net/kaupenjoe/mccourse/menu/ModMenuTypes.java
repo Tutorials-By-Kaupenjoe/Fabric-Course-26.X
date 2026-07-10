@@ -2,6 +2,7 @@ package net.kaupenjoe.mccourse.menu;
 
 import net.fabricmc.fabric.api.menu.v1.ExtendedMenuType;
 import net.kaupenjoe.mccourse.MCCourse;
+import net.kaupenjoe.mccourse.menu.custom.CoalGeneratorMenu;
 import net.kaupenjoe.mccourse.menu.custom.CrystallizerMenu;
 import net.kaupenjoe.mccourse.menu.custom.PedestalMenu;
 import net.kaupenjoe.mccourse.menu.custom.WarturtleMenu;
@@ -24,6 +25,10 @@ public class ModMenuTypes {
     public static final MenuType<CrystallizerMenu> CRYSTALLIZER_MENU =
             Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "crystallizer_menu"),
                     new ExtendedMenuType<>(CrystallizerMenu::new, BlockPos.STREAM_CODEC));
+
+    public static final MenuType<CoalGeneratorMenu> COAL_GENERATOR_MENU =
+            Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "coal_generator_menu"),
+                    new ExtendedMenuType<>(CoalGeneratorMenu::new, BlockPos.STREAM_CODEC));
 
 
     public static void registerModMenuTypes() {

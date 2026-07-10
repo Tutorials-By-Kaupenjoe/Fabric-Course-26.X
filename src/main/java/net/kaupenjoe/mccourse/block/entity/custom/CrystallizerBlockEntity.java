@@ -12,6 +12,7 @@ import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.kaupenjoe.mccourse.block.custom.CrystallizerBlock;
 import net.kaupenjoe.mccourse.block.entity.ImplementedInventory;
 import net.kaupenjoe.mccourse.block.entity.ModBlockEntities;
+import net.kaupenjoe.mccourse.block.entity.sub.EnergyBlockEntity;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.kaupenjoe.mccourse.menu.custom.CrystallizerMenu;
 import net.kaupenjoe.mccourse.menu.custom.PedestalMenu;
@@ -48,7 +49,7 @@ import team.reborn.energy.api.base.SimpleEnergyStorage;
 
 import java.util.Optional;
 
-public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenuProvider<BlockPos>, ImplementedInventory {
+public class CrystallizerBlockEntity extends EnergyBlockEntity implements ExtendedMenuProvider<BlockPos>, ImplementedInventory {
     public final NonNullList<ItemStack> inventory = NonNullList.withSize(4, ItemStack.EMPTY);
 
     private static final int FLUID_ITEM_SLOT = 0;
@@ -62,14 +63,6 @@ public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenu
 
     private static final int ENERGY_CRAFT_AMOUNT = 25; // amount per TICK to craft
     private static final int FLUID_CRAFT_AMOUNT = 1000; // amount of fluid PER CRAFT
-
-    private final SimpleEnergyStorage ENERGY_STORAGE = new SimpleEnergyStorage(64000, 320, 25) {
-        @Override
-        protected void onFinalCommit() {
-            setChanged(level, getBlockPos(), getBlockState());
-            getLevel().sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
-        }
-    };
 
     public final SingleVariantStorage<FluidVariant> FLUID_TANK = new SingleVariantStorage<FluidVariant>() {
         @Override
@@ -128,7 +121,6 @@ public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenu
         super.saveAdditional(output);
         output.putInt("crystallizer.progress", progress);
         output.putInt("crystallizer.max_progress", maxProgress);
-        output.putLong("crystallizer.energy", ENERGY_STORAGE.amount);
 
         ContainerHelper.saveAllItems(output, inventory);
         SingleVariantStorage.writeValue(FLUID_TANK, FluidVariant.CODEC, output);
@@ -139,7 +131,6 @@ public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenu
         super.loadAdditional(input);
         progress = input.getIntOr("crystallizer.progress", 0);
         maxProgress = input.getIntOr("crystallizer.max_progress", 72);
-        ENERGY_STORAGE.amount = input.getLongOr("crystallizer.energy", 0);
 
         ContainerHelper.loadAllItems(input, inventory);
         SingleVariantStorage.readValue(FLUID_TANK, FluidVariant.CODEC, FluidVariant::blank, input);
@@ -286,8 +277,9 @@ public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenu
     }
 
     /* ENERGY HANDLING */
-    public SimpleEnergyStorage getEnergyStorage() {
-        return this.ENERGY_STORAGE;
+    @Override
+    public void assignEnergyStorage() {
+        this.ENERGY_STORAGE = createEnergyStorage(64000, 320, 25);
     }
 
     private boolean hasEnoughEnergyToCraft() {
@@ -352,24 +344,5 @@ public class CrystallizerBlockEntity extends BlockEntity implements ExtendedMenu
                 }
             }
         }
-    }
-
-    /* BLOCK ENTITY SYNC METHOD */
-    @Override
-    public void setChanged() {
-        super.setChanged();
-        if(!level.isClientSide()) {
-            level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
-        }
-    }
-
-    @Override
-    public @Nullable Packet<ClientGamePacketListener> getUpdatePacket() {
-        return ClientboundBlockEntityDataPacket.create(this);
-    }
-
-    @Override
-    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
-        return saveWithoutMetadata(registries);
     }
 }

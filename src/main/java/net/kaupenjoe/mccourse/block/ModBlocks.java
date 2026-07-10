@@ -157,6 +157,8 @@ public class ModBlocks {
             properties -> new SidePedestalBlock(properties.strength(2f).noOcclusion()));
     public static final Block CRYSTALLIZER = registerBlock("crystallizer",
             properties -> new CrystallizerBlock(properties.strength(2f)));
+    public static final Block COAL_GENERATOR = registerBlock("coal_generator",
+            properties -> new CoalGeneratorBlock(properties.strength(2f)));
 
 
 
