@@ -3,6 +3,7 @@ package net.kaupenjoe.mccourse.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.kaupenjoe.mccourse.block.ModBlocks;
+import net.kaupenjoe.mccourse.datagen.recipe.CrystallizerRecipeBuilder;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.kaupenjoe.mccourse.tag.ModTags;
 import net.minecraft.core.HolderLookup;
@@ -202,6 +203,20 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 woodFromLogs(ModBlocks.BLOODWOOD_WOOD, ModBlocks.BLOODWOOD_LOG);
                 woodFromLogs(ModBlocks.STRIPPED_BLOODWOOD_WOOD, ModBlocks.STRIPPED_BLOODWOOD_LOG);
                 planksFromLogs(ModBlocks.BLOODWOOD_PLANKS, ModTags.Items.BLOODWOOD_LOGS, 4);
+
+                CrystallizerRecipeBuilder.crystallizerRecipe(RecipeCategory.MISC, Ingredient.of(ModItems.CAULIFLOWER), ModItems.RICE_SHOOT, 2)
+                        .unlockedBy(getHasName(ModItems.CAULIFLOWER), has(ModItems.CAULIFLOWER))
+                        .save(output, "mccourse:rice_shoot_from_crystallizing");
+                CrystallizerRecipeBuilder.crystallizerRecipe(RecipeCategory.MISC, Ingredient.of(Items.STICK), Items.END_ROD, 2)
+                        .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                        .save(output, "mccourse:end_rod_from_crystallizing");
+                CrystallizerRecipeBuilder.crystallizerRecipe(RecipeCategory.MISC, Ingredient.of(ModItems.RAW_BISMUTH), ModItems.BISMUTH, 3)
+                        .unlockedBy(getHasName(ModItems.RAW_BISMUTH), has(ModItems.RAW_BISMUTH))
+                        .save(output, "mccourse:bismuth_from_crystallizing");
+                CrystallizerRecipeBuilder.crystallizerRecipe(RecipeCategory.MISC, Ingredient.of(Blocks.DIRT), Items.NETHER_STAR)
+                        .unlockedBy(getHasName(Blocks.DIRT), has(Blocks.DIRT))
+                        .save(output, "mccourse:nether_star_from_crystallizing");
+
 
             }
         };
