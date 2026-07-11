@@ -34,6 +34,9 @@ public class ModMenuTypes {
     public static final MenuType<GrowthChamberMenu> GROWTH_CHAMBER_MENU =
             Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "growth_chamber_menu"),
                     new ExtendedMenuType<>(GrowthChamberMenu::new, BlockPos.STREAM_CODEC));
+    public static final MenuType<AtomicSeparatorMenu> ATOMIC_SEPARATOR_MENU =
+            Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "atomic_separator_menu"),
+                    new ExtendedMenuType<>(AtomicSeparatorMenu::new, BlockPos.STREAM_CODEC));
 
 
     public static void registerModMenuTypes() {

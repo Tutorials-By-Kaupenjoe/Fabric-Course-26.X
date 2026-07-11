@@ -31,6 +31,9 @@ public class ModBlockEntities {
     public static final BlockEntityType<GrowthChamberBlockEntity> GROWTH_CHAMBER_BE =
             Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "growth_chamber_be"),
                     FabricBlockEntityTypeBuilder.create(GrowthChamberBlockEntity::new, ModBlocks.GROWTH_CHAMBER).build());
+    public static final BlockEntityType<AtomicSeparatorBlockEntity> ATOMIC_SEPARATOR_BE =
+            Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "atomic_separator_be"),
+                    FabricBlockEntityTypeBuilder.create(AtomicSeparatorBlockEntity::new, ModBlocks.ATOMIC_SEPARATOR).build());
 
 
     public static void registerBlockEntities() {

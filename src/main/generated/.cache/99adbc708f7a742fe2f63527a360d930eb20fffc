@@ -1,4 +1,5 @@
 // 26.2	-999999999-01-01T00:00:00	MCCourse/Block Loot Tables
+ff8412112ab99621c45baf037cb2a0ea9a7c77c3 data/mccourse/loot_table/blocks/atomic_separator.json
 6f0e2dabc2e3c0021dfdba0e742f996554166d7e data/mccourse/loot_table/blocks/battery.json
 ddd5e9a56dcb283facaf11e6106777f93516771c data/mccourse/loot_table/blocks/bismuth_block.json
 105f9e49fd7a9879bfb472ea71b30859cf5291a3 data/mccourse/loot_table/blocks/bismuth_button.json

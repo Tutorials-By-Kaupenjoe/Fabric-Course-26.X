@@ -3,6 +3,7 @@ package net.kaupenjoe.mccourse.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.kaupenjoe.mccourse.block.ModBlocks;
+import net.kaupenjoe.mccourse.datagen.recipe.AtomicSeparatorRecipeBuilder;
 import net.kaupenjoe.mccourse.datagen.recipe.CrystallizerRecipeBuilder;
 import net.kaupenjoe.mccourse.datagen.recipe.GrowthChamberRecipeBuilder;
 import net.kaupenjoe.mccourse.item.ModItems;
@@ -11,6 +12,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -235,6 +237,28 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
                         .unlockedBy(getHasName(Items.LAPIS_LAZULI), has(Items.LAPIS_LAZULI))
                         .save(output, "mccourse:diamond_from_growing");
+
+
+                AtomicSeparatorRecipeBuilder.atomicSeparator(RecipeCategory.MISC, Ingredient.of(Items.NETHER_STAR), List.of(
+                                new ItemStackTemplate(Items.SLIME_BALL),
+                                new ItemStackTemplate(Items.SLIME_BALL),
+                                new ItemStackTemplate(Items.SLIME_BALL)))
+                        .unlockedBy(getHasName(Items.NETHER_STAR), has(Items.NETHER_STAR))
+                        .save(output, "mccourse:nether_star_into_atomic_separation");
+
+                AtomicSeparatorRecipeBuilder.atomicSeparator(RecipeCategory.MISC, Ingredient.of(ModItems.STARLIGHT_ASHES), List.of(
+                                new ItemStackTemplate(Items.BLAZE_POWDER),
+                                new ItemStackTemplate(Items.BLAZE_POWDER),
+                                new ItemStackTemplate(Items.BLAZE_POWDER)))
+                        .unlockedBy(getHasName(ModItems.STARLIGHT_ASHES), has(ModItems.STARLIGHT_ASHES))
+                        .save(output, "mccourse:starlight_ashes_into_atomic_separation");
+
+                AtomicSeparatorRecipeBuilder.atomicSeparator(RecipeCategory.MISC, Ingredient.of(ModItems.BISMUTH), List.of(
+                                new ItemStackTemplate(Items.IRON_INGOT, 3),
+                                new ItemStackTemplate(Items.CLAY, 16),
+                                new ItemStackTemplate(Items.FEATHER, 2)))
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output, "mccourse:bismuth_into_atomic_separation");
 
             }
         };
