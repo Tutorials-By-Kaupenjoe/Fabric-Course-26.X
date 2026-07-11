@@ -28,6 +28,10 @@ public class ModBlockEntities {
             Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "battery_be"),
                     FabricBlockEntityTypeBuilder.create(BatteryBlockEntity::new, ModBlocks.BATTERY).build());
 
+    public static final BlockEntityType<GrowthChamberBlockEntity> GROWTH_CHAMBER_BE =
+            Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "growth_chamber_be"),
+                    FabricBlockEntityTypeBuilder.create(GrowthChamberBlockEntity::new, ModBlocks.GROWTH_CHAMBER).build());
+
 
     public static void registerBlockEntities() {
         MCCourse.LOGGER.info("Registering Block Entities for " + MCCourse.MOD_ID);

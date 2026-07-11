@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.datagen.recipe.CrystallizerRecipeBuilder;
+import net.kaupenjoe.mccourse.datagen.recipe.GrowthChamberRecipeBuilder;
 import net.kaupenjoe.mccourse.item.ModItems;
 import net.kaupenjoe.mccourse.tag.ModTags;
 import net.minecraft.core.HolderLookup;
@@ -217,6 +218,23 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(Blocks.DIRT), has(Blocks.DIRT))
                         .save(output, "mccourse:nether_star_from_crystallizing");
 
+
+                GrowthChamberRecipeBuilder.growthChamber(RecipeCategory.MISC, List.of(
+                                        Ingredient.of(Items.SLIME_BALL),
+                                        Ingredient.of(Items.SLIME_BALL),
+                                        Ingredient.of(Items.SLIME_BALL)),
+                                Items.SLIME_BLOCK)
+                        .unlockedBy(getHasName(Items.SLIME_BALL), has(Items.SLIME_BALL))
+                        .save(output, "mccourse:slime_block_from_growing");
+
+                GrowthChamberRecipeBuilder.growthChamber(RecipeCategory.MISC, List.of(
+                                        Ingredient.of(Items.REDSTONE),
+                                        Ingredient.of(Items.LAPIS_LAZULI),
+                                        Ingredient.of(Items.REDSTONE)),
+                                Items.DIAMOND)
+                        .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
+                        .unlockedBy(getHasName(Items.LAPIS_LAZULI), has(Items.LAPIS_LAZULI))
+                        .save(output, "mccourse:diamond_from_growing");
 
             }
         };

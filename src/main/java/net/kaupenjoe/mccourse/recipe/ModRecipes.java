@@ -2,6 +2,7 @@ package net.kaupenjoe.mccourse.recipe;
 
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.recipe.custom.CrystallizerRecipe;
+import net.kaupenjoe.mccourse.recipe.custom.GrowthChamberRecipe;
 import net.kaupenjoe.mccourse.recipe.custom.PedestalRecipe;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -31,6 +32,18 @@ public class ModRecipes {
                 @Override
                 public String toString() {
                     return "pedestal_crafting";
+                }
+            });
+
+    public static final RecipeSerializer<GrowthChamberRecipe> GROWTH_CHAMBER_SERIALIZER = Registry.register(
+            BuiltInRegistries.RECIPE_SERIALIZER, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "growing"),
+            new RecipeSerializer<>(GrowthChamberRecipe.CODEC, GrowthChamberRecipe.STREAM_CODEC));
+    public static final RecipeType<GrowthChamberRecipe> GROWTH_CHAMBER_TYPE = Registry.register(
+            BuiltInRegistries.RECIPE_TYPE, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "growing"),
+            new RecipeType<GrowthChamberRecipe>() {
+                @Override
+                public String toString() {
+                    return "growing";
                 }
             });
 

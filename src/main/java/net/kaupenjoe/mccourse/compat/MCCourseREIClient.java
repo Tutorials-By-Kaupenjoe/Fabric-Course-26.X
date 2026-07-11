@@ -7,16 +7,20 @@ import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.menu.custom.CrystallizerScreen;
+import net.kaupenjoe.mccourse.menu.custom.GrowthChamberScreen;
 
 public class MCCourseREIClient implements REIClientPlugin {
     @Override
     public void registerCategories(CategoryRegistry registry) {
         registry.add(new CrystallizerCategory());
         registry.add(new PedestalRecipeCategory());
+        registry.add(new GrowthChamberCategory());
 
         registry.addWorkstations(MCCourseREICommon.CRYSTALLIZER, EntryStacks.of(ModBlocks.CRYSTALLIZER));
         registry.addWorkstations(MCCourseREICommon.PEDESTAL_CRAFTING, EntryStacks.of(ModBlocks.MAIN_PEDESTAL));
         registry.addWorkstations(MCCourseREICommon.PEDESTAL_CRAFTING, EntryStacks.of(ModBlocks.SIDE_PEDESTAL));
+
+        registry.addWorkstations(MCCourseREICommon.GROWTH_CHAMBER, EntryStacks.of(ModBlocks.GROWTH_CHAMBER));
     }
 
     @Override
@@ -24,5 +28,9 @@ public class MCCourseREIClient implements REIClientPlugin {
         registry.registerClickArea(screen -> new Rectangle(((screen.width - 176) / 2) + 78,
                         ((screen.height - 166) / 2) + 30, 20, 25),
                 CrystallizerScreen.class, MCCourseREICommon.CRYSTALLIZER);
+
+        registry.registerClickArea(screen -> new Rectangle(((screen.width - 176) / 2) + 45,
+                        ((screen.height - 166) / 2) + 10, 80, 60),
+                GrowthChamberScreen.class, MCCourseREICommon.GROWTH_CHAMBER);
     }
 }

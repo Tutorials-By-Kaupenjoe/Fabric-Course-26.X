@@ -81,5 +81,6 @@ public class MCCourseClient implements ClientModInitializer {
         MenuScreens.register(ModMenuTypes.CRYSTALLIZER_MENU, CrystallizerScreen::new);
         MenuScreens.register(ModMenuTypes.COAL_GENERATOR_MENU, CoalGeneratorScreen::new);
         MenuScreens.register(ModMenuTypes.BATTERY_MENU, BatteryScreen::new);
+        MenuScreens.register(ModMenuTypes.GROWTH_CHAMBER_MENU, GrowthChamberScreen::new);
     }
 }

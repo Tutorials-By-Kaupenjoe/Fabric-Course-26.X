@@ -109,6 +109,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(ModBlocks.CRYSTALLIZER);
         dropSelf(ModBlocks.COAL_GENERATOR);
         dropSelf(ModBlocks.BATTERY);
+        dropSelf(ModBlocks.GROWTH_CHAMBER);
     }
 
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {

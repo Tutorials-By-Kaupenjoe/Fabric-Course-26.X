@@ -31,6 +31,10 @@ public class ModMenuTypes {
             Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "battery_menu"),
                     new ExtendedMenuType<>(BatteryMenu::new, BlockPos.STREAM_CODEC));
 
+    public static final MenuType<GrowthChamberMenu> GROWTH_CHAMBER_MENU =
+            Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, "growth_chamber_menu"),
+                    new ExtendedMenuType<>(GrowthChamberMenu::new, BlockPos.STREAM_CODEC));
+
 
     public static void registerModMenuTypes() {
         MCCourse.LOGGER.info("Registering Mod Menu Types for " + MCCourse.MOD_ID);
