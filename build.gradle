@@ -52,7 +52,7 @@ dependencies {
 	implementation "me.shedaniel:RoughlyEnoughItems-api-fabric:26.2.820"
 	implementation "me.shedaniel:RoughlyEnoughItems-fabric:26.2.820"
 
-	include api("dev.architectury:architectury-fabric:21.0.2")
+	include api("dev.architectury:architectury-fabric:21.0.3")
 	compileOnly("me.shedaniel.cloth:basic-math:0.6.1")
 
 	implementation "curse.maven:techreborn-233564:8261648"
