@@ -1,5 +1,7 @@
 package net.kaupenjoe.mccourse.datagen;
 
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.effect.ModEffects;
@@ -14,6 +16,7 @@ import net.minecraft.advancements.predicates.LocationPredicate;
 import net.minecraft.advancements.predicates.MobEffectsPredicate;
 import net.minecraft.advancements.triggers.EffectsChangedTrigger;
 import net.minecraft.advancements.triggers.ItemUsedOnLocationTrigger;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -21,7 +24,10 @@ import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
@@ -30,73 +36,68 @@ import java.util.function.Consumer;
 
 import static net.minecraft.advancements.triggers.InventoryChangeTrigger.TriggerInstance.hasItems;
 
-public class ModAdvancements extends AdvancementProvider {
-    public ModAdvancements(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-        super(output, registries, List.of(new MCCCourseAdvancements()));
+public class ModAdvancements extends FabricAdvancementProvider {
+    public ModAdvancements(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+        super(output, registries);
     }
 
-    public static class MCCCourseAdvancements implements AdvancementSubProvider {
-        @Override
-        public void generate(HolderLookup.Provider registries, Consumer<AdvancementHolder> output) {
-            var items = registries.lookupOrThrow(Registries.ITEM);
-            var blocks = registries.lookupOrThrow(Registries.BLOCK);
+    @Override
+    public void generateAdvancement(HolderLookup.Provider registries, Consumer<AdvancementHolder> output) {
+        var items = registries.lookupOrThrow(Registries.ITEM);
+        var blocks = registries.lookupOrThrow(Registries.BLOCK);
 
-            AdvancementHolder root = Advancement.Builder.advancement()
-                    .display(
-                            ModItems.BISMUTH,
-                            Component.translatable("advancements.mccourse.root.title"),
-                            Component.translatable("advancements.mccourse.root.description"),
-                            Identifier.withDefaultNamespace("gui/advancements/backgrounds/adventure"),
-                            AdvancementType.TASK,
-                            false, false, false)
-                    .addCriterion("has_bismuth", hasItems(ItemPredicate.Builder.item().of(items, ModItems.BISMUTH)))
-                    .save(output, MCCourse.MOD_ID + ":mccourse/root");
+        AdvancementHolder root = Advancement.Builder.advancement()
+                .rootDisplay(
+                        ModItems.BISMUTH,
+                        Component.translatable("advancements.mccourse.root.title"),
+                        Component.translatable("advancements.mccourse.root.description"),
+                        Identifier.withDefaultNamespace("gui/advancements/backgrounds/adventure"),
+                        AdvancementType.TASK,
+                        false, false, false)
+                .addCriterion("has_bismuth", hasItems(ItemPredicate.Builder.item().of(items, ModItems.BISMUTH)))
+                .save(output, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID,"mccourse/root"));
 
-            AdvancementHolder plantSeed = Advancement.Builder.advancement()
-                    .parent(root)
-                    .display(
-                            ModItems.RICE_SHOOT,
-                            Component.translatable("advancements.mccourse.plant_custom.title"),
-                            Component.translatable("advancements.mccourse.plant_custom.description"),
-                            null,
-                            AdvancementType.TASK,
-                            true,
-                            true,
-                            false)
-                    .requirements(AdvancementRequirements.Strategy.OR)
-                    .addCriterion("berries", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(ModBlocks.HONEY_BERRY_BUSH))
-                    .addCriterion("rice", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(ModBlocks.RICE_CROP))
-                    .addCriterion("cauliflower", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(ModBlocks.CAULIFLOWER_CROP))
-                    .save(output, MCCourse.MOD_ID + ":mccourse/plant_custom");
+        AdvancementHolder plantSeed = Advancement.Builder.advancement()
+                .parent(root)
+                .display(
+                        ModItems.RICE_SHOOT,
+                        Component.translatable("advancements.mccourse.plant_custom.title"),
+                        Component.translatable("advancements.mccourse.plant_custom.description"),
+                        AdvancementType.TASK,
+                        true,
+                        true,
+                        false)
+                .requirements(AdvancementRequirements.Strategy.OR)
+                .addCriterion("berries", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(blocks, ModBlocks.HONEY_BERRY_BUSH))
+                .addCriterion("rice", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(blocks, ModBlocks.RICE_CROP))
+                .addCriterion("cauliflower", ItemUsedOnLocationTrigger.TriggerInstance.placedBlock(blocks, ModBlocks.CAULIFLOWER_CROP))
+                .save(output, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID,"mccourse/plant_custom"));
 
-            AdvancementHolder useChisel = Advancement.Builder.advancement()
-                    .parent(root)
-                    .display(
-                            ModItems.CHISEL,
-                            Component.translatable("advancements.mccourse.chisel_stone.title"),
-                            Component.translatable("advancements.mccourse.chisel_stone.description"),
-                            null,
-                            AdvancementType.TASK,
-                            true,
-                            true,
-                            false)
-                    .addCriterion("chisel_stone", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location()
-                            .setBlock(BlockPredicate.Builder.block().of(blocks, Blocks.STONE)), ItemPredicate.Builder.item().of(items, ModItems.CHISEL.asItem())))
-                    .save(output, MCCourse.MOD_ID + ":mccourse/chisel_stone");
+        AdvancementHolder useChisel = Advancement.Builder.advancement()
+                .parent(root)
+                .display(
+                        ModItems.CHISEL,
+                        Component.translatable("advancements.mccourse.chisel_stone.title"),
+                        Component.translatable("advancements.mccourse.chisel_stone.description"),
+                        AdvancementType.TASK,
+                        true,
+                        true,
+                        false)
+                .addCriterion("chisel_stone", ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock(LocationPredicate.Builder.location()
+                        .setBlock(BlockPredicate.Builder.block().of(blocks, Blocks.STONE)), ItemPredicate.Builder.item().of(items, ModItems.CHISEL.asItem())))
+                .save(output, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID,"mccourse/chisel_stone"));
 
-            AdvancementHolder stinkyAdv = Advancement.Builder.advancement()
-                    .parent(useChisel)
-                    .display(
-                            Items.DIRT,
-                            Component.translatable("advancements.mccourse.be_stinky.title"),
-                            Component.translatable("advancements.mccourse.be_stinky.description"),
-                            null,
-                            AdvancementType.TASK,
-                            true,
-                            true,
-                            true)
-                    .addCriterion("be_stinky", EffectsChangedTrigger.TriggerInstance.hasEffects(MobEffectsPredicate.Builder.effects().and(ModEffects.STINKY)))
-                    .save(output, MCCourse.MOD_ID + ":mccourse/stinky");
-        }
+        AdvancementHolder stinkyAdv = Advancement.Builder.advancement()
+                .parent(useChisel)
+                .display(
+                        Items.DIRT,
+                        Component.translatable("advancements.mccourse.be_stinky.title"),
+                        Component.translatable("advancements.mccourse.be_stinky.description"),
+                        AdvancementType.TASK,
+                        true,
+                        true,
+                        true)
+                .addCriterion("be_stinky", EffectsChangedTrigger.TriggerInstance.hasEffects(MobEffectsPredicate.Builder.effects().and(ModEffects.STINKY)))
+                .save(output, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID,"mccourse/stinky"));
     }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mccourse:bismuth_fence_gate"
+        "recipes": "mccourse:bismuth_fence_gate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

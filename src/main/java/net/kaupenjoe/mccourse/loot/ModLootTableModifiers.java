@@ -12,18 +12,17 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 public class ModLootTableModifiers {
     public static void modifyLootTables(ResourceKey<LootTable> key, FabricLootTableBuilder builder, LootTableSource source, HolderLookup.Provider provider) {
         // This targets shorts grass loot table
         if(key.identifier().equals(Identifier.withDefaultNamespace("blocks/short_grass"))) {
             LootPool.Builder poolBuilder = LootPool.lootPool()
-                    .setRolls(ConstantValue.exactly(1))
+                    .setRolls(ContextIntProviders.exactly(1))
                     .when(LootItemRandomChanceCondition.randomChance(0.25f)) // Drops 25% of the time
                     .add(LootItem.lootTableItem(ModItems.CAULIFLOWER))
-                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 2f)).build());
+                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2)).build());
 
             builder.pool(poolBuilder.build());
         }
@@ -31,10 +30,10 @@ public class ModLootTableModifiers {
         // This targets all ancient city chest loot tables!
         if(BuiltInLootTables.ANCIENT_CITY.equals(key)) {
             LootPool.Builder poolBuilder = LootPool.lootPool()
-                    .setRolls(ConstantValue.exactly(1))
+                    .setRolls(ContextIntProviders.exactly(1))
                     .when(LootItemRandomChanceCondition.randomChance(1f)) // Drops 100% of the time
                     .add(LootItem.lootTableItem(ModItems.CHISEL))
-                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 2f)).build());
+                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2)).build());
 
             builder.pool(poolBuilder.build());
         }
@@ -42,10 +41,10 @@ public class ModLootTableModifiers {
         // This targets creeper loot table
         if(key.identifier().equals(Identifier.withDefaultNamespace("entities/creeper"))) {
             LootPool.Builder poolBuilder = LootPool.lootPool()
-                    .setRolls(ConstantValue.exactly(1))
+                    .setRolls(ContextIntProviders.exactly(1))
                     .when(LootItemRandomChanceCondition.randomChance(0.45f)) // Drops 45% of the time
                     .add(LootItem.lootTableItem(ModItems.RAW_BISMUTH))
-                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(2f, 5f)).build());
+                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)).build());
 
             builder.pool(poolBuilder.build());
         }

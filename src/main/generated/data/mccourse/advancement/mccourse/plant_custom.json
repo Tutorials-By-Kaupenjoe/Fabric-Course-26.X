@@ -3,34 +3,28 @@
   "criteria": {
     "berries": {
       "conditions": {
-        "location": [
-          {
-            "block": "mccourse:honey_berry_bush",
-            "condition": "minecraft:block_state_property"
-          }
-        ]
+        "location": {
+          "type": "minecraft:match_block",
+          "blocks": "mccourse:honey_berry_bush"
+        }
       },
       "trigger": "minecraft:placed_block"
     },
     "cauliflower": {
       "conditions": {
-        "location": [
-          {
-            "block": "mccourse:cauliflower_crop",
-            "condition": "minecraft:block_state_property"
-          }
-        ]
+        "location": {
+          "type": "minecraft:match_block",
+          "blocks": "mccourse:cauliflower_crop"
+        }
       },
       "trigger": "minecraft:placed_block"
     },
     "rice": {
       "conditions": {
-        "location": [
-          {
-            "block": "mccourse:rice_crop",
-            "condition": "minecraft:block_state_property"
-          }
-        ]
+        "location": {
+          "type": "minecraft:match_block",
+          "blocks": "mccourse:rice_crop"
+        }
       },
       "trigger": "minecraft:placed_block"
     }

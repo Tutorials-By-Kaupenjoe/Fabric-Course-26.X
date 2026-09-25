@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mccourse:bismuth_from_smelting_bismuth_end_ore"
+        "recipes": "mccourse:bismuth_from_smelting_bismuth_end_ore"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

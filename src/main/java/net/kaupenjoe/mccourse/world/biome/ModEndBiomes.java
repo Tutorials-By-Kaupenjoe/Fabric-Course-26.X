@@ -3,23 +3,22 @@ package net.kaupenjoe.mccourse.world.biome;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.data.worldgen.placement.EndPlacements;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.attribute.AmbientParticle;
 import net.minecraft.world.attribute.EnvironmentAttributes;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityTypes;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
+import net.minecraft.world.level.levelgen.carver.WorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class ModEndBiomes {
-    public static Biome endRot(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
+    public static Biome endRot(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<WorldCarver> worldCarvers) {
         MobSpawnSettings.Builder mobBuilder = new MobSpawnSettings.Builder();
-        mobBuilder.addSpawn(MobCategory.CREATURE, 15, new MobSpawnSettings.SpawnerData(EntityTypes.BEE, 1, 3));
+        mobBuilder.addSpawn(EntityTypes.BEE, 15, UniformInt.of(1, 3));
 
         BiomeGenerationSettings.Builder builder = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
                 .addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, EndPlacements.END_SPIKE);

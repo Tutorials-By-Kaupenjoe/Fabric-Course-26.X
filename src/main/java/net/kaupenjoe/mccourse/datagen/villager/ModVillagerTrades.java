@@ -32,52 +32,44 @@ public class ModVillagerTrades {
 
 
     public static void bootstrap(BootstrapContext<VillagerTrade> context) {
-        register(context, FARMER_1_EMERALD_CAULIFLOWER, new VillagerTrade(
+        register(context, FARMER_1_EMERALD_CAULIFLOWER, VillagerTrade.builder(
                 new TradeCost(Items.EMERALD, 4),
                 new ItemStackTemplate(ModItems.CAULIFLOWER),
-                12, 10, 0.05f,
-                Optional.empty(), List.of()));
-        register(context, FARMER_1_DIAMOND_CAULIFLOWER_SEEDS, new VillagerTrade(
+                12, 10, 0.05f).build());
+        register(context, FARMER_1_DIAMOND_CAULIFLOWER_SEEDS, VillagerTrade.builder(
                 new TradeCost(Items.DIAMOND, 12),
                 new ItemStackTemplate(ModItems.CAULIFLOWER_SEEDS),
-                12, 10, 0.05f,
-                Optional.empty(), List.of()));
+                12, 10, 0.05f).build());
 
-        register(context, FARMER_2_EMERALD_HONEY_BERRIES, new VillagerTrade(
+        register(context, FARMER_2_EMERALD_HONEY_BERRIES, VillagerTrade.builder(
                 new TradeCost(Items.EMERALD, 16),
                 new ItemStackTemplate(ModItems.HONEY_BERRIES),
-                12, 10, 0.05f,
-                Optional.empty(), List.of()));
+                12, 10, 0.05f).build());
 
 
-        register(context, MASON_1_EMERALD_CHISEL, new VillagerTrade(
+        register(context, MASON_1_EMERALD_CHISEL, VillagerTrade.builder(
                 new TradeCost(Items.EMERALD, 6),
                 new ItemStackTemplate(ModItems.CHISEL),
-                2, 19, 0.05f,
-                Optional.empty(), List.of()));
+                12, 10, 0.05f).build());
 
 
-        register(context, KAUPENGER_1_EMERALD_BISMUTH, new VillagerTrade(
+        register(context, KAUPENGER_1_EMERALD_BISMUTH, VillagerTrade.builder(
                 new TradeCost(Items.EMERALD, 6),
                 new ItemStackTemplate(ModItems.BISMUTH, 4),
-                12, 19, 0.05f,
-                Optional.empty(), List.of()));
-        register(context, KAUPENGER_1_EMERALD_RAW_BISMUTH, new VillagerTrade(
+                12, 10, 0.05f).build());
+        register(context, KAUPENGER_1_EMERALD_RAW_BISMUTH, VillagerTrade.builder(
                 new TradeCost(Items.EMERALD, 5),
                 new ItemStackTemplate(ModItems.RAW_BISMUTH, 12),
-                12, 23, 0.05f,
-                Optional.empty(), List.of()));
+                12, 10, 0.05f).build());
 
-        register(context, KAUPENGER_2_EMERALD_CHAIR, new VillagerTrade(
+        register(context, KAUPENGER_2_EMERALD_CHAIR, VillagerTrade.builder(
                 new TradeCost(Items.EMERALD, 24),
                 new ItemStackTemplate(ModBlocks.CHAIR.asItem()),
-                12, 24, 0.05f,
-                Optional.empty(), List.of()));
-        register(context, KAUPENGER_2_BISMUTH_SPECTRE_STAFF, new VillagerTrade(
+                12, 10, 0.05f).build());
+        register(context, KAUPENGER_2_BISMUTH_SPECTRE_STAFF, VillagerTrade.builder(
                 new TradeCost(ModItems.BISMUTH, 19),
                 new ItemStackTemplate(ModItems.SPECTRE_STAFF),
-                2, 19, 0.05f,
-                Optional.empty(), List.of()));
+                12, 10, 0.05f).build());
     }
 
 

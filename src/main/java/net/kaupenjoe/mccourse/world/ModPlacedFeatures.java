@@ -10,9 +10,7 @@ import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
@@ -32,30 +30,30 @@ public class ModPlacedFeatures {
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
-        var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
+        var configuredFeatures = context.lookup(Registries.FEATURE);
 
-        register(context, BISMUTH_OVERWORLD_ORES_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BISMUTH_OVERWORLD_ORES_KEY),
+        register(context, BISMUTH_OVERWORLD_ORES_PLACED_KEY, configuredFeatures.getOrThrow(ModFeatures.BISMUTH_OVERWORLD_ORES_KEY),
                 ModOrePlacements.commonOrePlacement(14,
                         HeightRangePlacement.triangle(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80))));
-        register(context, BISMUTH_NETHER_ORES_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BISMUTH_NETHER_ORES_KEY),
+        register(context, BISMUTH_NETHER_ORES_PLACED_KEY, configuredFeatures.getOrThrow(ModFeatures.BISMUTH_NETHER_ORES_KEY),
                 ModOrePlacements.commonOrePlacement(14,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80))));
-        register(context, BISMUTH_END_ORES_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BISMUTH_END_ORES_KEY),
+        register(context, BISMUTH_END_ORES_PLACED_KEY, configuredFeatures.getOrThrow(ModFeatures.BISMUTH_END_ORES_KEY),
                 ModOrePlacements.commonOrePlacement(14,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80))));
 
-        register(context, BLOODWOOD_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BLOODWOOD_TREE_KEY),
+        register(context, BLOODWOOD_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModFeatures.BLOODWOOD_TREE_KEY),
                 VegetationPlacements.treePlacement(
                         PlacementUtils.countExtra(2, 0.1f, 2), ModBlocks.BLOODWOOD_SAPLING));
 
-        register(context, PETUNIA_FLOWER_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PETUNIA_FLOWER_KEY),
+        register(context, PETUNIA_FLOWER_PLACED_KEY, configuredFeatures.getOrThrow(ModFeatures.PETUNIA_FLOWER_KEY),
                 List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
-        register(context, HONEY_BERRY_BUSH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.HONEY_BERRY_BUSH_KEY),
+        register(context, HONEY_BERRY_BUSH_PLACED_KEY, configuredFeatures.getOrThrow(ModFeatures.HONEY_BERRY_BUSH_KEY),
                 List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 
 
-        register(context, BISMUTH_GEODE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BISMUTH_GEODE_KEY),
+        register(context, BISMUTH_GEODE_PLACED_KEY, configuredFeatures.getOrThrow(ModFeatures.BISMUTH_GEODE_KEY),
                         RarityFilter.onAverageOnceEvery(30), InSquarePlacement.spread(),
                         HeightRangePlacement.triangle(VerticalAnchor.absolute(5), VerticalAnchor.absolute(80)),
                 BiomeFilter.biome());
@@ -65,12 +63,12 @@ public class ModPlacedFeatures {
         return ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(MCCourse.MOD_ID, name));
     }
 
-    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key,
-                                                                                          Holder<ConfiguredFeature<?, ?>> configuration, PlacementModifier... modifiers) {
+    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key,
+                                                                                          Holder<Feature> configuration, PlacementModifier... modifiers) {
         register(context, key, configuration, List.of(modifiers));
     }
 
-    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
+    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<Feature> configuration,
                                  List<PlacementModifier> modifiers) {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }

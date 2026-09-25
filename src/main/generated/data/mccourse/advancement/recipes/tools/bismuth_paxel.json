@@ -33,7 +33,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mccourse:bismuth_paxel"
+        "recipes": "mccourse:bismuth_paxel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

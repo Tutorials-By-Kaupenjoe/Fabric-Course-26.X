@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mccourse:bismuth_shovel"
+        "recipes": "mccourse:bismuth_shovel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

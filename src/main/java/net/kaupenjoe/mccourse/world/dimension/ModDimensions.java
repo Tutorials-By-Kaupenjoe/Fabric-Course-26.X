@@ -9,6 +9,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TimelineTags;
+import net.minecraft.util.ARGB;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.attribute.AmbientSounds;
 import net.minecraft.world.attribute.BackgroundMusic;
@@ -58,12 +59,12 @@ public class ModDimensions {
                 CardinalLighting.Type.DEFAULT,
                 EnvironmentAttributeMap.builder()
                         .set(EnvironmentAttributes.STAR_BRIGHTNESS, 0.9f)
-                        .set(EnvironmentAttributes.FOG_COLOR, -6168945)
-                        .set(EnvironmentAttributes.SKY_COLOR, OverworldBiomes.calculateSkyColor(1.95f))
-                        .set(EnvironmentAttributes.CLOUD_COLOR, 0xA14313ba)
+                        .set(EnvironmentAttributes.FOG_COLOR, ARGB.vector3fFromRGB24(-6168945))
+                        .set(EnvironmentAttributes.SKY_COLOR, ARGB.vector3fFromRGB24(OverworldBiomes.calculateSkyColor(1.95f)))
+                        .set(EnvironmentAttributes.CLOUD_COLOR, ARGB.vector4fFromARGB32(0xA14313ba))
                         .set(EnvironmentAttributes.BACKGROUND_MUSIC, BackgroundMusic.OVERWORLD)
                         .set(EnvironmentAttributes.AMBIENT_SOUNDS, AmbientSounds.LEGACY_CAVE_SETTINGS)
-                        .set(EnvironmentAttributes.AMBIENT_LIGHT_COLOR, -4129286)
+                        .set(EnvironmentAttributes.AMBIENT_LIGHT_COLOR, ARGB.vector3fFromRGB24(-4129286))
                         .build(),
                 timelines.getOrThrow(TimelineTags.IN_OVERWORLD),
                 Optional.of(clocks.getOrThrow(WorldClocks.OVERWORLD))));

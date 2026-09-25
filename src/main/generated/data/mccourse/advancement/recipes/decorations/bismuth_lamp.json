@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mccourse:bismuth_lamp"
+        "recipes": "mccourse:bismuth_lamp"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

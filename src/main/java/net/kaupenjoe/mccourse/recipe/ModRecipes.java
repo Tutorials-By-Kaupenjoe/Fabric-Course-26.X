@@ -1,5 +1,6 @@
 package net.kaupenjoe.mccourse.recipe;
 
+import net.fabricmc.fabric.api.recipe.v1.sync.RecipeSynchronization;
 import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.recipe.custom.AtomicSeparatorRecipe;
 import net.kaupenjoe.mccourse.recipe.custom.CrystallizerRecipe;
@@ -62,6 +63,11 @@ public class ModRecipes {
 
 
     public static void registerModRecipes() {
+        RecipeSynchronization.synchronizeRecipeSerializer(ModRecipes.CRYSTALLIZER_SERIALIZER);
+        RecipeSynchronization.synchronizeRecipeSerializer(ModRecipes.PEDESTAL_SERIALIZER);
+        RecipeSynchronization.synchronizeRecipeSerializer(ModRecipes.GROWTH_CHAMBER_SERIALIZER);
+        RecipeSynchronization.synchronizeRecipeSerializer(ModRecipes.ATOMIC_SEPARATOR_SERIALIZER);
+
         MCCourse.LOGGER.info("Registering Custom Recipe Types for " + MCCourse.MOD_ID);
     }
 }

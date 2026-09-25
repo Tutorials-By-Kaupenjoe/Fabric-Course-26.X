@@ -16,6 +16,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.sounds.AmbientLeavesBlockSoundPlayer;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -58,11 +59,11 @@ public class ModBlocks {
 
     public static final Block BISMUTH_BUTTON = registerBlock("bismuth_button",
             properties -> new ButtonBlock(BlockSetType.IRON, 20, properties
-                    .noCollision().strength(0.5F).pushReaction(PushReaction.DESTROY)));
+                    .noCollision().strength(0.5F).pushReaction(PushReaction.POPPED)));
     public static final Block BISMUTH_PRESSURE_PLATE = registerBlock("bismuth_pressure_plate",
             properties -> new PressurePlateBlock(BlockSetType.IRON, properties
                     .mapColor(MapColor.STONE).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).noCollision()
-                    .strength(0.5F).pushReaction(PushReaction.DESTROY)));
+                    .strength(0.5F).pushReaction(PushReaction.POPPED)));
 
     public static final Block BISMUTH_FENCE = registerBlock("bismuth_fence",
             properties -> new FenceBlock(properties.strength(2f).requiresCorrectToolForDrops()));
@@ -85,36 +86,36 @@ public class ModBlocks {
 
     public static final Block CAULIFLOWER_CROP = registerBlockWithoutBlockItem("cauliflower_crop",
             properties -> new CauliflowerCropBlock(properties.randomTicks().instabreak()
-                    .sound(SoundType.CROP).noCollision().pushReaction(PushReaction.DESTROY)));
+                    .sound(SoundType.CROP).noCollision().pushReaction(PushReaction.POPPED)));
 
     public static final Block PETUNIA = registerBlock("petunia",
             properties -> new FlowerBlock(MobEffects.BLINDNESS, 12, properties.instabreak().mapColor(MapColor.PLANT)
-                    .sound(SoundType.GRASS).noCollision().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
+                    .sound(SoundType.GRASS).noCollision().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.POPPED)));
     public static final Block POTTED_PETUNIA = registerBlockWithoutBlockItem("potted_petunia",
-            properties -> new FlowerPotBlock(PETUNIA, properties.instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)));
+            properties -> new FlowerPotBlock(PETUNIA, properties.instabreak().noOcclusion().pushReaction(PushReaction.POPPED)));
 
     public static final Block COLORED_LEAVES = registerBlock("colored_leaves",
             properties -> new TintedParticleLeavesBlock(0.1f, properties.mapColor(MapColor.PLANT)
                     .strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(Blocks::ocelotOrParrot)
-                    .isSuffocating(Blocks::never).isViewBlocking(Blocks::never)
-                    .ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(Blocks::never)));
+                    .isSuffocating(Blocks::never)
+                    .ignitedByLava().pushReaction(PushReaction.POPPED).isRedstoneConductor(Blocks::never)));
 
     public static final Block HONEY_BERRY_BUSH = registerBlockWithoutBlockItem("honey_berry_bush",
             properties -> new HoneyBerryBushBlock(properties.mapColor(MapColor.COLOR_GREEN).randomTicks()
-                    .noCollision().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.DESTROY)));
+                    .noCollision().sound(SoundType.SWEET_BERRY_BUSH).pushReaction(PushReaction.POPPED)));
 
     public static final Block RICE_CROP = registerBlockWithoutBlockItem("rice_crop",
             properties -> new RiceCropBlock(properties.randomTicks().instabreak()
-                    .sound(SoundType.CROP).noCollision().pushReaction(PushReaction.DESTROY)));
+                    .sound(SoundType.CROP).noCollision().pushReaction(PushReaction.POPPED)));
 
     public static final Block CHAIR = registerBlock("chair",
             properties -> new ChairBlock(properties.mapColor(MapColor.WOOD).strength(1.25f)
-                    .sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)));
+                    .sound(SoundType.WOOD).pushReaction(PushReaction.POPPED)));
 
     public static final Block BISMUTH_WATER_BLOCK = registerBlockWithoutBlockItem("bismuth_water_block",
             properties -> new LiquidBlock(ModFluids.BISMUTH_WATER_SOURCE, properties
                     .mapColor(MapColor.WATER).replaceable().noCollision().strength(100.0F)
-                    .pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY)));
+                    .pushReaction(PushReaction.POPPED).noLootTable().liquid().sound(SoundType.EMPTY)));
 
     public static final Block BLOODWOOD_LOG = registerBlock("bloodwood_log",
             properties -> new RotatedPillarBlock(properties.mapColor(MapColor.WOOD).strength(2f)
@@ -133,19 +134,19 @@ public class ModBlocks {
             properties -> new Block(properties.mapColor(MapColor.WOOD).strength(2f)
                     .sound(SoundType.WOOD).ignitedByLava()));
     public static final Block BLOODWOOD_LEAVES = registerBlock("bloodwood_leaves",
-            properties -> new UntintedParticleLeavesBlock(0f, ParticleTypes.CHERRY_LEAVES,
+            properties -> new UntintedParticleLeavesBlock(0f, ParticleTypes.CHERRY_LEAVES, AmbientLeavesBlockSoundPlayer.noAmbientSound(),
                     properties.mapColor(MapColor.METAL).strength(0.2F).randomTicks().sound(SoundType.GRASS)
                             .noOcclusion().isValidSpawn(Blocks::ocelotOrParrot).isSuffocating(Blocks::never)
-                            .isViewBlocking(Blocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY)
+                            .ignitedByLava().pushReaction(PushReaction.POPPED)
                             .isRedstoneConductor(Blocks::never)));
 
 
     public static final Block BLOODWOOD_SAPLING = registerBlock("bloodwood_sapling",
             properties -> new ModSaplingBlock(ModTreeGrowers.BLOODWOOD, properties.mapColor(MapColor.GRASS).noCollision()
-                    .randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY), Blocks.STONE));
+                    .randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.POPPED), Blocks.STONE));
     public static final Block POTTED_BLOODWOOD_SAPLING = registerBlockWithoutBlockItem("potted_bloodwood_sapling",
             properties -> new FlowerPotBlock(BLOODWOOD_SAPLING, properties.mapColor(MapColor.GRASS).noOcclusion()
-                    .instabreak().pushReaction(PushReaction.DESTROY)));
+                    .instabreak().pushReaction(PushReaction.POPPED)));
 
 
     public static final Block KAUPEN_PORTAL = registerBlock("kaupen_portal",

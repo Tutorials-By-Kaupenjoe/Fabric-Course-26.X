@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.tag.ModTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.BlockItemTags;
 import net.minecraft.tags.BlockTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -87,6 +88,9 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.BLOODWOOD_WOOD.properties().blockIdOrThrow())
                 .add(ModBlocks.STRIPPED_BLOODWOOD_LOG.properties().blockIdOrThrow())
                 .add(ModBlocks.STRIPPED_BLOODWOOD_WOOD.properties().blockIdOrThrow());
+
+        tag(BlockItemTags.LOGS_THAT_BURN.block())
+                .addTag(ModTags.Blocks.BLOODWOOD_LOGS);
 
     }
 }

@@ -29,11 +29,6 @@ public class CoalGeneratorBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return null;
-    }
-
-    @Override
     public RenderShape getRenderShape(BlockState pState) {
         return RenderShape.MODEL;
     }

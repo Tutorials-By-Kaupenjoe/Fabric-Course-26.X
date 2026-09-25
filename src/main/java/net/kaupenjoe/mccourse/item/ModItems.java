@@ -17,6 +17,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -27,7 +28,7 @@ public class ModItems {
 
     public static final Item CHISEL = registerItem("chisel", properties -> new ChiselItem(properties.durability(32)));
     public static final Item CAULIFLOWER = registerItem("cauliflower", properties -> new Item(properties.food(ModFoodProperties.CAULIFLOWER,
-            ModFoodProperties.CAULIFLOWER_EFFECT)) {
+            ModFoodProperties.CAULIFLOWER_EFFECT).compostable(ContextIntProviders.COMPOSTABLE_MEDIUM_HIGH)) {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
             builder.accept(Component.translatable("tooltip.mccourse.cauliflower"));
@@ -35,18 +36,19 @@ public class ModItems {
         }
     });
 
-    public static final Item STARLIGHT_ASHES = registerItem("starlight_ashes", Item::new);
+    public static final Item STARLIGHT_ASHES = registerItem("starlight_ashes", properties ->
+            new Item(properties.cookingFuel(ContextIntProviders.COOKING_TIME_COAL_BLOCK)));
 
     public static final Item BISMUTH_SWORD = registerItem("bismuth_sword",
             properties -> new Item(properties.sword(ModToolMaterials.BISMUTH, 3, -2.4f)));
     public static final Item BISMUTH_PICKAXE = registerItem("bismuth_pickaxe",
             properties -> new Item(properties.pickaxe(ModToolMaterials.BISMUTH, 1, -2.8f)));
     public static final Item BISMUTH_SHOVEL = registerItem("bismuth_shovel",
-            properties -> new ShovelItem(ModToolMaterials.BISMUTH, 1.5f, -3.0f, properties));
+            properties -> new Item(properties.shovel(ModToolMaterials.BISMUTH, 1.5f, -3.0f)));
     public static final Item BISMUTH_AXE = registerItem("bismuth_axe",
-            properties -> new AxeItem(ModToolMaterials.BISMUTH, 6, -3.2f, properties));
+            properties -> new Item(properties.axe(ModToolMaterials.BISMUTH, 6, -3.2f)));
     public static final Item BISMUTH_HOE = registerItem("bismuth_hoe",
-            properties -> new HoeItem(ModToolMaterials.BISMUTH, 0, -3f, properties));
+            properties -> new Item(properties.hoe(ModToolMaterials.BISMUTH, 0, -3f)));
 
     public static final Item BISMUTH_PAXEL = registerItem("bismuth_paxel",
             properties -> new PaxelItem(ModToolMaterials.BISMUTH, 1, -2.2f, properties));
@@ -69,7 +71,8 @@ public class ModItems {
             properties -> new BowItem(properties.durability(500)));
 
     public static final Item CAULIFLOWER_SEEDS = registerItem("cauliflower_seeds",
-            properties -> new BlockItem(ModBlocks.CAULIFLOWER_CROP, properties.useItemDescriptionPrefix()));
+            properties -> new BlockItem(ModBlocks.CAULIFLOWER_CROP, properties.useItemDescriptionPrefix()
+                    .compostable(ContextIntProviders.COMPOSTABLE_LOW)));
     public static final Item HONEY_BERRIES = registerItem("honey_berries",
             properties -> new BlockItem(ModBlocks.HONEY_BERRY_BUSH, properties
                     .food(ModFoodProperties.HONEY_BERRIES, ModFoodProperties.HONEY_BERRY_EFFECT).useItemDescriptionPrefix()));

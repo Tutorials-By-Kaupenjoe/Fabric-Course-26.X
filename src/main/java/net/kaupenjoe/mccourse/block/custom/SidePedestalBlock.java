@@ -27,15 +27,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jspecify.annotations.Nullable;
 
 public class SidePedestalBlock extends PedestalBlock {
-    public static final MapCodec<SidePedestalBlock> CODEC = simpleCodec(SidePedestalBlock::new);
-
     public SidePedestalBlock(Properties properties) {
         super(properties);
-    }
-
-    @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
     }
 
     @Override

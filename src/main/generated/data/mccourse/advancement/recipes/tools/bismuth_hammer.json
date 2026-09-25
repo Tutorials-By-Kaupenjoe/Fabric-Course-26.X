@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mccourse:bismuth_hammer"
+        "recipes": "mccourse:bismuth_hammer"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

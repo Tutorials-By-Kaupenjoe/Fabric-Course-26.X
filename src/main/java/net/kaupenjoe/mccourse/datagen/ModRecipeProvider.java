@@ -2,20 +2,28 @@ package net.kaupenjoe.mccourse.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.kaupenjoe.mccourse.MCCourse;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.datagen.recipe.AtomicSeparatorRecipeBuilder;
 import net.kaupenjoe.mccourse.datagen.recipe.CrystallizerRecipeBuilder;
 import net.kaupenjoe.mccourse.datagen.recipe.GrowthChamberRecipeBuilder;
 import net.kaupenjoe.mccourse.item.ModItems;
+import net.kaupenjoe.mccourse.potion.ModPotions;
 import net.kaupenjoe.mccourse.tag.ModTags;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.data.recipes.BrewingRecipeBuilder;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
@@ -28,8 +36,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     }
 
     @Override
-    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
-        return new RecipeProvider(registries, output) {
+    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registries, BootstrapContext<Recipe<?>> recipes, BootstrapContext<Advancement> advancements) {
+        return new RecipeProvider(recipes, advancements) {
             @Override
             public void buildRecipes() {
                 List<ItemLike> BISMUTH_SMELTABLES = List.of(ModItems.RAW_BISMUTH, ModBlocks.BISMUTH_ORE,
@@ -260,6 +268,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
                         .save(output, "mccourse:bismuth_into_atomic_separation");
 
+                for(Item potion : List.of(Items.POTION, Items.SPLASH_POTION, Items.LINGERING_POTION)) {
+                    BrewingRecipeBuilder.brewingMix(potion, Potions.AWKWARD, Blocks.DIRT.asItem(), ModPotions.STINKY_POTION)
+                            .save(output, MCCourse.MOD_ID + ":brewing/" + getItemName(potion) + "_awkward_dirt");
+                }
             }
         };
     }

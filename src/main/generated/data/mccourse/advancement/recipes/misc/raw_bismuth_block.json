@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mccourse:raw_bismuth_block"
+        "recipes": "mccourse:raw_bismuth_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

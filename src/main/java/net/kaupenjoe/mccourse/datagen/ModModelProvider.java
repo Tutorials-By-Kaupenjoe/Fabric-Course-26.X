@@ -30,6 +30,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
+import java.util.Map;
 import java.util.Optional;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -121,10 +122,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_PAXEL, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_HAMMER, ModelTemplates.FLAT_HANDHELD_ITEM);
 
-        itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_HELMET, ModArmorMaterials.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
-        itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_CHESTPLATE, ModArmorMaterials.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
-        itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_LEGGINGS, ModArmorMaterials.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
-        itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_BOOTS, ModArmorMaterials.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
+        itemModelGenerators.generateTrimmableArmorSet(ModItems.BISMUTH_HELMET, ModItems.BISMUTH_CHESTPLATE, ModItems.BISMUTH_LEGGINGS, ModItems.BISMUTH_BOOTS,
+                false, Map.of());
 
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_HORSE_ARMOR, ModelTemplates.FLAT_ITEM);
 

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mccourse:bismuth_stairs"
+        "recipes": "mccourse:bismuth_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -35,7 +35,7 @@ public class FluidTankRenderer {
     private static final Identifier STILL_FLUID_TEXTURE = Identifier.fromNamespaceAndPath(MCCourse.MOD_ID,
             "textures/gui/still_fluid.png");
 
-    enum TooltipMode {
+    public enum TooltipMode {
         SHOW_AMOUNT,
         SHOW_AMOUNT_AND_CAPACITY,
         ITEM_LIST
@@ -45,7 +45,7 @@ public class FluidTankRenderer {
         this(capacity, showCapacity ? TooltipMode.SHOW_AMOUNT_AND_CAPACITY : TooltipMode.SHOW_AMOUNT, width, height);
     }
 
-    private FluidTankRenderer(long capacity, TooltipMode tooltipMode, int width, int height) {
+    public FluidTankRenderer(long capacity, TooltipMode tooltipMode, int width, int height) {
         Preconditions.checkArgument(capacity > 0, "capacity must be > 0");
         Preconditions.checkArgument(width > 0, "width must be > 0");
         Preconditions.checkArgument(height > 0, "height must be > 0");

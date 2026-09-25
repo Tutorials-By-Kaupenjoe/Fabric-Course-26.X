@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mccourse:bismuth_leggings"
+        "recipes": "mccourse:bismuth_leggings"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

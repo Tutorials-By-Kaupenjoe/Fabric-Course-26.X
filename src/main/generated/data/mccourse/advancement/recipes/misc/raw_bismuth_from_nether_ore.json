@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mccourse:raw_bismuth_from_nether_ore"
+        "recipes": "mccourse:raw_bismuth_from_nether_ore"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

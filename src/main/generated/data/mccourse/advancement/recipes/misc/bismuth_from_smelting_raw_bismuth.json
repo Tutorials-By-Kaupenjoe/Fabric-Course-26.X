@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mccourse:bismuth_from_smelting_raw_bismuth"
+        "recipes": "mccourse:bismuth_from_smelting_raw_bismuth"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mccourse:bismuth_button"
+        "recipes": "mccourse:bismuth_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
